@@ -6,7 +6,7 @@
 
 ![iMac-MacBook-flat](http://i.imgur.com/GBpjrHB.png)
 
-這份 dotfiles 是 fork 自 [Holman's dotfiles](https://github.com/holman/dotfiles)，並根據個人的需求修改。
+這份 dotfiles 是從 Amo Wu fork 自 [Holman's dotfiles](https://github.com/holman/dotfiles) 後，Seraphwu 再fork 後根據個人需求修改。
 
 閱讀完這份文件之後，如果有興趣，歡迎 fork 一份回去配置成適合自己的 dotfiles。
 
@@ -30,10 +30,10 @@ $ xcode-select --install
 
 ## Install dotfiles
 
-[下載](https://github.com/amowu/dotfiles/archive/master.zip)或使用 git clone 一份到 `$HOME` 目錄底下的 `.dotfiles` 資料夾裡面:
+[下載](https://github.com/seraphwu/dotfiles/archive/master.zip)或使用 git clone 一份到 `$HOME` 目錄底下的 `.dotfiles` 資料夾裡面:
 
 ```bash
-$ git clone https://github.com/amowu/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/seraphwu/dotfiles.git ~/.dotfiles
 ```
 
 進入 `.dotfiles` 資料夾:
