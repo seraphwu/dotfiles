@@ -111,11 +111,8 @@ cask "visual-studio-code"
 cask "vlc"
 cask "webstorm"
 cask "Clipy"
-<<<<<<< HEAD
-=======
 cask "mounty"
 
->>>>>>> 260b8d1e74f71b3314a1d1dc388a85fe143cfc87
 cask "font-sourcecodepro-nerd-font"
 cask "font-hack"
 cask "font-noto-sans-cjk"
