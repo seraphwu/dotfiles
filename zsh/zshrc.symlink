@@ -126,3 +126,4 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completionexport PATH="/usr/local/sbin:$PATH"
 export HOMEBREW_GITHUB_API_TOKEN=d47f598886596a0a448db0614f76d1e2e88753b0
 export HOMEBREW_GITHUB_API_TOKEN=d47f598886596a0a448db0614f76d1e2e88753b0
+eval "$(rbenv init -)"
