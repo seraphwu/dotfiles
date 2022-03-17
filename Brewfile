@@ -206,7 +206,6 @@ mas "Apowersoft Screen Recorder", id: 1030681467
 mas "Disk Speed Test", id: 425264550
 mas "EzyCal", id: 1190243926
 mas "FileSumo Pro", id: 1182711853
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
@@ -217,3 +216,4 @@ mas "QuickKey", id: 1142743710
 mas "QuickLinks", id: 1200685619
 mas "ToothFairy", id: 1191449274
 mas "Xcode", id: 497799835
+mas "iMovie", id: 408981434
