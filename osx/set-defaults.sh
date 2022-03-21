@@ -56,6 +56,9 @@ defaults write com.apple.systemuiserver menuExtras -array \
  	"/System/Library/CoreServices/Menu Extras/Battery.menu" \
  	"/System/Library/CoreServices/Menu Extras/Clock.menu"
 
+#show Battery Percentage
+defaults write com.apple.menuextra.battery ShowPercent YES
+
 # Set highlight color to green
 # defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
 
