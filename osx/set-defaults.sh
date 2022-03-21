@@ -795,6 +795,11 @@ defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 # Hide the app in the background if it’s not the front-most window
 # defaults write com.twitter.twitter-mac HideInBackground -bool true
 
+#QuickLook Enable Text Selection in Quick Look Windows
+defaults write com.apple.finder QLEnableTextSelection -bool TRUE
+
+
+
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
