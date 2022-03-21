@@ -104,7 +104,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
 # Disable the crash reporter
-# defaults write com.apple.CrashReporter DialogType -string "none"
+defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Set Help Viewer windows to non-floating mode
 # defaults write com.apple.helpviewer DevMode -bool true
@@ -255,6 +255,7 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# 設定截圖檔名為 螢幕快照
 defaults write com.apple.screencapture name "螢幕快照"
 
 # Enable subpixel font rendering on non-Apple LCDs
@@ -473,8 +474,11 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.dock wvous-tr-corner -int 4
 # defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Start screen saver
-# defaults write com.apple.dock wvous-bl-corner -int 5
-# defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-bl-modifier -int 0
+# Bottom right screen corner → Put display to sleep
+defaults write com.apple.dock wvous-br-corner -int 10
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -492,7 +496,7 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
 # Set Safari’s home page to `about:blank` for faster loading
-# defaults write com.apple.Safari HomePage -string "about:blank"
+defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 # defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
@@ -519,12 +523,12 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 # Enable the Develop menu and the Web Inspector in Safari
-# defaults write com.apple.Safari IncludeDevelopMenu -bool true
-# defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Add a context menu item for showing the Web Inspector in web views
-# defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 ###############################################################################
 # Mail                                                                        #
@@ -668,10 +672,10 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.iCal IncludeDebugMenu -bool true
 
 # Use plain text mode for new TextEdit documents
-# defaults write com.apple.TextEdit RichText -int 0
+defaults write com.apple.TextEdit RichText -int 0
 # Open and save files as UTF-8 in TextEdit
-# defaults write com.apple.TextEdit PlainTextEncoding -int 4
-# defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+defaults write com.apple.TextEdit PlainTextEncoding -int 4
+defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 # Enable the debug menu in Disk Utility
 # defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
@@ -705,8 +709,8 @@ defaults write com.apple.dock showhidden -bool true
 ###############################################################################
 
 # Allow installing user scripts via GitHub Gist or Userscripts.org
-# defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
-# defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
+defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
+defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
 
 # Disable the all too sensitive backswipe
 # defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
@@ -728,10 +732,10 @@ defaults write com.apple.dock showhidden -bool true
 ###############################################################################
 
 # Start SizeUp at login
-# defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
+defaults write com.irradiatedsoftware.SizeUp StartAtLogin -bool true
 
 # Don’t show the preferences window on next start
-# defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
+defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 
 ###############################################################################
 # Sublime Text                                                                #
