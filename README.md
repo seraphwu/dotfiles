@@ -36,7 +36,7 @@ $ git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-z
 ## Install Xcode
 
 1. 更新 App Store。
-2. 安裝 [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。
+==2. 安裝 [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)。==
 3. 開啟 Terminal，安裝 Xcode Command Line Tools:
 
 ```bash
