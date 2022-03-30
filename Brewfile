@@ -9,6 +9,7 @@ tap "homebrew/services"
 #cask "insomniax"
 cask "dropbox"
 cask "the-unarchiver"
+
 cask "nvalt"
 cask "rocket"
 cask "vanilla"
@@ -209,6 +210,15 @@ cask "welly"
 cask "workflowy"
 cask "xquartz"
 #cask "zotero"
+
+#20220331 added
+cask "SwitchKey"
+cask "FinderGo"
+cask "monitorcontrol"
+cask "Bitwarden"
+cask "keka"
+cask "Karabiner"
+
 mas "Agenda", id: 1287445660
 mas "Amphetamine", id: 937984704
 mas "Apowersoft Screen Recorder", id: 1030681467
