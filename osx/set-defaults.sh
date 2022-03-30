@@ -7,6 +7,7 @@
 # The original idea (and a couple settings) were grabbed from:
 #   https://github.com/mathiasbynens/dotfiles/blob/master/.osx
 #   https://mths.be/osx
+#   https://short.is/writing/setting-up-a-new-mac
 #
 # Run ./set-defaults.sh and you'll be good to go.
 
