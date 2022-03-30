@@ -371,6 +371,7 @@ ssh
 - [强迫症的 Mac 设置指南](https://github.com/macdao/ocds-guide-to-setting-up-mac)
 - [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)
 - **[使用 dotfiles 和 stow 管理你的 dotfiles](https://github.com/jcouyang/dotfiles)**
+- **[Setting up a new Mac --Alan Shortis](https://short.is/writing/setting-up-a-new-mac)**
 
 ## Thanks
 
