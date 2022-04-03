@@ -131,8 +131,11 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # Never go into computer sleep mode
 # sudo systemsetup -setcomputersleep Off > /dev/null
 
+# Press power button to shutdown without confirm dialog.
+# defaults write com.apple.loginwindow PowerButtonSleepsSystem -bool no
+
 # Check for software updates daily, not just once per week
-# defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Disable Notification Center and remove the menu bar icon
 # launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
