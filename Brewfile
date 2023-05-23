@@ -184,6 +184,8 @@ cask "fliqlo"
 cask "flux"
 # Time tracker
 cask "focus-booster"
+# 小麥注音
+cask "McBopomofo"
 # Developer targeted fonts with a high number of glyphs
 cask "font-comic-shanns-mono-nerd-font"
 cask "font-geologica"
