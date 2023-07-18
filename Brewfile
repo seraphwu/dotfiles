@@ -408,7 +408,7 @@ mas "Agenda", id: 1287445660
 mas "Amphetamine", id: 937984704
 mas "Apowersoft Screen Recorder", id: 1030681467
 mas "Disk Speed Test", id: 425264550
-mas "EzyCal", id: 1190243926
+# mas "EzyCal", id: 1190243926
 mas "FileSumo Pro", id: 1182711853
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
