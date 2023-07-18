@@ -247,9 +247,9 @@ cask "font-source-code-pro-for-powerline"
 cask "franz"
 # Free and open-source image editor
 cask "gimp"
-cask "gitter"
+#cask "gitter"
 # Game client
-cask "gog-galaxy"
+#cask "gog-galaxy"
 # Web browser
 cask "google-chrome"
 # Open-source video transcoder
