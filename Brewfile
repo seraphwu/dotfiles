@@ -133,7 +133,7 @@ cask "alfred"
 # App to measure storage read/write performance
 cask "amorphousdiskmark"
 # Android SDK component
-cask "android-platform-tools"
+# cask "android-platform-tools"
 # Allows connection to a computer remotely
 cask "anydesk"
 # Application uninstaller
@@ -147,7 +147,7 @@ cask "betterzip"
 # Compare files and folders
 cask "beyond-compare"
 # Desktop password and login vault
-cask "bitwarden"
+# cask "bitwarden"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Tool to list all active shortcuts of the current application
@@ -185,7 +185,7 @@ cask "flux"
 # Time tracker
 cask "focus-booster"
 # 小麥注音
-cask "McBopomofo"
+# cask "McBopomofo"
 # Eagle - 圖片收藏及管理必備工具 https://eagle.cool 
 cask "ogdesign-eagle"
 # Developer targeted fonts with a high number of glyphs
@@ -282,13 +282,13 @@ cask "macdown"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # Fork of Nylas Mail
-cask "mailspring"
+# cask "mailspring"
 # Markdown editor
 cask "mark-text"
 # Extensible two-pane file manager
 cask "marta"
 # Input method for Bopomofo (Phonetic Symbols of Mandarin Chinese)
-cask "mcbopomofo"
+# cask "mcbopomofo"
 # Web browser
 cask "microsoft-edge"
 # App to create and edit MKV videos
@@ -356,7 +356,7 @@ cask "skype"
 # Team communication and collaboration software
 cask "slack"
 # Code source explorer
-cask "sourcetrail"
+# cask "sourcetrail"
 # Graphical client for Git version control
 cask "sourcetree"
 # Move and resize windows with ease
@@ -366,7 +366,7 @@ cask "spotify"
 # Video game digital distribution service
 cask "steam"
 # Text editor for code, markup and prose
-cask "sublime-text"
+# cask "sublime-text"
 # Application for inspecting installer packages
 cask "suspicious-package"
 # App to switch hosts
@@ -379,7 +379,7 @@ cask "textmate"
 # Unpacks archive files
 cask "the-unarchiver"
 # Flexible level editor
-cask "tiled"
+# cask "tiled"
 # Web browser focusing on security
 cask "tor-browser"
 # Configurable document editor that supports Markdown
@@ -397,7 +397,7 @@ cask "vnote"
 cask "vu"
 cask "webpquicklook"
 # JavaScript IDE
-cask "webstorm"
+# cask "webstorm"
 # BBS client
 cask "welly"
 # Notetaking tool
