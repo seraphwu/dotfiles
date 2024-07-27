@@ -144,9 +144,18 @@ install_dotfiles () {
   done
 }
 
+install_iterm () {
+  
+    info '  Installing iTerm config'
+    defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iterm2"
+    defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+
+}
+
 install_homebrew
 install_ohmyzsh
 install_dotfiles
+install_iterm
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
