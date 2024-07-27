@@ -184,6 +184,12 @@ cask "fliqlo"
 cask "flux"
 # Time tracker
 cask "focus-booster"
+# Framer
+cask "framer"
+# Heptabase
+cask "heptabase"
+# Arc browser
+cask "arc"
 # 小麥注音
 # cask "McBopomofo"
 # Eagle - 圖片收藏及管理必備工具 https://eagle.cool 
@@ -314,7 +320,7 @@ cask "openemu-experimental"
 # Cross-platform video editor
 cask "openshot-video-editor"
 # VPN client focusing on security
-cask "protonvpn"
+# cask "protonvpn"
 # Peer to peer Bitorrent client
 cask "qbittorrent"
 # QuickLook plug-in that renders source code with syntax highlighting
@@ -347,6 +353,8 @@ cask "send-anywhere"
 cask "sequel-pro"
 # Video editor
 cask "shotcut"
+# losslesscut
+cask "losslesscut"
 # React client for Simplenote
 cask "simplenote"
 # Utility to resize and position application windows
