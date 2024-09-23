@@ -418,6 +418,7 @@ cask "welly"
 cask "workflowy"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
+mas "Dropover - Easier Drag & Drop", id: 1355679052
 mas "Agenda", id: 1287445660
 mas "Amphetamine", id: 937984704
 mas "Apowersoft Screen Recorder", id: 1030681467
