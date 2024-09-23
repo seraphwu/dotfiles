@@ -212,6 +212,8 @@ cask "font-iosevka-nerd-font"
 # Developer targeted fonts with a high number of glyphs
 cask "font-iosevka-term-nerd-font"
 cask "font-ipafont"
+cask "font-ipaexfont"
+cask "font-ipamjmincho"
 cask "font-jf-open-huninn"
 cask "font-josefin-sans"
 cask "font-josefin-slab"
