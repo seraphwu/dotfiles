@@ -204,6 +204,26 @@ cask "font-geologica"
 cask "font-hack"
 # Corporate typeface for IBM
 cask "font-ibm-plex"
+#源樣黑體
+cask "font-genyogothic"
+#源雲明體
+cask "font-genwanmin"
+#源泉圓體
+cask "font-gensenrounded"
+#源石黑體
+cask "font-gensekigothic"
+#源流明體
+cask "font-genryumin"
+#源樣明體
+cask "font-genyomin"
+#芫荽
+cask "font-iansui"
+#源柔ゴシック
+brew install --cask font-genjyuugothic
+#源柔ゴシック-l
+brew install --cask font-genjyuugothic-l
+#源柔ゴシック-x
+brew install --cask font-genjyuugothic-x
 cask "font-inconsolata"
 # Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
 cask "font-iosevka"
@@ -251,6 +271,8 @@ cask "font-plemol-jp-nf"
 # Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
 ## cask "font-plemol-jp-nfj"
 cask "font-quicksand"
+## IBM Plex Sans TC
+cask "font-ibm-plex-sans-tc"
 # Developer targeted fonts with a high number of glyphs
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro"
