@@ -187,7 +187,7 @@ cask "fliqlo"
 # Screen color temperature controller
 cask "flux"
 # Time tracker
-cask "focus-booster"
+#scask "focus-booster"
 # Framer
 cask "framer"
 # Heptabase
