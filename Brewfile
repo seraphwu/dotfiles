@@ -7,7 +7,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 # localsend source
-tab "brew tap localsend/localsend"
+# tab "brew tap localsend/localsend"
 # Automatic configure script builder
 brew "autoconf"
 # Shell extension to jump to frequently used directories
