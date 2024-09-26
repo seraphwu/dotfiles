@@ -59,7 +59,7 @@ brew "joe"
 # Note taking and to-do application with synchronization capabilities
 # brew "joplin-cli"
 # Localsend
-brew install localsend
+#brew install localsend
 # Conversion library
 brew "libiconv"
 # YAML Parser
