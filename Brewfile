@@ -182,7 +182,7 @@ cask "figma"
 # Open terminal quickly from Finder
 cask "findergo"
 # Web browser
-cask "firefox-developer-edition"
+#cask "firefox-developer-edition"
 # Flip clock screensaver
 cask "fliqlo"
 # Screen color temperature controller
@@ -373,7 +373,7 @@ cask "quicklookase"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Screencasting software
-cask "recordit"
+# cask "recordit" #unable
 # Emoji picker optimized for blind people
 cask "rocket"
 # Free and open-source page layout program
