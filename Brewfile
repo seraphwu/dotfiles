@@ -442,7 +442,8 @@ cask "welly"
 cask "workflowy"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
-mas "Agenda", id: 1287445660
+# 20240927 註解掉，不要再過多的生產力工具
+# mas "Agenda", id: 1287445660
 mas "Amphetamine", id: 937984704
 mas "Apowersoft Screen Recorder", id: 1030681467
 mas "Disk Speed Test", id: 425264550
