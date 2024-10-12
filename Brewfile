@@ -217,6 +217,8 @@ cask "font-gensekigothic"
 cask "font-genryumin"
 #源樣明體
 cask "font-genyomin"
+#源起黑體
+cask font-genkigothic
 #芫荽
 cask "font-iansui"
 #源柔ゴシック
@@ -259,6 +261,10 @@ cask font-shippori-antique
 cask font-shippori-antique-b1
 cask font-shippori-mincho
 cask font-shippori-mincho-b1
+#Hachi Maru Pop https://fonts.google.com/specimen/Hachi+Maru+Pop
+cask font-hachi-maru-pop
+#en Old Mincho https://fonts.google.com/specimen/Zen+Old+Mincho
+cask font-zen-old-mincho
 # Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
 # Minimalist sans serif typeface, designed for both display and text typography
@@ -302,6 +308,8 @@ cask font-Raleway
 cask font-Roboto
 # Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
 cask "franz"
+# 語音轉文字軟體
+cask macwhisper
 # Free and open-source image editor
 cask "gimp"
 #cask "gitter"
