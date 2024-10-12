@@ -254,6 +254,11 @@ cask "font-m-plus-1"
 cask "font-m-plus-1-code"
 cask "font-m-plus-1p"
 cask "font-m-plus-2"
+# Shippori 系列字體
+cask font-shippori-antique
+cask font-shippori-antique-b1
+cask font-shippori-mincho
+cask font-shippori-mincho-b1
 # Developer targeted fonts with a high number of glyphs
 cask "font-meslo-lg-nerd-font"
 # Minimalist sans serif typeface, designed for both display and text typography
