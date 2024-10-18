@@ -309,7 +309,7 @@ cask "font-Roboto"
 # Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
 cask "franz"
 # 語音轉文字軟體
-cask macwhisper
+cask "macwhisper"
 # Free and open-source image editor
 cask "gimp"
 #cask "gitter"
