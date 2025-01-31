@@ -41,6 +41,9 @@ brew "gnupg"
 # brew "go"
 # Colorize logfiles and command output
 brew "grc"
+#GUI for Brew
+cack applite
+
 # Open-source video transcoder available for Linux, Mac, and Windows
 brew "handbrake", link: false
 # Improved top (interactive process viewer)
@@ -206,6 +209,9 @@ cask "font-geologica"
 cask "font-hack"
 # Corporate typeface for IBM
 cask "font-ibm-plex"
+#Maple Mono NF-CN
+cask "font-maple-mono-cn"
+cask "font-maple-mono-nf-cn"
 #源樣黑體
 cask "font-genyogothic"
 #源雲明體
