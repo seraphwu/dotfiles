@@ -41,6 +41,8 @@ brew "gnupg"
 # brew "go"
 # Colorize logfiles and command output
 brew "grc"
+# midnight-commander 
+brew "mc"
 #GUI for Brew
 cack applite
 
