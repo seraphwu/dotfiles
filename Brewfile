@@ -1,431 +1,394 @@
 tap "bigwig-club/brew"
 tap "buo/cask-upgrade"
+tap "dart-lang/dart"
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
 tap "homebrew/services"
-# Automatic configure script builder
+tap "lihaoyun6/tap"
+tap "sass/sass"
+brew "glib"
 brew "autoconf"
-# Shell extension to jump to frequently used directories
 brew "autojump"
-# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Fish completion for brew-cask
+brew "bat"
+brew "icu4c@76"
 brew "brew-cask-completion"
-# GNU File, Shell, and Text utilities
 brew "coreutils"
-# Lightweight DNS forwarder and DHCP server
-brew "dnsmasq", restart_service: true
-# Prepare CD image files so they compress better
+brew "dnsmasq", restart_service: :changed
 brew "ecm"
-# Play, record, convert, and stream audio and video
+brew "eza"
+brew "fd"
+brew "harfbuzz"
+brew "libass"
 brew "ffmpeg"
-# Create thumbnails for your video files
 brew "ffmpegthumbnailer"
-# Collection of GNU find, xargs, and locate
 brew "findutils"
-# X.Org: Font package creation/installation utilities
 brew "font-util"
-# Distributed revision control system
+brew "fzf"
 brew "git"
-# Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
-# GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Colorize logfiles and command output
 brew "grc"
-# Open-source video transcoder available for Linux, Mac, and Windows
+brew "groonga"
 brew "handbrake", link: false
-# Improved top (interactive process viewer)
 brew "htop"
-# Apache HTTP server
 brew "httpd"
-# User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
-# Website copier/offline browser
 brew "httrack"
-# Add GitHub support to git on the command-line
 brew "hub"
-# Modular IRC client
+brew "hugo"
+brew "imagemagick"
 brew "irssi"
-# Full featured terminal-based screen editor
 brew "joe"
-# Note taking and to-do application with synchronization capabilities
-# brew "joplin-cli"
-# Conversion library
+brew "jq"
 brew "libiconv"
-# YAML Parser
 brew "libyaml"
-# Keep your Mac's application settings in sync
 brew "mackup"
-# Drop-in replacement for MySQL
-brew "mariadb", restart_service: true
-# Mac App Store command-line interface
+brew "mariadb", restart_service: :changed
 brew "mas"
-# Matroska media files manipulation tools
-brew "mkvtoolnix", link: false
-# Turn marked-up plain text into well-formatted documents
+brew "midnight-commander"
+brew "mkvtoolnix"
 brew "multimarkdown"
-# Manage multiple Node.js versions
+brew "neovim"
 brew "nvm"
-# Simplified-traditional Chinese conversion tool
+brew "ollama", restart_service: :changed
 brew "opencc"
-# Open source suite of directory software
 brew "openldap"
-# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
-# Implementation of Telnet and SSH
+brew "pipx"
+brew "pkgconf"
+brew "poppler"
 brew "putty"
-# Python version management
 brew "pyenv"
-# Ruby version manager
 brew "rbenv"
-# Persistent key-value database, with built-in net interface
 brew "redis"
-# Open-source database for the realtime web
 brew "rethinkdb"
-# Display and control your Android device
+brew "ripgrep"
 brew "scrcpy"
-# Add a public key to a remote machine's authorized_keys file
+brew "sevenzip"
 brew "ssh-copy-id"
-# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# Version control system designed to be a better CVS
+brew "utf8proc", args: ["HEAD"]
 brew "subversion"
-# Tool to build, change, and version infrastructure
 brew "terraform"
-# CLI tool that moves files or folder to the trash
-brew "trash"
-# Display directories as trees (with optional color/HTML output)
+brew "trash", link: true
 brew "tree"
-# Command-line unarchiving tools supporting multiple formats
 brew "unar"
-# Internet file retriever
 brew "wget"
-# Download YouTube videos from the command-line
+brew "yazi"
 brew "youtube-dl"
-# UNIX shell (command interpreter)
+brew "zoxide"
 brew "zsh"
-# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# Additional completion definitions for zsh
 brew "zsh-completions"
-# Informative git prompt for zsh
 brew "zsh-git-prompt"
-# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# Download Instagram photos, accounts, hashtags and locations
+brew "sass/sass/sass"
 cask "4k-stogram"
-# Free video downloader
-cask "4k-video-downloader"
-# Turn YouTube links into MP3 files
+cask "4k-video-downloader+"
 cask "4k-youtube-to-mp3"
-# Create and modify subtitles
 cask "aegisub"
-# Menu bar tool to limit maximum charging percentage
 cask "aldente"
-# Application launcher and productivity software
 cask "alfred"
-# App to measure storage read/write performance
+cask "alt-tab"
 cask "amorphousdiskmark"
-# Android SDK component
-# cask "android-platform-tools"
-# Allows connection to a computer remotely
 cask "anydesk"
-# Application uninstaller
+cask "anytype"
+cask "apparency"
 cask "appcleaner"
-# Cloud storage service
-cask "baidunetdisk"
-# Online gaming platform
-cask "battle-net"
-# Utility to create and modify archives
-cask "betterzip"
-# Compare files and folders
-cask "beyond-compare"
-# Desktop password and login vault
-# cask "bitwarden"
-# Web browser focusing on privacy
-cask "brave-browser"
-# Tool to list all active shortcuts of the current application
-cask "cheatsheet"
-# Tool to show live information about the batteries in various devices
-cask "coconutbattery"
-# Two-panel file manager
-cask "commander-one"
-# Grab and tweak the colours you see on your screen
-cask "couleurs"
-# Server and cloud storage browser
-cask "cyberduck"
-# Browser for SQLite databases
-cask "db-browser-for-sqlite"
-# Voice and text chat software
-cask "discord"
-# Tool to hide status bar icons
-cask "dozer"
-# Client for the Dropbox cloud storage service
-cask "dropbox"
-# Outlining app for your work
-cask "dynalist"
-# App for note taking, organizing, task lists, and archiving
-cask "evernote"
-# Collaborative team software
-cask "figma"
-# Open terminal quickly from Finder
-cask "findergo"
-# Web browser
-cask "firefox-developer-edition"
-# Flip clock screensaver
-cask "fliqlo"
-# Screen color temperature controller
-cask "flux"
-# Time tracker
-cask "focus-booster"
-# Framer
-cask "framer"
-# Heptabase
-cask "heptabase"
-# Arc browser
+cask "applite"
 cask "arc"
-# 小麥注音
-# cask "McBopomofo"
-# Eagle - 圖片收藏及管理必備工具 https://eagle.cool 
-cask "ogdesign-eagle"
-# Developer targeted fonts with a high number of glyphs
+cask "baidunetdisk"
+cask "battle-net"
+cask "betterzip"
+cask "beyond-compare"
+cask "brave-browser"
+cask "calibre"
+cask "cap"
+cask "coconutbattery"
+cask "commander-one"
+cask "couleurs"
+cask "cyberduck"
+cask "db-browser-for-sqlite"
+cask "discord"
+cask "dozer"
+cask "dropbox"
+cask "dynalist"
+cask "evernote"
+cask "figma"
+cask "findergo"
+cask "fliqlo"
+cask "flux"
+cask "font-belleza"
+cask "font-calistoga"
 cask "font-comic-shanns-mono-nerd-font"
+cask "font-dancing-script"
 cask "font-geologica"
+cask "font-glow-sans-tc-extended"
+cask "font-glow-sans-tc-normal"
 cask "font-hack"
-# Corporate typeface for IBM
 cask "font-ibm-plex"
+cask "font-ibm-plex-sans-tc"
 cask "font-inconsolata"
-# Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
 cask "font-iosevka"
-# Developer targeted fonts with a high number of glyphs
 cask "font-iosevka-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-iosevka-term-nerd-font"
 cask "font-ipafont"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-jf-open-huninn"
 cask "font-josefin-sans"
 cask "font-josefin-slab"
-# Merged font of Ysabeau Office and LXGW WenKai Lite
 cask "font-lxgw-bright"
-# Merged font of Ysabeau Office and LXGW WenKai GB
 cask "font-lxgw-bright-gb"
-# Merged font of Ysabeau Office and LXGW WenKai TC
 cask "font-lxgw-bright-tc"
-# Open-source Chinese font derived from Fontworks' Klee One
 cask "font-lxgw-wenkai-lite"
-# Open-source traditional Chinese font derived from Fontworks' Klee One
 cask "font-lxgw-wenkai-tc"
 cask "font-m-plus-1"
 cask "font-m-plus-1-code"
 cask "font-m-plus-1p"
 cask "font-m-plus-2"
-# Developer targeted fonts with a high number of glyphs
+cask "font-maple-mono-cn"
+cask "font-maple-mono-nf-cn"
 cask "font-meslo-lg-nerd-font"
-# Minimalist sans serif typeface, designed for both display and text typography
+cask "font-montserrat"
+cask "font-montserrat-alternates"
+cask "font-montserrat-subrayada"
 cask "font-mulish"
-# Developer targeted fonts with a high number of glyphs
 cask "font-noto-nerd-font"
 cask "font-noto-sans"
-# Design for the historical middle eastern chorasmian script
 cask "font-noto-sans-chorasmian"
 cask "font-noto-sans-cjk"
 cask "font-noto-serif-cjk"
-# Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
+cask "font-nunito"
+cask "font-nunito-sans"
+cask "font-oswald"
+cask "font-playfair-display"
+cask "font-playfair-display-sc"
 cask "font-plemol-jp"
-# Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
 cask "font-plemol-jp-hs"
-# Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
 cask "font-plemol-jp-nf"
-# Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
-## cask "font-plemol-jp-nfj"
+cask "font-poppins"
 cask "font-quicksand"
-# Developer targeted fonts with a high number of glyphs
+cask "font-raleway"
+cask "font-roboto"
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
-# Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
+cask "font-symbols-only-nerd-font"
+cask "font-zen-maru-gothic"
+cask "framer"
 cask "franz"
-# Free and open-source image editor
 cask "gimp"
-#cask "gitter"
-# Game client
-#cask "gog-galaxy"
-# Web browser
+cask "github"
 cask "google-chrome"
-# Open-source video transcoder
 cask "handbrake"
-# App for managing Android devices
 cask "handshaker"
-# Free and open-source media player
+cask "heptabase"
 cask "iina"
-# Vector graphics editor
 cask "inkscape"
-# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Menu bar calendar
 cask "itsycal"
-# Note taking and to-do application with synchronization capabilities
 cask "joplin"
-# File archiver
+cask "kap"
 cask "keka"
-# Free and open-source media player
+cask "keycastr"
+cask "keyclu"
 cask "kodi"
 cask "laverna"
-# Privacy-first, open-source platform for knowledge sharing and management
+cask "localsend"
 cask "logseq"
-# Trims video and audio files losslessly
+cask "loop"
 cask "losslesscut"
-# Clipboard manager
 cask "maccy"
-# Open-source Markdown editor
 cask "macdown"
-# Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
-# Fork of Nylas Mail
-# cask "mailspring"
-# Markdown editor
 cask "mark-text"
-# Extensible two-pane file manager
 cask "marta"
-# Input method for Bopomofo (Phonetic Symbols of Mandarin Chinese)
-# cask "mcbopomofo"
-# Web browser
+cask "mdimagesizemdimporter"
 cask "microsoft-edge"
-# App to create and edit MKV videos
 cask "mkvtools"
-# Tool to control external monitor brightness & volume
 cask "monitorcontrol"
-# Smooths scrolling and set mouse scroll directions independently
 cask "mos"
-# Re-mounts write-protected NTFS volumes
 cask "mounty"
-# Reverse proxy, secure introspectable tunnels to localhost
+cask "neat-reader"
 cask "ngrok"
-# App to write, plan, collaborate, and get organized
 cask "notion"
-# Note taking app
+cask "notion-calendar"
 cask "nvalt"
-# Open-source software for live streaming and screen recording
 cask "obs"
-# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-# Retro video game emulation
-cask "openemu-experimental"
-# Cross-platform video editor
+cask "ogdesign-eagle"
+cask "only-switch"
+cask "openemu@experimental"
 cask "openshot-video-editor"
-# VPN client focusing on security
-# cask "protonvpn"
-# Peer to peer Bitorrent client
+cask "pika"
+cask "protonvpn"
 cask "qbittorrent"
-# QuickLook plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
-# Display image info and preview unsupported formats in QuickLook
 cask "qlimagesize"
-# QuickLook generator for Markdown files
 cask "qlmarkdown"
-# QuickLook plugin for plaintext files without an extension
 cask "qlstephen"
-# Thumbnails, static previews, cover art and metadata for video files
 cask "qlvideo"
-# QuickLook plugin for CSV files
 cask "quicklook-csv"
-# QuickLook plugin for JSON files
 cask "quicklook-json"
-# QuickLook generator for Adobe Swatch Exchange files
 cask "quicklookase"
-# Control your tools with a few keystrokes
+cask "quickrecorder"
 cask "raycast"
-# Screencasting software
-cask "recordit"
-# Emoji picker optimized for blind people
+cask "reminders-menubar"
 cask "rocket"
-# Free and open-source page layout program
 cask "scribus"
-# File sharing app
 cask "send-anywhere"
-# MySQL/MariaDB database management platform
 cask "sequel-pro"
-# Video editor
 cask "shotcut"
-# losslesscut
-cask "losslesscut"
-# React client for Simplenote
 cask "simplenote"
-# Utility to resize and position application windows
 cask "sizeup"
-# Video chat, voice call and instant messaging application
 cask "skype"
-# Team communication and collaboration software
 cask "slack"
-# Code source explorer
-# cask "sourcetrail"
-# Graphical client for Git version control
 cask "sourcetree"
-# Move and resize windows with ease
 cask "spectacle"
-# Music streaming service
 cask "spotify"
-# Video game digital distribution service
+cask "startupfolder"
 cask "steam"
-# Text editor for code, markup and prose
-# cask "sublime-text"
-# Application for inspecting installer packages
 cask "suspicious-package"
-# App to switch hosts
 cask "switchhosts"
 cask "switchkey"
-# Messaging app with a focus on speed and security
+cask "teamviewer"
 cask "telegram"
-# General-purpose text editor
 cask "textmate"
-# Unpacks archive files
 cask "the-unarchiver"
-# Flexible level editor
-# cask "tiled"
-# Web browser focusing on security
+cask "topnotch"
 cask "tor-browser"
-# Configurable document editor that supports Markdown
-# cask "typora"
+cask "typora"
 cask "upic"
-# Tool to hide menu bar icons
+cask "upscayl"
 cask "vanilla"
-# Open-source code editor
 cask "visual-studio-code"
-# Multimedia player
 cask "vlc"
-# Note-taking platform
-cask "vnote"
-# Instagram client
 cask "vu"
 cask "webpquicklook"
-# JavaScript IDE
-# cask "webstorm"
-# BBS client
 cask "welly"
-# Notetaking tool
 cask "workflowy"
-# Open-source version of the X.Org X Window System
 cask "xquartz"
-mas "Agenda", id: 1287445660
+cask "zed"
 mas "Amphetamine", id: 937984704
+mas "Anybox", id: 1593408455
 mas "Apowersoft Screen Recorder", id: 1030681467
+mas "DeskMinder", id: 6740942938
 mas "Disk Speed Test", id: 425264550
-# mas "EzyCal", id: 1190243926
 mas "FileSumo Pro", id: 1182711853
+mas "Folder Slice", id: 6736857712
+mas "HiddenMe", id: 467040476
+mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
+mas "MenubarX", id: 1575588022
 mas "Numbers", id: 409203825
 mas "OmmWriter", id: 412347921
 mas "Pages", id: 409201541
+mas "PDFgear", id: 6469021132
 mas "QuickKey", id: 1142743710
 mas "QuickLinks", id: 1200685619
+mas "Sleeve", id: 1606145041
 mas "Squash", id: 1152443474
 mas "ToothFairy", id: 1191449274
 mas "Xcode", id: 497799835
+mas "簡放島", id: 6529528324
+vscode "aaron-bond.better-comments"
+vscode "aestudio.tailwind-skeleton-generator"
+vscode "agavram.github-vscode-theme-minimal"
+vscode "anbuselvanrocky.bootstrap5-vscode"
+vscode "antfu.slidev"
+vscode "austenc.tailwind-docs"
+vscode "bierner.github-markdown-preview"
+vscode "bierner.markdown-checkbox"
+vscode "bierner.markdown-emoji"
+vscode "bierner.markdown-footnotes"
+vscode "bierner.markdown-mermaid"
+vscode "bierner.markdown-preview-github-styles"
+vscode "bierner.markdown-yaml-preamble"
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+vscode "bradlc.vscode-tailwindcss"
+vscode "budparr.language-hugo-vscode"
+vscode "charleswan.markdown-toc"
+vscode "christian-kohler.path-intellisense"
+vscode "danielgjackson.auto-dark-mode-windows"
+vscode "davidanson.vscode-markdownlint"
+vscode "devrashed.go-responsive"
+vscode "dotjoshjohnson.xml"
+vscode "eamodio.gitlens"
+vscode "ecmel.vscode-html-css"
+vscode "eliostruyf.vscode-front-matter"
+vscode "enskylin.gitbook-shelf"
+vscode "esbenp.prettier-vscode"
+vscode "estevesegura.svgl"
+vscode "fivethree.vscode-hugo-snippets"
+vscode "formulahendry.auto-close-tag"
+vscode "formulahendry.auto-rename-tag"
+vscode "ginfuru.ginfuru-better-solarized-dark-theme"
+vscode "gitbook.gitbook-vscode"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-github-actions"
+vscode "goessner.mdmath"
+vscode "gruntfuggly.todo-tree"
+vscode "hansuxdev.bootstrap5-snippets"
+vscode "hoyt-tian.gitbook-kit"
+vscode "huibizhang.codesnap-plus"
+vscode "idleberg.icon-fonts"
+vscode "jeff-hykin.polacode-2019"
+vscode "jgclark.vscode-todo-highlight"
+vscode "jock.svg"
+vscode "kaellarkin.hugo-shortcode-syntax"
+vscode "lightyen.vscode-fanhuaji"
+vscode "lior-chamla.google-fonts"
+vscode "marp-team.marp-vscode"
+vscode "mechatroner.rainbow-csv"
+vscode "miguelsolorio.fluent-icons"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-ceintl.vscode-language-pack-zh-hant"
+vscode "ms-edgedevtools.vscode-edge-devtools"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode-remote.remote-wsl"
+vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode.powershell"
+vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.remote-server"
+vscode "ms-windows-ai-studio.windows-ai-studio"
+vscode "mushan.vscode-paste-image"
+vscode "natizyskunk.sftp"
+vscode "noahbeij.marp-codecafe-snippets"
+vscode "oderwat.indent-rainbow"
+vscode "onecentlin.laravel-blade"
+vscode "onecentlin.laravel5-snippets"
+vscode "pkief.material-icon-theme"
+vscode "pranaygp.vscode-css-peek"
+vscode "rangav.vscode-thunder-client"
+vscode "redhat.vscode-yaml"
+vscode "ritwickdey.liveserver"
+vscode "robole.markdown-snippets"
+vscode "ryannaddy.laravel-artisan"
+vscode "shd101wyy.markdown-preview-enhanced"
+vscode "shopify.ruby-lsp"
+vscode "simonsiefke.svg-preview"
+vscode "sleistner.vscode-fileutils"
+vscode "starbist.clamp-it"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "tabbyml.vscode-tabby"
+vscode "tehnix.vscode-tidymarkdown"
+vscode "thekalinga.bootstrap4-vscode"
+vscode "tomoki1207.pdf"
+vscode "tootone.org-mode"
+vscode "toxblh.polacode-fork"
+vscode "ue.alphabetical-sorter"
+vscode "usernamehw.errorlens"
+vscode "ysemeniuk.emmet-live"
+vscode "yzane.markdown-pdf"
+vscode "yzhang.markdown-all-in-one"
+vscode "zaczero.bootstrap-v4-snippets"
+vscode "zignd.html-css-class-completion"

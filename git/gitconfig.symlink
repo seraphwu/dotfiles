@@ -1,8 +1,8 @@
 [hub]
   protocol = https
 [user]
-	name = Seraph Wu
-	email = seraphwu@gmail.com
+	name = 4icsshu
+	email = wingfly.tw@gmail.com
   signingkey = E77D0CB6
 [credential]
 	helper = osxkeychain
@@ -38,9 +38,10 @@
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [commit]
   gpgsign = false
 [gpg]
