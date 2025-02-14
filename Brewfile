@@ -1,3 +1,4 @@
+# 使用 brew bundle dump --describe --force --file="~/brewfile" 可以產生說明
 tap "bigwig-club/brew"
 tap "buo/cask-upgrade"
 tap "dart-lang/dart"
@@ -5,120 +6,235 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "lihaoyun6/tap"
 tap "sass/sass"
+# Core application library for C
 brew "glib"
+# Automatic configure script builder
 brew "autoconf"
+# Shell extension to jump to frequently used directories
 brew "autojump"
+# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
+# Fish completion for brew-cask
 brew "brew-cask-completion"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Lightweight DNS forwarder and DHCP server
 brew "dnsmasq", restart_service: :changed
+# Prepare CD image files so they compress better
 brew "ecm"
+# Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# OpenType text shaping engine
 brew "harfbuzz"
+# Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
+# Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Create thumbnails for your video files
 brew "ffmpegthumbnailer"
+# Collection of GNU find, xargs, and locate
 brew "findutils"
+# X.Org: Font package creation/installation utilities
 brew "font-util"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# Distributed revision control system
 brew "git"
+# Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
+# GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Colorize logfiles and command output
 brew "grc"
+# Fulltext search engine and column store
 brew "groonga"
+# Open-source video transcoder available for Linux, Mac, and Windows
 brew "handbrake", link: false
+# Improved top (interactive process viewer)
 brew "htop"
+# Apache HTTP server
 brew "httpd"
+# User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
+# Website copier/offline browser
 brew "httrack"
+# Add GitHub support to git on the command-line
 brew "hub"
+# Configurable static site generator
 brew "hugo"
+# Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Modular IRC client
 brew "irssi"
+# Full featured terminal-based screen editor
 brew "joe"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
+# Conversion library
 brew "libiconv"
+# YAML Parser
 brew "libyaml"
+# Keep your Mac's application settings in sync
 brew "mackup"
+# Drop-in replacement for MySQL
 brew "mariadb", restart_service: :changed
+# Mac App Store command-line interface
 brew "mas"
+# Terminal-based visual file manager
 brew "midnight-commander"
+# Matroska media files manipulation tools
 brew "mkvtoolnix"
+# Turn marked-up plain text into well-formatted documents
 brew "multimarkdown"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Manage multiple Node.js versions
 brew "nvm"
+# Create, run, and share large language models (LLMs)
 brew "ollama", restart_service: :changed
+# Simplified-traditional Chinese conversion tool
 brew "opencc"
+# Open source suite of directory software
 brew "openldap"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
+# Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Implementation of Telnet and SSH
 brew "putty"
+# Python version management
 brew "pyenv"
+# Ruby version manager
 brew "rbenv"
+# Persistent key-value database, with built-in net interface
 brew "redis"
+# Open-source database for the realtime web
 brew "rethinkdb"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Display and control your Android device
 brew "scrcpy"
+# 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
+# Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Clean C library for processing UTF-8 Unicode data
 brew "utf8proc", args: ["HEAD"]
+# Version control system designed to be a better CVS
 brew "subversion"
+# Tool to build, change, and version infrastructure
 brew "terraform"
+# CLI tool that moves files or folder to the trash
 brew "trash", link: true
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Command-line unarchiving tools supporting multiple formats
 brew "unar"
+# Internet file retriever
 brew "wget"
+# Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Download YouTube videos from the command-line
 brew "youtube-dl"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
 brew "zsh-completions"
+# Informative git prompt for zsh
 brew "zsh-git-prompt"
+# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# Stylesheet Preprocessor
 brew "sass/sass/sass"
+# Download Instagram photos, accounts, hashtags and locations
 cask "4k-stogram"
+# Free video downloader
+cask "4k-video-downloader"
+# Free video downloader
 cask "4k-video-downloader+"
+# Turn YouTube links into MP3 files
 cask "4k-youtube-to-mp3"
+# Create and modify subtitles
 cask "aegisub"
+# Menu bar tool to limit maximum charging percentage
 cask "aldente"
+# Application launcher and productivity software
 cask "alfred"
+# Enable Windows-like alt-tab
 cask "alt-tab"
+# App to measure storage read/write performance
 cask "amorphousdiskmark"
+# Allows connection to a computer remotely
 cask "anydesk"
+# Local-first and end-to-end encrypted notes app
 cask "anytype"
+# Inspect application bundles
 cask "apparency"
+# Application uninstaller
 cask "appcleaner"
+# User-friendly GUI app for Homebrew
 cask "applite"
+# Chromium based browser
 cask "arc"
+# Cloud storage service
 cask "baidunetdisk"
+# Online gaming platform
 cask "battle-net"
+# Utility to create and modify archives
 cask "betterzip"
+# Compare files and folders
 cask "beyond-compare"
+# Web browser focusing on privacy
 cask "brave-browser"
+# E-books management software
 cask "calibre"
+# Screen recording software
 cask "cap"
+# Tool to show live information about the batteries in various devices
 cask "coconutbattery"
+# Two-panel file manager
 cask "commander-one"
+# Grab and tweak the colours you see on your screen
 cask "couleurs"
+# Server and cloud storage browser
 cask "cyberduck"
+# Browser for SQLite databases
 cask "db-browser-for-sqlite"
+# Voice and text chat software
 cask "discord"
+# Tool to hide status bar icons
 cask "dozer"
+# Client for the Dropbox cloud storage service
 cask "dropbox"
+# Outlining app for your work
 cask "dynalist"
+# App for note taking, organising, task lists, and archiving
 cask "evernote"
+# Collaborative team software
 cask "figma"
+# Open terminal quickly from Finder
 cask "findergo"
-cask "docker"
+# Flip clock screensaver
 cask "fliqlo"
+# Screen colour temperature controller
 cask "flux"
 cask "font-belleza"
 cask "font-calistoga"
@@ -177,99 +293,190 @@ cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
 cask "font-symbols-only-nerd-font"
 cask "font-zen-maru-gothic"
+# Tool that helps teams design every part of the product experience
 cask "framer"
+# Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
 cask "franz"
+# Free and open-source image editor
 cask "gimp"
+# Desktop client for GitHub repositories
 cask "github"
+# Web browser
 cask "google-chrome"
+# Open-source video transcoder
 cask "handbrake"
+# App for managing Android devices
 cask "handshaker"
+# Note-taking tool for visual learning
 cask "heptabase"
+# Free and open-source media player
 cask "iina"
+# Vector graphics editor
 cask "inkscape"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Menu bar calendar
 cask "itsycal"
+# Note taking and to-do application with synchronisation capabilities
 cask "joplin"
+# Open-source screen recorder built with web technology
 cask "kap"
+# File archiver
 cask "keka"
+# Open-source keystroke visualiser
 cask "keycastr"
+# Find shortcuts for any installed application
 cask "keyclu"
+# Free and open-source media player
 cask "kodi"
+# Encryption-focused open source note taking application
 cask "laverna"
+# Open-source cross-platform alternative to AirDrop
 cask "localsend"
+# Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
+# Window manager
 cask "loop"
+# Trims video and audio files losslessly
 cask "losslesscut"
+# Clipboard manager
 cask "maccy"
+# Open-source Markdown editor
 cask "macdown"
+# Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
+# Markdown editor
 cask "mark-text"
+# Extensible two-pane file manager
 cask "marta"
 cask "mdimagesizemdimporter"
+# Multi-platform web browser
 cask "microsoft-edge"
+# App to create and edit MKV videos
 cask "mkvtools"
+# Tool to control external monitor brightness & volume
 cask "monitorcontrol"
+# Smooths scrolling and set mouse scroll directions independently
 cask "mos"
+# Re-mounts write-protected NTFS volumes
 cask "mounty"
+# Read, annotate and manage ePub books
 cask "neat-reader"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# App to write, plan, collaborate, and get organised
 cask "notion"
+# Calendar for professionals and teams
 cask "notion-calendar"
+# Note taking app
 cask "nvalt"
+# Open-source software for live streaming and screen recording
 cask "obs"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Organise all your reference images in one place
 cask "ogdesign-eagle"
+# System and utility switches
 cask "only-switch"
+# Retro video game emulation
 cask "openemu@experimental"
+# Cross-platform video editor
 cask "openshot-video-editor"
+# Colour picker for colours onscreen
 cask "pika"
+# VPN client focusing on security
 cask "protonvpn"
+# Peer to peer Bitorrent client
 cask "qbittorrent"
+# Quick Look plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
+# Display image info and preview unsupported formats in QuickLook
 cask "qlimagesize"
+# Quick Look generator for Markdown files
 cask "qlmarkdown"
+# Quick Look plugin for plaintext files without an extension
 cask "qlstephen"
+# Thumbnails, static previews, cover art and metadata for video files
 cask "qlvideo"
+# Quick Look plugin for CSV files
 cask "quicklook-csv"
+# Quick Look plugin for JSON files
 cask "quicklook-json"
+# Quick Look generator for Adobe Swatch Exchange files
 cask "quicklookase"
+# A lightweight and high-performance screen recorder for macOS.
 cask "quickrecorder"
+# Control your tools with a few keystrokes
 cask "raycast"
+# Simple menu bar app to view and interact with reminders
 cask "reminders-menubar"
+# Emoji picker optimised for blind people
 cask "rocket"
+# Free and open-source page layout program
 cask "scribus"
+# File sharing app
 cask "send-anywhere"
+# MySQL/MariaDB database management platform
 cask "sequel-pro"
+# Video editor
 cask "shotcut"
+# React client for Simplenote
 cask "simplenote"
+# Utility to resize and position application windows
 cask "sizeup"
+# Video chat, voice call and instant messaging application
 cask "skype"
+# Team communication and collaboration software
 cask "slack"
+# Graphical client for Git version control
 cask "sourcetree"
+# Move and resize windows with ease
 cask "spectacle"
+# Music streaming service
 cask "spotify"
+# Run anything at startup by simply placing it in a special folder
 cask "startupfolder"
+# Video game digital distribution service
 cask "steam"
+# Application for inspecting installer packages
 cask "suspicious-package"
+# App to switch hosts
 cask "switchhosts"
 cask "switchkey"
+# Remote access and connectivity software focused on security
 cask "teamviewer"
+# Messaging app with a focus on speed and security
 cask "telegram"
+# General-purpose text editor
 cask "textmate"
+# Unpacks archive files
 cask "the-unarchiver"
+# Utility to hide the notch
 cask "topnotch"
+# Web browser focusing on security
 cask "tor-browser"
+# Configurable document editor that supports Markdown
 cask "typora"
 cask "upic"
+# AI image upscaler
 cask "upscayl"
+# Tool to hide menu bar icons
 cask "vanilla"
+# Open-source code editor
 cask "visual-studio-code"
+# Multimedia player
 cask "vlc"
+# Instagram client
 cask "vu"
+# Quick Look plugin for webp files
 cask "webpquicklook"
+# BBS client
 cask "welly"
+# Notetaking tool
 cask "workflowy"
+# Open-source version of the X.Org X Window System
 cask "xquartz"
+# Multiplayer code editor
 cask "zed"
 mas "Amphetamine", id: 937984704
 mas "Anybox", id: 1593408455
