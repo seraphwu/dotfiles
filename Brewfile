@@ -56,6 +56,8 @@ brew "git-flow"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+#trash-cli - Record + restore removed files
+brew "trash-cli"
 # Colorize logfiles and command output
 brew "grc"
 # Fulltext search engine and column store
@@ -64,6 +66,8 @@ brew "groonga"
 brew "handbrake", link: false
 # Improved top (interactive process viewer)
 brew "htop"
+#ttygif：将终端录制转化为GIF动画的神器 - CSDN部落客
+brew "ttygif"
 # Apache HTTP server
 brew "httpd"
 # User-friendly cURL replacement (command-line HTTP client)
@@ -80,6 +84,12 @@ brew "imagemagick"
 brew "irssi"
 # Full featured terminal-based screen editor
 brew "joe"
+#zoxide - Easy navigation (better cd)
+brew "zoxide"
+# task - Todo + task management
+brew "task"
+#lazydocker - Full Docker management app
+#lazygit - Full Git managemtne app
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Conversion library
@@ -98,8 +108,19 @@ brew "midnight-commander"
 brew "mkvtoolnix"
 # Turn marked-up plain text into well-formatted documents
 brew "multimarkdown"
+# ranger - Directory browser
+brew "ranger"
+# tmux - Term multiplexer
+brew "tmux"
+#exiftool - Reading and writing exif metadata
+brew "exiftool"
+#https://github.com/mjolnirapp/AppGrid
+#Pandoc - Universal file converter
+brew "pandoc"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+#Synfig Studio - 2D animation
+cask "Synfig"
 # Manage multiple Node.js versions
 brew "nvm"
 # Create, run, and share large language models (LLMs)
