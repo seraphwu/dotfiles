@@ -549,6 +549,7 @@ mas "ToothFairy", id: 1191449274
 mas "Xcode", id: 497799835
 mas "簡放島", id: 6529528324
 mas "amorphousdiskmark", id: 1168254295
+mas "Hidden Bar", id: 1452453066
 vscode "aaron-bond.better-comments"
 vscode "aestudio.tailwind-skeleton-generator"
 vscode "agavram.github-vscode-theme-minimal"
