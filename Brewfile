@@ -31,7 +31,7 @@ brew "dnsmasq", restart_service: :changed
 # Prepare CD image files so they compress better
 brew "ecm"
 # yabai - Tiling window manager
-cask "yabai"
+#cask "yabai"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
