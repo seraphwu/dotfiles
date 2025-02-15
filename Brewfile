@@ -480,7 +480,7 @@ cask "sourcetree"
 #cask "spectacle"
 # Music streaming service
 cask "spotify"
-# Run anything at startup by simply placing it in a special folder
+# Run anything at startup by simply placing it in a special folder (sonoma or later)
 cask "startupfolder"
 # Video game digital distribution service
 cask "steam"
