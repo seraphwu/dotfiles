@@ -192,7 +192,7 @@ brew "sass/sass/sass"
 # skhd - Hotkey daemon for macOS
 #cask "skhd" brew install koekeishiya/formulae/skhd
 #lporg - Backup and restore launchpad layout
-cask "lporg"
+#cask "lporg"
 #hiddenbar - 隱藏/顯示煩人的功能表欄圖示
 cask "hiddenbar"
 # copyq - Clipboard manager (cross platform)
