@@ -374,7 +374,7 @@ cask "keyclu"
 # Free and open-source media player
 cask "kodi"
 # Encryption-focused open source note taking application
-cask "laverna"
+#cask "laverna"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Window manager
