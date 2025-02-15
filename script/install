@@ -12,6 +12,8 @@ echo "› brew bundle"
 #brew tap localsend/localsend
 #brew install localsend
 brew bundle
+brew install koekeishiya/formulae/yabai
+yabai --start-service
 
 sudo xcodebuild -license accept
 
