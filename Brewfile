@@ -381,6 +381,8 @@ cask "localsend"
 cask "logseq"
 # Window manager
 cask "loop"
+# Drop any files to any devices on your LAN
+cask "landrop"
 # Trims video and audio files losslessly
 cask "losslesscut"
 # Clipboard manager
