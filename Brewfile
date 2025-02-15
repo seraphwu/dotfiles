@@ -226,7 +226,7 @@ cask "popclip"
 # shottr - Better screenshot utility
 cask "shottr"
 # App to measure storage read/write performance
-cask "amorphousdiskmark"
+# cask "amorphousdiskmark"
 # Allows connection to a computer remotely
 cask "anydesk"
 # Local-first and end-to-end encrypted notes app
@@ -554,6 +554,7 @@ mas "Squash", id: 1152443474
 mas "ToothFairy", id: 1191449274
 mas "Xcode", id: 497799835
 mas "簡放島", id: 6529528324
+mas "amorphousdiskmark", id: 1168254295
 vscode "aaron-bond.better-comments"
 vscode "aestudio.tailwind-skeleton-generator"
 vscode "agavram.github-vscode-theme-minimal"
