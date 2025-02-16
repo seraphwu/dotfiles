@@ -36,8 +36,6 @@ brew "ecm"
 brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
 # Play, record, convert, and stream audio and video
