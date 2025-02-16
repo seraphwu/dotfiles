@@ -32,6 +32,7 @@ git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh
 ## Erase and reinstall OS X
 
 如果你打算從乾淨的 Mac 環境開始，請參閱「[OS X：如何清除並安裝](http://support.apple.com/zh-tw/HT5943)」。
+如果想要下載完整的安裝程式，可以利用[Mr. Macintosh](https://mrmacintosh.com)進行下載。
 
 ## Install Xcode
 
