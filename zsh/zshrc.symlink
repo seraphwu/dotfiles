@@ -18,7 +18,7 @@ typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs vi_mode)
 # 右側
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history ram load time)
-# 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
+# 若目前登入的帳號為你的帳號 xxx，就不用特別顯示出來
 DEFAULT_USER="seraphwu"
 # 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki 
 POWERLEVEL10K_MODE='nerdfont-complete'
@@ -157,3 +157,5 @@ eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# 隐藏 Homebrew 的环境提示
+export HOMEBREW_NO_ENV_HINTS=1
