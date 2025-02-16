@@ -41,8 +41,9 @@ git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh
 
 ```bash
 xcode-select --install
-
-# Optional: Set HostName
+```
+另外可以使用以下指令更改電腦名稱: Set HostName
+```bash
 sudo scutil --set HostName seraphwuMBM2
 ```
 
@@ -51,19 +52,24 @@ sudo scutil --set HostName seraphwuMBM2
 [下載](https://github.com/seraphwu/dotfiles/archive/master.zip)或使用 git clone 一份到 `$HOME` 目錄底下的 `.dotfiles` 資料夾裡面:
 
 ```bash
-$ git clone https://github.com/seraphwu/dotfiles.git ~/.dotfiles
+git clone https://github.com/seraphwu/dotfiles.git ~/.dotfiles
 ```
 
 進入 `.dotfiles` 資料夾:
 
 ```bash
-$ cd ~/.dotfiles
+cd ~/.dotfiles
 ```
 
 安裝 dotfiles:
 
 ```bash
-$ ./script/bootstrap
+./script/bootstrap
+```
+
+可以一次指令完成：
+```bash
+git clone https://github.com/seraphwu/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./script/bootstrap
 ```
 
 `bootstrap.sh` 這個程式會自動完成以下工作:
