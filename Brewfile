@@ -2,8 +2,8 @@
 tap "bigwig-club/brew"
 tap "buo/cask-upgrade"
 tap "dart-lang/dart"
-tap "homebrew/bundle"
-tap "homebrew/services"
+#tap "homebrew/bundle"
+#tap "homebrew/services"
 tap "lihaoyun6/tap"
 tap "sass/sass"
 # Distributed revision control system
@@ -118,7 +118,7 @@ brew "exiftool"
 #Pandoc - Universal file converter
 brew "pandoc"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+#brew "neovim"
 #Synfig Studio - 2D animation
 cask "Synfigstudio"
 # Open source continuous file synchronization application
