@@ -240,7 +240,10 @@ cask "shottr"
 # App to measure storage read/write performance
 # cask "amorphousdiskmark"
 # Allows connection to a computer remotely
-cask "anydesk"
+# cask "anydesk"
+
+# pronotes
+cack "pronotes"
 # Local-first and end-to-end encrypted notes app
 cask "anytype"
 # Inspect application bundles
