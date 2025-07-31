@@ -255,8 +255,6 @@ cask "appcleaner"
 cask "applite"
 # Chromium based browser
 cask "arc"
-# Cloud storage service
-cask "baidunetdisk"
 # Online gaming platform
 cask "battle-net"
 # Utility to create and modify archives
