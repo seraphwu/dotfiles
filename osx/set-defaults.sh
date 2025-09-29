@@ -265,7 +265,7 @@ defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName Fl
 #defaults write com.apple.screensaver moduleName -string "Fliqlo" modulePath -string "~/Library/Screen\ Savers/Fliqlo.saver"
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Desktop/螢幕快照"
+defaults write com.apple.screencapture location -string "${HOME}/Documents/00.ScreenShot"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
@@ -274,7 +274,7 @@ defaults write com.apple.screencapture type -string "png"
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # 設定截圖檔名為 螢幕快照
-defaults write com.apple.screencapture name "螢幕快照"
+defaults write com.apple.screencapture name "ScreenShot"
 
 # Enable subpixel font rendering on non-Apple LCDs
 # defaults write NSGlobalDomain AppleFontSmoothing -int 2
