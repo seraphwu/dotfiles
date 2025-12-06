@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+
+  n8n:
+    image: n8nio/n8n
+    restart: always
+    ports:
+      - "5678:5678"
+    environment:
+      - DB_TYPE=mysqldb
+      - DB_MYSQLDB_DATABASE=${MYSQL_DATABASE}
+      - DB_MYSQLDB_HOST=mysql
+      - DB_MYSQLDB_PORT=3306
+      - DB_MYSQLDB_USER=${MYSQL_USER}
+      - DB_MYSQLDB_PASSWORD=${MYSQL_PASSWORD}
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_AUTH_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_AUTH_PASSWORD}
+      - N8N_HOST=${N8N_HOST}
+      - WEBHOOK_URL=http://${N8N_HOST}:5678/
+    links:
+      - mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  mysql_data:
+  n8n_data:

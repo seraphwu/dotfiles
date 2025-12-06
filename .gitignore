@@ -16,3 +16,10 @@
 
 # sftp configuration file
 sftp-config.json
+
+# Docker Environment Variables
+.env
+
+
+# Crash logs
+npm-debug.log
