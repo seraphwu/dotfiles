@@ -57,13 +57,37 @@ $ScoopFile = "$PSScriptRoot\scoopfile.json"
 if (Test-Path $ScoopFile) { scoop import $ScoopFile }
 
 # -----------------------------------------------------------------------------
-# 3. 建立連結 (Symlinks)
+# 3. 建立連結 (Symlinks) - 智慧路徑偵測版
 # -----------------------------------------------------------------------------
-$Links = @{
-    "$DotfilesDir\windows\Microsoft.PowerShell_profile.ps1" = "$UserHome\Documents\PowerShell\Microsoft.PowerShell_profile.ps1";
-    "$DotfilesDir\git\gitconfig.symlink" = "$UserHome\.gitconfig"; 
+
+# 定義可能的 Terminal 設定檔路徑
+$ScoopTerminalPath = "$env:USERPROFILE\scoop\persist\windows-terminal\settings.json"
+$StoreTerminalPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+$TargetTerminalPath = $null
+
+# 自動判斷路徑
+if (Test-Path "$(Split-Path $ScoopTerminalPath -Parent)") {
+    $TargetTerminalPath = $ScoopTerminalPath
+    Write-Host "🔎 Detected Scoop version of Windows Terminal." -ForegroundColor Gray
+} elseif (Test-Path "$(Split-Path $StoreTerminalPath -Parent)") {
+    $TargetTerminalPath = $StoreTerminalPath
+    Write-Host "🔎 Detected Store/Winget version of Windows Terminal." -ForegroundColor Gray
 }
 
+# 定義基本連結
+$Links = @{
+    "$DotfilesDir\windows\Microsoft.PowerShell_profile.ps1" = "$UserHome\Documents\PowerShell\Microsoft.PowerShell_profile.ps1";
+    "$DotfilesDir\git\gitconfig.symlink" = "$UserHome\.gitconfig";
+}
+
+# 如果找得到 Terminal 路徑，才加入連結清單
+if ($TargetTerminalPath) {
+    $Links["$DotfilesDir\windows\Terminal\settings.json"] = $TargetTerminalPath
+} else {
+    Write-Host "⚠️  Windows Terminal not found. Skipping settings link." -ForegroundColor Yellow
+}
+
+# 執行連結邏輯 (保持不變)
 foreach ($Link in $Links.GetEnumerator()) {
     $Src = $Link.Key
     $Dst = $Link.Value

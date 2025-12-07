@@ -1,0 +1,124 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "console_title_template": "{{ .Folder }}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "os",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#ffffff",
+          "template": " {{ .Icon }} "
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#333333",
+          "template": "{{ if ne .UserName \"seraphwu\" }} {{ .UserName }}@{{ .HostName }} {{ end }}"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#ffffff",
+          "background": "#3465a4",
+          "properties": {
+            "style": "full",
+            "folder_icon": " "
+          },
+          "template": " {{ .Path }} "
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#f1c40f",
+          "properties": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "template": " \ue728 {{ .Ref }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if .Untracked }} ?{{ end }} "
+        },
+        {
+          "type": "vi-mode",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#000000",
+          "background": "#ffffff",
+          "template": " {{ .ModeSymbol }} ",
+          "properties": {
+            "display_modes": ["INSERT", "NORMAL"],
+            "normal_mode_background": "#f1c40f",
+            "normal_mode_foreground": "#000000",
+            "insert_mode_background": "#3498db",
+            "insert_mode_foreground": "#ffffff"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "status",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B2",
+          "foreground": "#ffffff",
+          "background": "#e04646",
+          "background_templates": ["{{ if eq .Code 0 }}#2e9599{{ end }}"],
+          "template": " {{ if ne .Code 0 }}\uf00d{{ else }}\uf00c{{ end }} ",
+          "invert_powerline": true
+        },
+        {
+          "type": "jobs",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B2",
+          "foreground": "#000000",
+          "background": "#c2c270",
+          "template": " \uf4bc {{ .String }} ",
+          "invert_powerline": true
+        },
+        {
+          "type": "sysinfo",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B2",
+          "foreground": "#000000",
+          "background": "#bdc3c7",
+          "template": " \uf85a {{ round .PhysicalPercentUsed .Precision }}% ",
+          "invert_powerline": true
+        },
+        {
+          "type": "sysload",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B2",
+          "foreground": "#000000",
+          "background": "#6272a4",
+          "template": " \uF080 {{ round .CurrentLoad .Precision }} ",
+          "invert_powerline": true
+        },
+        {
+          "type": "time",
+          "style": "powerline",
+          "powerline_symbol": "\uE0B2",
+          "foreground": "#ffffff",
+          "background": "#333333",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "invert_powerline": true
+        }
+      ]
+    }
+  ]
+}
