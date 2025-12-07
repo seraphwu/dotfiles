@@ -72,8 +72,6 @@ brew "httpd"
 brew "curlie"
 # Website copier/offline browser
 brew "httrack"
-# Add GitHub support to git on the command-line
-brew "hub"
 # Configurable static site generator
 brew "hugo"
 # Tools and libraries to manipulate images in many formats
@@ -101,14 +99,10 @@ brew "libyaml"
 brew "mackup"
 # Mac App Store command-line interface
 brew "mas"
-# Terminal-based visual file manager
-brew "midnight-commander"
 # Matroska media files manipulation tools
 brew "mkvtoolnix"
 # Turn marked-up plain text into well-formatted documents
 brew "multimarkdown"
-# ranger - Directory browser
-brew "ranger"
 # tmux - Term multiplexer
 brew "tmux"
 #exiftool - Reading and writing exif metadata
@@ -132,8 +126,6 @@ brew "nvm"
 brew "ollama", restart_service: :changed
 # Simplified-traditional Chinese conversion tool
 brew "opencc"
-# Open source suite of directory software
-brew "openldap"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
 # Execute binaries from Python packages in isolated environments
@@ -188,6 +180,8 @@ brew "zsh-git-prompt"
 brew "zsh-syntax-highlighting"
 # Stylesheet Preprocessor
 brew "sass"
+# uv
+brew "uv"
 # skhd - Hotkey daemon for macOS
 brew "skhd"
 #lporg - Backup and restore launchpad layout
