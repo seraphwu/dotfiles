@@ -303,8 +303,6 @@ cask "github"
 cask "google-chrome"
 # Open-source video transcoder
 cask "handbrake"
-# App for managing Android devices
-cask "handshaker"
 # Note-taking tool for visual learning
 cask "heptabase"
 # Free and open-source media player
@@ -419,8 +417,6 @@ cask "shotcut"
 cask "simplenote"
 # Utility to resize and position application windows
 cask "sizeup"
-# Video chat, voice call and instant messaging application
-cask "skype"
 # Team communication and collaboration software
 cask "slack"
 # Graphical client for Git version control
