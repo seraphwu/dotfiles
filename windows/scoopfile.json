@@ -141,13 +141,6 @@
             "Source": "extras"
         },
         {
-            "Info": "Install failed",
-            "Updated": "2025-11-19T00:10:30.1069613+08:00",
-            "Name": "exiftool",
-            "Version": null,
-            "Source": null
-        },
-        {
             "Info": "",
             "Updated": "2025-11-09T17:07:54.7472417+08:00",
             "Name": "eza",
@@ -279,13 +272,6 @@
             "Name": "gsudo",
             "Version": "2.6.1",
             "Source": "main"
-        },
-        {
-            "Info": "Install failed",
-            "Updated": "2025-11-09T20:51:44.9005892+08:00",
-            "Name": "Hanamin",
-            "Version": null,
-            "Source": null
         },
         {
             "Info": "",
@@ -985,97 +971,6 @@
             "Updated": "2025-12-06T23:03:33.1594326+08:00",
             "Name": "zoxide",
             "Version": "0.9.8",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:21:52.0216097+08:00",
-            "Name": "7zip",
-            "Version": "25.01",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:21:56.9010468+08:00",
-            "Name": "clipboard",
-            "Version": "0.10.0",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:21:57.8695966+08:00",
-            "Name": "dark",
-            "Version": "3.14.1",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:21:58.551591+08:00",
-            "Name": "docker",
-            "Version": "28.5.2",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:21:59.736066+08:00",
-            "Name": "everything-powertoys",
-            "Version": "0.91.1",
-            "Source": "extras"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:21:59.9096001+08:00",
-            "Name": "eza",
-            "Version": "0.23.4",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:22:01.2154254+08:00",
-            "Name": "FantasqueSansMono-NF-Mono",
-            "Version": "3.4.0",
-            "Source": "nerd-fonts"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:22:01.3877279+08:00",
-            "Name": "fd",
-            "Version": "10.3.0",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:22:03.9606959+08:00",
-            "Name": "ffmpeg",
-            "Version": "8.0",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:22:05.1204081+08:00",
-            "Name": "FiraCode-NF",
-            "Version": "3.4.0",
-            "Source": "nerd-fonts"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-11-09T17:22:05.2735411+08:00",
-            "Name": "fzf",
-            "Version": "0.66.1",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-12-06T20:40:48.2430809+08:00",
-            "Name": "mysql",
-            "Version": "9.5.0",
-            "Source": "main"
-        },
-        {
-            "Info": "Global install",
-            "Updated": "2025-12-05T20:55:59.6954087+08:00",
-            "Name": "mysql-shell",
-            "Version": "9.5.0",
             "Source": "main"
         }
     ],
