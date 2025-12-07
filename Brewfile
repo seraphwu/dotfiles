@@ -11,8 +11,8 @@ tap "koekeishiya/formulae"
 brew "git"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-# Core application library for C
-brew "glib"
+# Bitwarden是一款自由且開源的密碼管理服務，使用者可在加密的保管庫中儲存敏感資訊（例如網站登入憑據）
+brew "bitwarden"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
 # Automatic configure script builder
