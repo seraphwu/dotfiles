@@ -11,17 +11,6 @@ export ZSH="/Users/seraphwu/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
-
-
-# 左側
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs vi_mode)
-# 右側
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history ram load time)
-# 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
-DEFAULT_USER="seraphwu"
-# 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki 
-POWERLEVEL10K_MODE='nerdfont-complete'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -153,10 +142,15 @@ alias gt="starship toggle gcloud disabled" # toggle gcloud info on the prompt
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completionexport PATH="/usr/local/sbin:$PATH"
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/sbin:$PATH"
 export HOMEBREW_GITHUB_API_TOKEN=d47f598886596a0a448db0614f76d1e2e88753b0
-export HOMEBREW_GITHUB_API_TOKEN=d47f598886596a0a448db0614f76d1e2e88753b0
+
 eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by Antigravity
+export PATH="/Users/seraphwu/.antigravity/antigravity/bin:$PATH"
