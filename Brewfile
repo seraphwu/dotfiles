@@ -15,8 +15,6 @@ brew "sevenzip"
 brew "duti"
 # Automatic configure script builder
 brew "autoconf"
-# Shell extension to jump to frequently used directories
-brew "autojump"
 # Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -413,9 +411,7 @@ cask "landrop"
 # Trims video and audio files losslessly
 cask "losslesscut"
 # Clipboard manager
-# cask "maccy"
-# Open-source Markdown editor
-cask "macdown"
+cask "maccy"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
 # Extensible two-pane file manager
@@ -503,8 +499,6 @@ cask "skype"
 cask "slack"
 # Graphical client for Git version control
 cask "sourcetree"
-# Move and resize windows with ease disabled on 2024-12-16.
-#cask "spectacle"
 # Music streaming service
 cask "spotify"
 # Run anything at startup by simply placing it in a special folder (sonoma or later)
