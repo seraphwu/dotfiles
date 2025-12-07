@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+#
+# script/brew-sync-check
+# 比對 Local Homebrew 與 Repo Brewfiles 的差異，並產生修復腳本。
+
+set -e
+
+# 定義路徑
+DOTFILES_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+BREWFILE_CORE="$DOTFILES_ROOT/Brewfile"
+BREWFILE_FONTS="$DOTFILES_ROOT/Brewfile.fonts"
+TEMP_BREWFILE="/tmp/Brewfile.combined"
+
+# 輸出檔案
+SCRIPT_INSTALL="fix-brew-install.sh"
+SCRIPT_UNINSTALL="fix-brew-uninstall.sh"
+
+echo "🔍 分析 Brewfile 配置..."
+
+# 1. 合併 Brewfile (核心 + 字體) 到暫存檔
+# 這是為了讓 cleanup 指令知道這兩個檔案裡的軟體都是「合法的」
+cat "$BREWFILE_CORE" > "$TEMP_BREWFILE"
+echo "" >> "$TEMP_BREWFILE" # 確保有換行
+if [ -f "$BREWFILE_FONTS" ]; then
+    cat "$BREWFILE_FONTS" >> "$TEMP_BREWFILE"
+fi
+
+echo "📋 正在比對差異 (這可能需要幾秒鐘)..."
+
+# ---------------------------------------------------------
+# 2. 檢查缺漏 (Missing) - 產生安裝腳本
+# ---------------------------------------------------------
+echo "#!/bin/bash" > "$SCRIPT_INSTALL"
+echo "# 這是自動產生的安裝腳本" >> "$SCRIPT_INSTALL"
+echo "echo '🚀 開始安裝缺漏的套件...'" >> "$SCRIPT_INSTALL"
+
+# 使用 brew bundle check 檢查缺漏
+# check 會回傳非 0 如果有缺漏，我們抓取 output
+if brew bundle check --file="$TEMP_BREWFILE" --verbose > /dev/null 2>&1; then
+    echo "✅ 所有清單上的軟體都已安裝。"
+    echo "echo '✅ 沒有需要安裝的項目。'" >> "$SCRIPT_INSTALL"
+else
+    echo "⚠️  發現缺漏的軟體！"
+    # 這裡直接呼叫 bundle install，因為它是最準確的補齊方式
+    echo "brew bundle install --file='$TEMP_BREWFILE'" >> "$SCRIPT_INSTALL"
+fi
+
+# ---------------------------------------------------------
+# 3. 檢查多餘 (Extraneous) - 產生移除腳本
+# ---------------------------------------------------------
+echo "#!/bin/bash" > "$SCRIPT_UNINSTALL"
+echo "# 這是自動產生的移除腳本 - 請務必檢查內容！" >> "$SCRIPT_UNINSTALL"
+echo "echo '🗑️ 開始移除不在清單上的套件...'" >> "$SCRIPT_UNINSTALL"
+
+# 使用 cleanup --dry-run 列出多餘項目
+CLEANUP_OUTPUT=$(brew bundle cleanup --file="$TEMP_BREWFILE" --zap)
+
+if [ -z "$CLEANUP_OUTPUT" ]; then
+    echo "✅ 沒有多餘的軟體 (環境很乾淨)。"
+    echo "echo '✅ 沒有需要移除的項目。'" >> "$SCRIPT_UNINSTALL"
+else
+    echo "⚠️  發現多餘的軟體 (未在 Brewfile 中)！"
+    
+    # 解析輸出並轉換為移除指令
+    # 格式通常為: Would uninstall formula 'xxx'
+    # 格式通常為: Would uninstall cask 'xxx'
+    
+    echo "$CLEANUP_OUTPUT" | while read -r line; do
+        if [[ $line == *"Would uninstall formula"* ]]; then
+            NAME=$(echo "$line" | sed -E "s/Would uninstall formula '(.*)'/\1/")
+            echo "echo 'Removing formula: $NAME'" >> "$SCRIPT_UNINSTALL"
+            echo "brew uninstall '$NAME'" >> "$SCRIPT_UNINSTALL"
+        elif [[ $line == *"Would uninstall cask"* ]]; then
+            NAME=$(echo "$line" | sed -E "s/Would uninstall cask '(.*)'/\1/")
+            echo "echo 'Removing cask: $NAME'" >> "$SCRIPT_UNINSTALL"
+            echo "brew uninstall --cask '$NAME'" >> "$SCRIPT_UNINSTALL"
+        elif [[ $line == *"Would uninstall tap"* ]]; then
+            NAME=$(echo "$line" | sed -E "s/Would uninstall tap '(.*)'/\1/")
+            echo "echo 'Untapping: $NAME'" >> "$SCRIPT_UNINSTALL"
+            echo "brew untap '$NAME'" >> "$SCRIPT_UNINSTALL"
+        elif [[ $line == *"Would remove"* ]]; then
+             # 針對 App Store (mas) 或其他
+             echo "# $line (需手動確認)" >> "$SCRIPT_UNINSTALL"
+        fi
+    done
+fi
+
+# 賦予產出的腳本執行權限
+chmod +x "$SCRIPT_INSTALL"
+chmod +x "$SCRIPT_UNINSTALL"
+
+echo ""
+echo "======================================================="
+echo "🎉 分析完成！已產生以下兩個腳本："
+echo ""
+echo "1. 安裝缺漏: ./$SCRIPT_INSTALL"
+if grep -q "brew bundle" "$SCRIPT_INSTALL"; then
+    echo "   (有項目需要安裝)"
+else
+    echo "   (無動作)"
+fi
+echo ""
+echo "2. 移除多餘: ./$SCRIPT_UNINSTALL"
+if grep -q "brew uninstall" "$SCRIPT_UNINSTALL"; then
+    echo "   ⚠️  注意：請務必先 cat ./$SCRIPT_UNINSTALL 檢查內容，以免誤刪！"
+else
+    echo "   (無動作)"
+fi
+echo "======================================================="
