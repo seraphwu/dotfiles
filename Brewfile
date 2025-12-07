@@ -11,8 +11,6 @@ tap "koekeishiya/formulae"
 brew "git"
 # 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-# Bitwarden是一款自由且開源的密碼管理服務，使用者可在加密的保管庫中儲存敏感資訊（例如網站登入憑據）
-brew "bitwarden"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
 # Automatic configure script builder
@@ -197,6 +195,8 @@ brew "sass"
 # skhd - Hotkey daemon for macOS
 brew "skhd"
 #lporg - Backup and restore launchpad layout
+# Bitwarden是一款自由且開源的密碼管理服務，使用者可在加密的保管庫中儲存敏感資訊（例如網站登入憑據）
+cask "bitwarden"
 # Acrobat Reader
 cask "adobe-acrobat-reader"
 #cask "lporg"
