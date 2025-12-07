@@ -61,14 +61,15 @@ brew "grc"
 brew "groonga"
 # Open-source video transcoder available for Linux, Mac, and Windows
 brew "handbrake", link: false
-# Improved top (interactive process viewer)
-brew "htop"
+# 取代 htop
+# brew "htop"
+brew "btop"
 #ttygif：将终端录制转化为GIF动画的神器 - CSDN部落客
 brew "ttygif"
 # Apache HTTP server
 brew "httpd"
-# User-friendly cURL replacement (command-line HTTP client)
-brew "httpie"
+# Power of curl, ease of use of httpie
+brew "curlie"
 # Website copier/offline browser
 brew "httrack"
 # Add GitHub support to git on the command-line
@@ -86,7 +87,10 @@ brew "zoxide"
 # task - Todo + task management
 brew "task"
 #lazydocker - Full Docker management app
-#lazygit - Full Git managemtne app
+# lazygit - Full Git managemtne app
+brew "lazygit"
+# Helix
+brew "helix"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Conversion library
@@ -95,8 +99,6 @@ brew "libiconv"
 brew "libyaml"
 # Keep your Mac's application settings in sync
 brew "mackup"
-# Drop-in replacement for MySQL
-brew "mariadb", restart_service: :changed
 # Mac App Store command-line interface
 brew "mas"
 # Terminal-based visual file manager
@@ -146,10 +148,6 @@ brew "putty"
 brew "pyenv"
 # Ruby version manager
 brew "rbenv"
-# Persistent key-value database, with built-in net interface
-brew "redis"
-# Open-source database for the realtime web
-brew "rethinkdb"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Display and control your Android device
@@ -162,8 +160,6 @@ brew "stow"
 brew "utf8proc", args: ["HEAD"]
 # Version control system designed to be a better CVS
 brew "subversion"
-# Tool to build, change, and version infrastructure
-brew "terraform"
 # CLI tool that moves files or folder to the trash
 brew "trash", link: true
 # Display directories as trees (with optional color/HTML output)
@@ -172,6 +168,8 @@ brew "tree"
 brew "unar"
 # Internet file retriever
 brew "wget"
+# Superfile
+brew "superfile"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
 # Download YouTube videos from the command-line It was disabled on 2024-11-23.
@@ -420,8 +418,6 @@ cask "rocket"
 cask "scribus"
 # File sharing app
 cask "send-anywhere"
-# MySQL/MariaDB database management platform
-cask "sequel-ace"
 # Video editor
 cask "shotcut"
 # React client for Simplenote
