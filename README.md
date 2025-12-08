@@ -1,7 +1,7 @@
 # Seraph Wu's Dotfiles
 
 這份 Dotfiles 採用 **Monorepo** 架構，同時管理 **macOS** 與 **Windows** 的開發環境配置，並包含容器化的服務設定。
-Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holman\'s dotfiles](https://github.com/holman/dotfiles).
+Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holman's dotfiles](https://github.com/holman/dotfiles).
 
 ## 🚀 Overview
 
@@ -9,6 +9,9 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
 - **Infrastructure as Code**:
   - **macOS**: 使用 `Brewfile` (核心) 與 `Brewfile.fonts` (字體) 管理軟體，`script/install` 自動化部署。
   - **Windows**: 使用 `scoopfile.json` 管理軟體，`windows/install.ps1` 自動化部署。
+- **Security First**:
+  - **SSH Strategy**: 採用 Bitwarden 管理私鑰，配合 `ssh-agent` 實現免密碼連線。
+  - **Bitwarden**: 透過 Scoop/Brew 優先安裝，作為環境建置的基石。
 - **Shell Customization**:
   - **Zsh (Mac)**: Powerlevel10k, Autosuggestions, Syntax-highlighting.
   - **PowerShell (Win)**: Oh My Posh, Terminal-Icons, Zoxide, PSFzf, Eza.
@@ -43,18 +46,45 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
 
 ## 🛠 Installation
 
-### 🪟 Windows Setup
+由於本 Repo 使用 SSH 進行 Clone，且依賴 **Bitwarden** 管理金鑰，請務必遵守以下順序：
+
+### 🟢 Step 0: Pre-installation (Bitwarden & Keys)
+
+在拉取此 Repo 之前，請先安裝套件管理器與 Bitwarden，並還原 SSH 金鑰。
+
+**Windows (PowerShell):**
+```powershell
+# 1. 安裝 Scoop
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; irm get.scoop.sh | iex
+# 2. 安裝 Bitwarden
+scoop bucket add extras; scoop install bitwarden
+# 3. 登入 Bitwarden，取出 SSH Key 並放入 $env:USERPROFILE\.ssh\
+# 4. 啟動 SSH Agent
+Set-Service ssh-agent -StartupType Automatic; Start-Service ssh-agent; ssh-add $env:USERPROFILE\.ssh\id_ed25519
+```
+
+**macOS (Terminal):**
+```bash
+# 1. 安裝 Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# 2. 安裝 Bitwarden
+brew install --cask bitwarden
+# 3. 登入 Bitwarden，取出 SSH Key 並放入 ~/.ssh/，執行 chmod 600
+# 4. 加入 Agent
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+```
+
+---
+
+### 🪟 Windows Setup (Main)
 
 **Prerequisites:**
-
 - Windows 10 / 11
-- PowerShell 5.1 or 7+ (建議使用 Windows Terminal)
-- **必須以系統管理員身分執行**
+- **必須以系統管理員身分執行 PowerShell**
 
 **Steps:**
 
 1.  Clone repo:
-
     ```powershell
     cd $env:USERPROFILE
     git clone git@github.com:seraphwu/dotfiles.git .dotfiles
@@ -67,30 +97,26 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
     ```
 
 **腳本功能：**
-
 - **系統層**: 透過 Winget 自動檢查並安裝 **Docker Desktop** (需重啟生效)。
-- **工具層**: 安裝 **Scoop** 及必要 Buckets，還原所有 CLI 工具 (`git`, `oh-my-posh`, `eza`, `zoxide`...)。
-- **設定層**: 自動備份舊 Profile，建立 Symlink 將設定檔指向此 Repo。
+- **工具層**: 還原 Scoop 所有 CLI 工具 (`git`, `oh-my-posh`, `eza`, `zoxide`...)。
+- **設定層**: 自動備份舊 Profile，建立 Symlink 將設定檔指向此 Repo (包含 `.ssh/config`)。
 
 ---
 
-### 🍎 macOS Setup
+### 🍎 macOS Setup (Main)
 
 **Prerequisites:**
-
 - macOS recent versions.
 - Xcode Command Line Tools: `xcode-select --install`
 
 **Steps:**
 
 1.  Clone repo:
-
     ```bash
     git clone git@github.com:seraphwu/dotfiles.git ~/.dotfiles
     ```
 
 2.  Run bootstrap (初始化環境與連結):
-
     ```bash
     cd ~/.dotfiles
     ./script/bootstrap
@@ -102,12 +128,10 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
     ```
 
 **腳本功能：**
-
-- **Bootstrap**: 安裝 Homebrew, Oh My Zsh, 建立 Symlinks。
+- **Bootstrap**: 建立 Symlinks (包含 `.ssh/config`)，設定 macOS Defaults。
 - **Install**:
   1.  執行 `Brewfile` 安裝核心軟體。
-  2.  執行 `Brewfile.fonts` 安裝字體 (若網路逾時會自動略過，不影響核心安裝)。
-  3.  執行其他子模組安裝 (如 Yabai)。
+  2.  執行 `Brewfile.fonts` 安裝字體。
 
 ---
 
