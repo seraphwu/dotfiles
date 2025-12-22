@@ -154,3 +154,5 @@ eval "$(rbenv init -)"
 
 # Added by Antigravity
 export PATH="/Users/seraphwu/.antigravity/antigravity/bin:$PATH"
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_ENV_HINTS=1
