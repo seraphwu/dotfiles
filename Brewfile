@@ -142,7 +142,7 @@ cask "macdown"
 cask "mailspring"
 cask "marked"
 cask "marta"
-cask "mendeley"
+#cask "mendeley"
 # cask "mkvtoolnix-app"
 cask "mkvtools"
 cask "mounty"
@@ -199,7 +199,7 @@ cask "webstorm"
 cask "welly"
 cask "workflowy"
 cask "xquartz"
-cask "zotero"
+#cask "zotero"
 mas "Agenda", id: 1287445660
 mas "Amphetamine", id: 937984704
 mas "Apowersoft Screen Recorder", id: 1030681467
