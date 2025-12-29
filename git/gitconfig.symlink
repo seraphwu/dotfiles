@@ -1,8 +1,8 @@
 [hub]
   protocol = https
 [user]
-	name = 4icsshu
-	email = wingfly.tw@gmail.com
+	name = seraphwu
+	email = seraphwu@gmail.com
   signingkey = E77D0CB6
 [credential]
 	helper = osxkeychain
@@ -46,3 +46,5 @@
   gpgsign = false
 [gpg]
 	program = gpg
+[init]
+	defaultBranch = main
