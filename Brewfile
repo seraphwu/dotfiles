@@ -152,6 +152,8 @@ cask "baidunetdisk"
 cask "battle-net"
 # Utility to create and modify archives
 cask "betterzip"
+# Run anything at startup https://lowtechguys.com/startupfolder 
+cask startupfolder
 # Compare files and folders
 cask "beyond-compare"
 # Desktop password and login vault
