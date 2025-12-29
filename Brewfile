@@ -390,8 +390,6 @@ cask "losslesscut"
 cask "macdown"
 # Controls and monitors all fans on Apple computers
 cask "macs-fan-control"
-# Markdown editor
-cask "mark-text"
 # Extensible two-pane file manager
 cask "marta"
 #cask "mdimagesizemdimporter"
