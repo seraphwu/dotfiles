@@ -11,14 +11,17 @@ export ZSH="/Users/seraphwu/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION=''
+
+
 # 左側
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable vcs vi_mode)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs vi_mode)
 # 右側
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history ram load time)
 # 若當前登入的帳號為你的帳號 xxx，就不用特別顯示出來
 DEFAULT_USER="seraphwu"
 # 使用 nerd font 時可以顯示更多 icon。詳情請參考 powerlevel9k wiki 
-POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL10K_MODE='nerdfont-complete'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -75,7 +78,6 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 plugins=(
   git
   zsh-autosuggestions
-  zsh-syntax-highlighting
   z 
   zsh-wakatime
   sublime
@@ -85,7 +87,11 @@ plugins=(
   emoji-clock
   battery
   history
-  
+  eza
+  fzf
+  fabric
+  #zsh-z
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -121,9 +127,33 @@ source $ZSH/oh-my-zsh.sh
 # source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 #export NVM_DIR="$HOME/.nvm"
 #. "/usr/local/opt/nvm/nvm.sh"
+
+# ~/.zshrc
+# 20250128 update from https://engineeringfordatascience.com/posts/configure_terminal_for_data_science_with_oh_my_zsh/
+# python
+alias python=python3
+
+# git
+alias gs="git status"
+
+# map exa commands to normal ls commands
+alias ll="eza -l -g --icons"
+alias ls="eza --icons"
+alias lt="eza --tree --icons -a -I '.git|__pycache__|.mypy_cache|.ipynb_checkpoints'"
+
+# show file previews for fzf using bat
+alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
+
+# starship prompt
+alias gt="starship toggle gcloud disabled" # toggle gcloud info on the prompt
+
+
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completionexport PATH="/usr/local/sbin:$PATH"
 export HOMEBREW_GITHUB_API_TOKEN=d47f598886596a0a448db0614f76d1e2e88753b0
 export HOMEBREW_GITHUB_API_TOKEN=d47f598886596a0a448db0614f76d1e2e88753b0
 eval "$(rbenv init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
