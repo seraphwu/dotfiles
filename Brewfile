@@ -166,6 +166,18 @@ brew "zsh-git-prompt"
 brew "zsh-syntax-highlighting"
 # Stylesheet Preprocessor
 brew "sass/sass/sass"
+# skhd - Hotkey daemon for macOS
+cask "skhd"
+#lporg - Backup and restore launchpad layout
+cask "lporg"
+#hiddenbar - 隱藏/顯示煩人的功能表欄圖示
+cask "hiddenbar"
+# copyq - Clipboard manager (cross platform)
+cask "copyq"
+# espanso - Live text expander (cross-platform)
+cask "espanso"
+# finicky - Website-specific default browser 可以指定某些連結利用某些瀏覽器開啟
+# cask "finicky"
 # Download Instagram photos, accounts, hashtags and locations
 cask "4k-stogram"
 # Free video downloader
