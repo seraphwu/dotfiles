@@ -111,6 +111,8 @@ cask "visual-studio-code"
 cask "vlc"
 cask "webstorm"
 cask "Clipy"
+cask "mounty"
+
 cask "font-sourcecodepro-nerd-font"
 cask "font-hack"
 cask "font-noto-sans-cjk"
