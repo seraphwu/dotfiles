@@ -1,3 +1,18 @@
+```
+$ clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+```
+$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+```
+/*cd ~/.oh-my-zsh/custom/plugins &&*/ 
+git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-wakatime
+```
 # Seraph Wu's dotfiles modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles)
 
 如果不清楚什麼是 dotfiles 的話，可以參閱「[善用 dotfiles 個人化自己的工作環境](http://cloudchen.logdown.com/posts/49264746647/dotfiles)」：
@@ -195,7 +210,6 @@ cask ...
 | [istat-munus](https://bjango.com/mac/istatmenus/) | An advanced Mac system monitor for your menubar |
 | [iterm2](http://iterm2.com/) | iTerm2 is a terminal emulator for Mac OS X that does amazing things. |
 | [keka](http://www.kekaosx.com/) | the free Mac OS X file archiver |
-| [neteasemusic](http://music.163.com/) | 网易云音乐是一款专注于发现与分享的音乐产品，依托专业音乐人、DJ、好友推荐及社交功能，为用户打造全新的音乐生活。 |
 | [ngrok](https://ngrok.com/) | ngrok secure introspectable tunnels to localhost webhook development tool and debugging tool. |
 | [macdown](http://macdown.uranusjr.com/) | The open source Markdown editor for OS X. |
 | [obs](https://obsproject.com/) | Free, open source software for live streaming and recording |
