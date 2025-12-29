@@ -117,9 +117,11 @@ brew "exiftool"
 #https://github.com/mjolnirapp/AppGrid
 #Pandoc - Universal file converter
 brew "pandoc"
+# Yabai WM
+brew "koekeishiya/formulae/yabai"
 # Ambitious Vim-fork focused on extensibility and agility
 # Google Gemini CLI
-install gemini-cli
+cask "gemini-cli"
 #brew "neovim"
 #Synfig Studio - 2D animation
 cask "Synfigstudio"
