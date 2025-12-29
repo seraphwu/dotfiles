@@ -203,7 +203,7 @@ cask "mist"
 #hiddenbar - 隱藏/顯示煩人的功能表欄圖示
 cask "hiddenbar"
 # copyq - Clipboard manager (cross platform)
-cask "copyq"
+# cask "copyq"
 # espanso - Live text expander (cross-platform)
 cask "espanso"
 # finicky - Website-specific default browser 可以指定某些連結利用某些瀏覽器開啟
