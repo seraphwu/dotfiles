@@ -338,6 +338,11 @@ cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
 cask "font-symbols-only-nerd-font"
 cask "font-zen-maru-gothic"
+cask "font-m-plus-rounded-1c"
+cask "font-jetbrains-maple-mono"
+cask "font-jetbrains-maple-mono-nf"
+cask "font-wdxl-lubrifont-tc" 
+cask "comfyui"
 # Tool that helps teams design every part of the product experience
 cask "framer"
 # Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
