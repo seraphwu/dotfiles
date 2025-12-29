@@ -2,7 +2,7 @@
 #tap "bigwig-club/brew"
 #tap "buo/cask-upgrade"
 #tap "homebrew/bundle"
-3tap "homebrew/cask"
+#tap "homebrew/cask"
 #tap "homebrew/cask-fonts"
 #tap "homebrew/cask-versions"
 #tap "homebrew/core"
