@@ -14,7 +14,7 @@
   ui = true
 [core]
   excludesfile = ~/.gitignore
-	editor = subl
+	editor = code --wait
 [help]
   autocorrect = 1
 [push]
