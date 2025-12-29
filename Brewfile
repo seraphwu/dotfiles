@@ -13,7 +13,7 @@ brew "sevenzip"
 # Core application library for C
 brew "glib"
 # Select default apps for documents and URL schemes on macOS
-brew duti
+brew "duti"
 # Automatic configure script builder
 brew "autoconf"
 # Shell extension to jump to frequently used directories
