@@ -22,7 +22,7 @@ brew "coreutils"
 brew "dnsmasq", restart_service: true
 brew "ecm"
 brew "ffmpeg"
-brew "fliqlo"
+cask "fliqlo"
 brew "findutils"
 brew "git"
 brew "git-flow"
