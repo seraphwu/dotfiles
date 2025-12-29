@@ -173,7 +173,7 @@ cask "dozer"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # Outlining app for your work
-cask "dynalist"
+#cask "dynalist"
 # App for note taking, organizing, task lists, and archiving
 #cask "evernote"
 # Collaborative team software
