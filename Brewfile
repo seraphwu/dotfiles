@@ -8,7 +8,7 @@ tap "homebrew/services"
 cask "iterm2"
 cask "clipy"
 cask "joplin"
-
+cask "joplin-cli"
 cask "istycal"
 cask "mark-text"
 brew "autoconf"
