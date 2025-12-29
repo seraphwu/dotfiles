@@ -514,7 +514,7 @@ cask "suspicious-package"
 cask "switchhosts"
 cask "switchkey"
 # Remote access and connectivity software focused on security
-cask "teamviewer"
+## cask "teamviewer"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # General-purpose text editor
@@ -550,7 +550,6 @@ cask "xquartz"
 cask "zed"
 mas "Amphetamine", id: 937984704
 mas "Anybox", id: 1593408455
-mas "Apowersoft Screen Recorder", id: 1030681467
 mas "DeskMinder", id: 6740942938
 mas "Disk Speed Test", id: 425264550
 mas "FileSumo Pro", id: 1182711853
