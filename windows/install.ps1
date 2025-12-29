@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-    Windows Dotfiles Installer (Fix FZF & Zoxide)
+    Windows Dotfiles Installer (Added Docker Support)
 #>
 
 $DotfilesDir = Split-Path -Parent $PSScriptRoot
@@ -8,14 +8,36 @@ $UserHome = $env:USERPROFILE
 
 Write-Host "🚀 Starting Windows Setup..." -ForegroundColor Cyan
 
-# 1. 安裝 Scoop
+# -----------------------------------------------------------------------------
+# 1. 系統層級軟體安裝 (Docker Desktop)
+# -----------------------------------------------------------------------------
+# 使用 Winget 安裝 Docker (比 Scoop 更適合安裝驅動層級軟體)
+if (-not (Get-Command docker -ErrorAction SilentlyContinue)) {
+    Write-Host "🐳 Docker not found. Installing Docker Desktop via Winget..." -ForegroundColor Yellow
+    
+    # 檢查 Winget 是否可用
+    if (Get-Command winget -ErrorAction SilentlyContinue) {
+        # 安裝 Docker Desktop
+        winget install -e --id Docker.DockerDesktop --accept-source-agreements --accept-package-agreements
+        
+        Write-Host "⚠️ Docker installed. You may need to RESTART Windows/WSL for it to work." -ForegroundColor Red
+        Write-Host "   Please ensure WSL 2 is enabled (wsl --install)." -ForegroundColor Gray
+    } else {
+        Write-Host "❌ Winget not found. Please install Docker Desktop manually." -ForegroundColor Red
+    }
+} else {
+    Write-Host "✅ Docker is already installed." -ForegroundColor Green
+}
+
+# -----------------------------------------------------------------------------
+# 2. Scoop 安裝與設定
+# -----------------------------------------------------------------------------
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Write-Host "Installing Scoop..." -ForegroundColor Yellow
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
     irm get.scoop.sh | iex
 }
 
-# 2. 安裝必要 Buckets & Apps
 scoop bucket add extras
 scoop bucket add nerd-fonts
 scoop bucket add java
@@ -25,8 +47,8 @@ Write-Host "📦 Installing Core Tools..." -ForegroundColor Yellow
 foreach ($App in $Apps) { scoop install $App }
 
 # 補裝 PowerShell Gallery 模組 (Scoop 沒包的)
-Write-Host "📦 Installing PowerShell Modules..." -ForegroundColor Yellow
 if (-not (Get-Module -ListAvailable PSFzf)) {
+    Write-Host "📦 Installing PSFzf Module..." -ForegroundColor Yellow
     Install-Module PSFzf -Scope CurrentUser -Force -AllowClobber
 }
 
@@ -34,7 +56,9 @@ if (-not (Get-Module -ListAvailable PSFzf)) {
 $ScoopFile = "$PSScriptRoot\scoopfile.json"
 if (Test-Path $ScoopFile) { scoop import $ScoopFile }
 
+# -----------------------------------------------------------------------------
 # 3. 建立連結 (Symlinks)
+# -----------------------------------------------------------------------------
 $Links = @{
     "$DotfilesDir\windows\Microsoft.PowerShell_profile.ps1" = "$UserHome\Documents\PowerShell\Microsoft.PowerShell_profile.ps1";
     "$DotfilesDir\git\gitconfig.symlink" = "$UserHome\.gitconfig"; 
@@ -48,13 +72,11 @@ foreach ($Link in $Links.GetEnumerator()) {
     if (-not (Test-Path $DstDir)) { New-Item -ItemType Directory -Path $DstDir | Out-Null }
 
     if (Test-Path $Dst) {
-        # 檢查是否已經是正確的 Symlink，是的話就跳過
         $IsSymlink = (Get-Item $Dst).LinkType -eq "SymbolicLink"
         if ($IsSymlink) {
             Write-Host "✅ Link exists: $Dst" -ForegroundColor Gray
             continue
         }
-        
         $Backup = "$Dst.bak.$(Get-Date -Format 'yyyyMMddHHmm')"
         Write-Host "⚠️  File exists. Backing up to $Backup" -ForegroundColor DarkGray
         Move-Item $Dst $Backup -Force
@@ -63,5 +85,10 @@ foreach ($Link in $Links.GetEnumerator()) {
     New-Item -ItemType SymbolicLink -Path $Dst -Target $Src | Out-Null
     Write-Host "🔗 Linked: $Dst -> $Src" -ForegroundColor Green
 }
+
+# -----------------------------------------------------------------------------
+# 4. 全域設定
+# -----------------------------------------------------------------------------
+git config --global core.editor "code --wait"
 
 Write-Host "🎉 Setup Complete! Please restart PowerShell." -ForegroundColor Cyan
