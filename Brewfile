@@ -6,6 +6,7 @@ tap "dart-lang/dart"
 #tap "homebrew/services"
 tap "lihaoyun6/tap"
 tap "sass/sass"
+tap "koekeishiya/formulae/"
 # Distributed revision control system
 brew "git"
 # 7-Zip is a file archiver with a high compression ratio
@@ -118,7 +119,7 @@ brew "exiftool"
 #Pandoc - Universal file converter
 brew "pandoc"
 # Yabai WM
-brew "koekeishiya/formulae/yabai"
+brew "yabai"
 # Ambitious Vim-fork focused on extensibility and agility
 # Google Gemini CLI
 cask "gemini-cli"
@@ -192,9 +193,9 @@ brew "zsh-git-prompt"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # Stylesheet Preprocessor
-brew "sass/sass/sass"
+brew "sass"
 # skhd - Hotkey daemon for macOS
-brew "koekeishiya/formulae/skhd"
+brew "skhd"
 #lporg - Backup and restore launchpad layout
 # Acrobat Reader
 cask "adobe-acrobat-reader"
