@@ -40,7 +40,10 @@ git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh
 3. 開啟 Terminal，安裝 Xcode Command Line Tools:
 
 ```bash
-$ xcode-select --install
+xcode-select --install
+
+# Optional: Set HostName
+sudo scutil --set HostName seraphwuMBM2
 ```
 
 ## Install dotfiles
