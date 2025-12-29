@@ -265,8 +265,6 @@ cask "cyberduck"
 cask "db-browser-for-sqlite"
 # Voice and text chat software
 cask "discord"
-# Tool to hide status bar icons
-cask "dozer"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
 # Collaborative team software
