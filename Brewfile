@@ -55,7 +55,7 @@ brew "irssi"
 # Full featured terminal-based screen editor
 brew "joe"
 # Note taking and to-do application with synchronization capabilities
-brew "joplin-cli"
+# brew "joplin-cli"
 # Conversion library
 brew "libiconv"
 # YAML Parser
