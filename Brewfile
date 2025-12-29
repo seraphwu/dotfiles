@@ -220,7 +220,7 @@ cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # All in one MacOS management CLI app
-cask "m-cli"
+brew "m-cli"
 #Popup options for text on highlight 
 cask "popclip"
 # shottr - Better screenshot utility
