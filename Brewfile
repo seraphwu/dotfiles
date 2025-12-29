@@ -476,8 +476,8 @@ cask "skype"
 cask "slack"
 # Graphical client for Git version control
 cask "sourcetree"
-# Move and resize windows with ease
-cask "spectacle"
+# Move and resize windows with ease disabled on 2024-12-16.
+#cask "spectacle"
 # Music streaming service
 cask "spotify"
 # Run anything at startup by simply placing it in a special folder
