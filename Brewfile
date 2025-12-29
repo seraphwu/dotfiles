@@ -112,7 +112,6 @@ cask "vlc"
 cask "webstorm"
 cask "Clipy"
 cask "mounty"
-cask "itscal"
 
 cask "font-sourcecodepro-nerd-font"
 cask "font-hack"
