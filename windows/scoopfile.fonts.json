@@ -1,0 +1,264 @@
+{
+  "buckets": [
+    {
+      "Name": "nerd-fonts",
+      "Source": "[https://github.com/matthewjberger/scoop-nerd-fonts](https://github.com/matthewjberger/scoop-nerd-fonts)",
+      "Updated": "2025-12-07T02:32:59+08:00",
+      "Manifests": 367
+    }
+  ],
+  "apps": [
+    {
+      "Updated": "2025-11-09T20:40:14.2798625+08:00",
+      "Version": "3.4.0",
+      "Name": "CascadiaMono-NF-Mono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:40:14.6248628+08:00",
+      "Version": "3.4.0",
+      "Name": "FantasqueSansMono-NF-Mono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:40:15.1105627+08:00",
+      "Version": "3.4.0",
+      "Name": "FiraCode-NF",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:11.7766998+08:00",
+      "Version": "8.10",
+      "Name": "I-Ming",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:12.4998024+08:00",
+      "Version": "1.020",
+      "Name": "iansui",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:16.9242349+08:00",
+      "Version": "6.4.0",
+      "Name": "IBMPlexSans",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:20.0157053+08:00",
+      "Version": "6.4.0",
+      "Name": "IBMPlexSans-Condensed",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:23.0260703+08:00",
+      "Version": "6.4.0",
+      "Name": "IBMPlexSans-JP",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:26.0872144+08:00",
+      "Version": "6.4.0",
+      "Name": "IBMPlexSans-KR",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:41.9833872+08:00",
+      "Version": "3.4.0",
+      "Name": "Iosevka-NF-Mono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:48.7154675+08:00",
+      "Version": "004.01",
+      "Name": "IPAex-Gothic",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:52.0359585+08:00",
+      "Version": "004.01",
+      "Name": "IPAex-Mincho",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:52.8763885+08:00",
+      "Version": "2.304",
+      "Name": "JetBrains-Mono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:41:57.9197824+08:00",
+      "Version": "3.4.0",
+      "Name": "JetBrainsMono-NF",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:02.7056595+08:00",
+      "Version": "3.4.0",
+      "Name": "JetBrainsMono-NF-Mono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:12.5091486+08:00",
+      "Version": "5.321",
+      "Name": "LXGW-Bright-TC",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-12-07T02:09:55.2299481+08:00",
+      "Version": "1.233",
+      "Name": "LXGWNeoXiHei",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-12-07T02:09:58.5910178+08:00",
+      "Version": "1.052",
+      "Name": "LXGWNeoZhiSong",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:18.8938104+08:00",
+      "Version": "1.521",
+      "Name": "LXGWWenKai",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:23.2181832+08:00",
+      "Version": "1.521",
+      "Name": "LXGWWenKaiGB",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:27.6687289+08:00",
+      "Version": "1.521",
+      "Name": "LXGWWenKaiMono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:32.6585951+08:00",
+      "Version": "1.521",
+      "Name": "LXGWWenKaiMonoGB",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:38.8920608+08:00",
+      "Version": "1.520",
+      "Name": "LXGWWenKaiMonoTC",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:42:40.4111495+08:00",
+      "Version": "1.521",
+      "Name": "LXGWWenKaiScreen",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:43:34.5119203+08:00",
+      "Version": "1.520",
+      "Name": "LXGWWenKaiTC",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T18:11:34.6410115+08:00",
+      "Version": "3.4.0",
+      "Name": "Meslo-NF",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:43:47.1289517+08:00",
+      "Version": "3.4.0",
+      "Name": "Meslo-NF-Mono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:43:51.8946217+08:00",
+      "Version": "2.004",
+      "Name": "Noto-CJK-Mega-OTC",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:45:08.0743315+08:00",
+      "Version": "3.4.0",
+      "Name": "Noto-NF-Mono",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:45:44.0508746+08:00",
+      "Version": "3.4.0",
+      "Name": "Noto-NF-Propo",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:45:52.3720943+08:00",
+      "Version": "2.003",
+      "Name": "Noto-Serif-CJK-Super-OTC",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-28T14:56:53.1717021+08:00",
+      "Version": "1.0.35",
+      "Name": "SarasaGothic-ttc",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:46:39.8263808+08:00",
+      "Version": "20190603",
+      "Name": "Source-Han-Noto-CJK-Ultra-OTC",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:46:47.6976426+08:00",
+      "Version": "1.000-beta",
+      "Name": "taipei-sans",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:46:50.4031306+08:00",
+      "Version": "0.2.0-beta",
+      "Name": "Wenquanyi-Microhei",
+      "Source": "nerd-fonts",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-11-09T20:46:53.6097537+08:00",
+      "Version": "0.9.45",
+      "Name": "Wenquanyi-Zenhei",
+      "Source": "nerd-fonts",
+      "Info": ""
+    }
+  ]
+}
