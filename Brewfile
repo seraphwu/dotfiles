@@ -11,6 +11,8 @@
 # tab "brew tap localsend/localsend"
 # Automatic configure script builder
 brew "autoconf"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Bourne-Again SHell, a UNIX command interpreter
