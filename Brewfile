@@ -1,11 +1,12 @@
-tap "bigwig-club/brew"
-tap "buo/cask-upgrade"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
+#20240928 untap 
+#tap "bigwig-club/brew"
+#tap "buo/cask-upgrade"
+#tap "homebrew/bundle"
+3tap "homebrew/cask"
+#tap "homebrew/cask-fonts"
+#tap "homebrew/cask-versions"
+#tap "homebrew/core"
+#tap "homebrew/services"
 # localsend source
 # tab "brew tap localsend/localsend"
 # Automatic configure script builder
