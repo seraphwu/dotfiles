@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#
+# Run all dotfiles installers.
+
+set -e
+
+cd "$(dirname $0)"/..
+
+# -----------------------------------------------------------
+# 1. 安裝核心軟體 (Core Software)
+# -----------------------------------------------------------
+echo "› brew bundle (Core Software)"
+brew bundle --file="Brewfile"
+
+# -----------------------------------------------------------
+# 2. 安裝字體 (Fonts) - 獨立處理
+# -----------------------------------------------------------
+# 檢查檔案是否存在，並使用 || true 允許失敗繼續 (字體下載常逾時)
+if [ -f "Brewfile.fonts" ]; then
+    echo "› brew bundle (Fonts)"
+    brew bundle --file="Brewfile.fonts" || true
+else
+    echo "› Warning: Brewfile.fonts not found, skipping fonts."
+fi
+
+# -----------------------------------------------------------
+# 3. 其他特定安裝與設定
+# -----------------------------------------------------------
+# Yabai Window Manager
+echo "› Installing Yabai..."
+brew install koekeishiya/formulae/yabai
+yabai --start-service
+
+# 同意 Xcode 授權 (需要 sudo 密碼)
+echo "› Accepting Xcode license..."
+sudo xcodebuild -license accept || true
+
+# 尋找並執行其他子目錄下的 install.sh
+echo "› Running sub-installers..."
+find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+
+echo "› Done!"
