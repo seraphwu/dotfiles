@@ -377,8 +377,6 @@ cask "kodi"
 cask "laverna"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
-# Privacy-first, open-source platform for knowledge sharing and management
-cask "logseq"
 # Window manager
 cask "loop"
 # Drop any files to any devices on your LAN
