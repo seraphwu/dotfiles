@@ -306,9 +306,9 @@ cask "joplin"
 cask "keka"
 # Free and open-source media player
 cask "kodi"
-cask "laverna"
+#cask "laverna"
 # Privacy-first, open-source platform for knowledge sharing and management
-cask "logseq"
+#cask "logseq"
 # Trims video and audio files losslessly
 cask "losslesscut"
 # Clipboard manager
