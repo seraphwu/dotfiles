@@ -37,6 +37,9 @@ sudo pmset -a autopoweroff 0
 # Disable the sound effects on boot
 # sudo nvram SystemAudioVolume=" "
 
+# 啟用安全性
+sudo spctl --master-disable
+
 # Disable transparency in the menu bar and elsewhere on Yosemite
 # defaults write com.apple.universalaccess reduceTransparency -bool true
 
