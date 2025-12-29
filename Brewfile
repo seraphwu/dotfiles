@@ -30,6 +30,8 @@ brew "coreutils"
 brew "dnsmasq", restart_service: :changed
 # Prepare CD image files so they compress better
 brew "ecm"
+# yabai - Tiling window manager
+cask "yabai"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
@@ -172,6 +174,8 @@ cask "4k-video-downloader"
 cask "4k-video-downloader+"
 # Turn YouTube links into MP3 files
 cask "4k-youtube-to-mp3"
+# Finder button, opens directory in terminal
+cask "openinterminal"
 # Create and modify subtitles
 cask "aegisub"
 # Menu bar tool to limit maximum charging percentage
@@ -180,6 +184,12 @@ cask "aldente"
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
+# All in one MacOS management CLI app
+cask "m-cli"
+#Popup options for text on highlight 
+cack "popclip"
+# shottr - Better screenshot utility
+cask "shottr"
 # App to measure storage read/write performance
 cask "amorphousdiskmark"
 # Allows connection to a computer remotely
