@@ -118,6 +118,8 @@ brew "exiftool"
 #Pandoc - Universal file converter
 brew "pandoc"
 # Ambitious Vim-fork focused on extensibility and agility
+# Google Gemini CLI
+install gemini-cli
 #brew "neovim"
 #Synfig Studio - 2D animation
 cask "Synfigstudio"
@@ -221,6 +223,8 @@ cask "alfred"
 cask "alt-tab"
 # 
 cask "dockdoor"
+# docker
+cask "docker"
 # All in one MacOS management CLI app
 brew "m-cli"
 #Popup options for text on highlight 
@@ -285,6 +289,7 @@ cask "font-geologica"
 cask "font-glow-sans-tc-extended"
 cask "font-glow-sans-tc-normal"
 cask "font-hack"
+cask "font-sarasa-gothic"
 #cask "font-ibm-plex"
 cask "font-ibm-plex-sans"
 cask "font-ibm-plex-mono"
@@ -346,7 +351,9 @@ cask "font-zen-maru-gothic"
 cask "font-m-plus-rounded-1c"
 cask "font-jetbrains-maple-mono"
 cask "font-jetbrains-maple-mono-nf"
-cask "font-wdxl-lubrifont-tc" 
+cask "font-wdxl-lubrifont-tc"
+# 昭源環方：現代筆形風格，平衡標準字形和印刷體慣用筆形的免費開源仿圓體字型
+cask "font-chiron-goround-tc"
 cask "comfyui"
 # Tool that helps teams design every part of the product experience
 cask "framer"
