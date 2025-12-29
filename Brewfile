@@ -195,6 +195,8 @@ brew "sass/sass/sass"
 #cask "skhd" brew install koekeishiya/formulae/skhd
 #lporg - Backup and restore launchpad layout
 #cask "lporg"
+# 直接從蘋果伺服器下載所需的操作系統
+cask "mist"
 #hiddenbar - 隱藏/顯示煩人的功能表欄圖示
 cask "hiddenbar"
 # copyq - Clipboard manager (cross platform)
