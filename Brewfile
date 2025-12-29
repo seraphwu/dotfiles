@@ -411,7 +411,7 @@ cask "neat-reader"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
-cask "notion"
+#cask "notion"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Note taking app
