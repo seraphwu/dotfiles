@@ -220,7 +220,7 @@ cask "alt-tab"
 # All in one MacOS management CLI app
 cask "m-cli"
 #Popup options for text on highlight 
-cack "popclip"
+cask "popclip"
 # shottr - Better screenshot utility
 cask "shottr"
 # App to measure storage read/write performance
