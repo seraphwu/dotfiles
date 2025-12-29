@@ -173,8 +173,8 @@ brew "unar"
 brew "wget"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
-# Download YouTube videos from the command-line
-brew "youtube-dl"
+# Download YouTube videos from the command-line It was disabled on 2024-11-23.
+#brew "youtube-dl"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
