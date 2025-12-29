@@ -408,6 +408,8 @@ cask "monitorcontrol"
 cask "mos"
 # Re-mounts write-protected NTFS volumes
 cask "mounty"
+# macwhisper
+cask "macwhisper"
 # Read, annotate and manage ePub books
 cask "neat-reader"
 # Reverse proxy, secure introspectable tunnels to localhost
