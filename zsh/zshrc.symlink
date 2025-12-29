@@ -152,7 +152,7 @@ alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}
 alias gt="starship toggle gcloud disabled" # toggle gcloud info on the prompt
 
 #you-should-use
-source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+source /usr/.oh-my-zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
