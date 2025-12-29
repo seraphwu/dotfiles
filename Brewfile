@@ -280,6 +280,21 @@ cask "font-ibm-plex-sans-tc"
 cask "font-sauce-code-pro-nerd-font"
 cask "font-source-code-pro"
 cask "font-source-code-pro-for-powerline"
+# 20241012 add some google fonts
+cask font-Belleza 
+cask font-Calistoga 
+cask font-Dancing-Script 
+cask font-Montserrat 
+cask font-Montserrat-Alternates 
+cask font-Montserrat-Subrayada 
+cask font-Nunito 
+cask font-Nunito-Sans 
+cask font-Oswald 
+cask font-Playfair-Display 
+cask font-Playfair-Display-SC 
+cask font-Poppins 
+cask font-Raleway 
+cask font-Roboto
 # Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
 cask "franz"
 # Free and open-source image editor
