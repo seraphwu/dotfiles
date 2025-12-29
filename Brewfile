@@ -7,6 +7,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "caskroom/fonts"
 tap "caskroom/versions"
+tap "buo/cask-upgrade"
 
 brew "zsh"
 brew "zsh-autosuggestions"
