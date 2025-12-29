@@ -35,7 +35,7 @@ sudo pmset -a standby 0
 sudo pmset -a autopoweroff 0
 
 # Disable the sound effects on boot
-# sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=" "
 
 # 啟用安全性
 sudo spctl --master-disable
