@@ -88,6 +88,41 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
 *   建立 **Symlinks** (連結 `*.symlink` 檔案到 Home 目錄)。
 *   執行 `Brewfile` 安裝應用程式。
 
+#### 🔌 Zsh Plugins (Manual Setup)
+
+若需手動安裝或重灌個別 Plugin，可參考以下指令。
+建議維持指令獨立執行，方便除錯與選擇性安裝；但在單一 Plugin 的安裝步驟中（如切換目錄後下載），會使用 `&&` 確保執行順序正確。
+
+**zsh-autosuggestions**
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+**powerlevel10k**
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+**zsh-syntax-highlighting**
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+**zsh-wakatime**
+```bash
+git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-wakatime
+```
+
+**zsh-bat**
+```bash
+git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+```
+
+**zsh-256color**
+```bash
+cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color
+```
+
 ---
 
 ## ⚙️ Management
