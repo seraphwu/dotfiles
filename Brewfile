@@ -120,7 +120,9 @@ brew "pandoc"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 #Synfig Studio - 2D animation
-cask "Synfig"
+cask "Synfigstudio"
+# Open source continuous file synchronization application
+cask "syncthing"
 # Manage multiple Node.js versions
 brew "nvm"
 # Create, run, and share large language models (LLMs)
