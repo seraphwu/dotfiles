@@ -122,7 +122,7 @@ brew "pandoc"
 brew "yabai"
 # Ambitious Vim-fork focused on extensibility and agility
 # Google Gemini CLI
-cask "gemini-cli"
+brew "gemini-cli"
 #brew "neovim"
 #Synfig Studio - 2D animation
 cask "Synfigstudio"
