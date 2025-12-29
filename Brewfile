@@ -219,7 +219,7 @@ cask "FinderGo"
 cask "monitorcontrol"
 cask "Bitwarden"
 cask "keka"
-cask "Karabiner"
+cask "Karabinder"
 
 mas "Agenda", id: 1287445660
 mas "Amphetamine", id: 937984704
