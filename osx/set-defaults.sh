@@ -252,6 +252,9 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
+# disable Screensaver
+sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 0
+
 # Change Screensaver to Fliqlo
 defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName Fliqlo path ~/Library/Screen\ Savers/Fliqlo.saver/ type 0
 
@@ -399,6 +402,17 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Use dark menu bar and Dock
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
+# Remove Siri icon from status menu
+defaults write com.apple.Siri StatusMenuVisible -bool false
+
+
+# Disable Resume system-wide
+# This will stop your mac trying to open everything when started
+defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool false
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
 # Enable highlight hover effect for the grid view of a stack (Dock)
 # defaults write com.apple.dock mouse-over-hilite-stack -bool true
 
@@ -452,6 +466,15 @@ defaults write com.apple.dock autohide -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
+# Increase sound qualty for Bluetooth headphones
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
+defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool (editable)" 80
+defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool Min (editable)" 80
+defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool" 80
+defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 80
+defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
+
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 # defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
 
@@ -485,10 +508,10 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.dock wvous-tr-corner -int 4
 # defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Start screen saver
-defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-bl-corner -int 10
 defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right screen corner → Put display to sleep
-defaults write com.apple.dock wvous-br-corner -int 10
+defaults write com.apple.dock wvous-br-corner -int 5
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
