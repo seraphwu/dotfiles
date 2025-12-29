@@ -204,7 +204,7 @@ cask "espanso"
 # Download Instagram photos, accounts, hashtags and locations
 cask "4k-stogram"
 # Free video downloader
-cask "4k-video-downloader"
+# cask "4k-video-downloader"
 # Free video downloader
 cask "4k-video-downloader+"
 # Turn YouTube links into MP3 files
