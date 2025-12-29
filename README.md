@@ -7,7 +7,7 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
 
 *   **Cross-Platform**: 單一 Repo 同步管理雙平台設定。
 *   **Infrastructure as Code**:
-    *   **macOS**: 使用 `Brewfile` 管理軟體，`script/bootstrap` 自動化部署。
+    *   **macOS**: 使用 `Brewfile` 管理軟體，`script/install` 自動化部署。
     *   **Windows**: 使用 `scoopfile.json` 管理軟體，`windows/install.ps1` 自動化部署。
 *   **Shell Customization**:
     *   **Zsh (Mac)**: Powerlevel10k, Autosuggestions, Syntax-highlighting.
@@ -23,10 +23,15 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
   ├── .gitconfig          # [Shared] 跨平台共用的 Git 設定
   ├── macos/              # [Mac] macOS 專屬設定與腳本
   ├── windows/            # [Win] Windows 專屬設定 (Scoop, PowerShell)
-  │   ├── install.ps1     # [Win] 自動安裝腳本
-  │   └── scoopfile.json  # [Win] 軟體清單
-  ├── script/             # [Mac] Bootstrap 安裝腳本
+  │   ├── install.ps1     # [Win] 自動安裝腳本 (含 Docker)
+  │   ├── scoopfile.json  # [Win] 軟體清單
+  │   └── docker-services # [Win] Docker 服務設定 (n8n, MySQL)
+  ├── script/             # [Mac] 安裝腳本
+  │   ├── bootstrap       # [Mac] 初始化腳本
+  │   └── install         # [Mac] 軟體安裝腳本 (Brewfile + Fonts)
   ├── zsh/                # [Mac] Zsh 設定
+  ├── Brewfile            # [Mac] 核心軟體清單
+  ├── Brewfile.fonts      # [Mac] 字體清單 (獨立安裝)
   └── ...
 ```
 
@@ -56,10 +61,11 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
     ```
 
 **腳本功能：**
-*   安裝 **Scoop** 及必要 Buckets (Extras, Nerd-Fonts)。
-*   安裝核心工具：`git`, `oh-my-posh`, `eza`, `zoxide`, `fzf` 等。
-*   自動備份舊的 PowerShell Profile。
-*   建立 **Symlink** 將設定檔指向此 Repo。
+*   **系統層**: 透過 Winget 自動檢查並安裝 **Docker Desktop**。
+*   **工具層**: 安裝 **Scoop** 及必要 Buckets，還原所有 CLI 工具 (`git`, `oh-my-posh`, `eza`...)。
+*   **設定層**: 自動備份舊 Profile，建立 Symlink 指向此 Repo。
+
+> ⚠️ **注意**: 若腳本安裝了 Docker Desktop，可能需要**重新啟動電腦**以啟用 WSL 2 後端。
 
 ---
 
@@ -76,52 +82,23 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
     git clone git@github.com:seraphwu/dotfiles.git ~/.dotfiles
     ```
 
-2.  Run bootstrap:
+2.  Run bootstrap (初始化):
     ```bash
     cd ~/.dotfiles
     ./script/bootstrap
     ```
 
+3.  Run install (安裝軟體):
+    ```bash
+    ./script/install
+    ```
+
 **腳本功能：**
-*   安裝 **Homebrew**。
-*   安裝 **Oh My Zsh** 及所有 Plugins。
-*   建立 **Symlinks** (連結 `*.symlink` 檔案到 Home 目錄)。
-*   執行 `Brewfile` 安裝應用程式。
-
-#### 🔌 Zsh Plugins (Manual Setup)
-
-若需手動安裝或重灌個別 Plugin，可參考以下指令。
-建議維持指令獨立執行，方便除錯與選擇性安裝；但在單一 Plugin 的安裝步驟中（如切換目錄後下載），會使用 `&&` 確保執行順序正確。
-
-**zsh-autosuggestions**
-```bash
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-
-**powerlevel10k**
-```bash
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-```
-
-**zsh-syntax-highlighting**
-```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-```
-
-**zsh-wakatime**
-```bash
-git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-wakatime
-```
-
-**zsh-bat**
-```bash
-git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
-```
-
-**zsh-256color**
-```bash
-cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color
-```
+*   **Bootstrap**: 安裝 Homebrew, Oh My Zsh, 建立 Symlinks。
+*   **Install**:
+    1.  執行 `Brewfile` 安裝核心軟體。
+    2.  執行 `Brewfile.fonts` 安裝字體 (失敗會自動略過，不影響核心安裝)。
+    3.  執行其他子模組安裝 (如 Yabai)。
 
 ---
 
@@ -131,10 +108,11 @@ cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color
 *   **新增軟體**: `scoop install <app>`
 *   **更新清單**: 執行 `scoop export > ~/.dotfiles/windows/scoopfile.json` 並 Commit。
 *   **修改設定**: 直接編輯 `~/.dotfiles/windows/Microsoft.PowerShell_profile.ps1`。
+*   **Docker 服務**: 設定檔位於 `windows/docker-services/`。
 
 ### macOS
 *   **新增軟體**: `brew install <app>`
-*   **更新清單**: `brew bundle dump --describe --force --file="~/brewfile"` (或手動維護 Repo 中的 Brewfile)。
+*   **更新清單**: 手動維護 `Brewfile` (核心) 或 `Brewfile.fonts` (字體)。
 *   **修改設定**: 直接編輯 `~/.dotfiles/zsh/zshrc.symlink` 等檔案。
 
 ### Backup / Restore (Mac Only)
