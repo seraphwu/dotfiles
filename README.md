@@ -13,6 +13,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-wakatime
 ```
+
+```
+git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+```
+```
+cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color
+```
+
 # Seraph Wu's dotfiles modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles)
 
 如果不清楚什麼是 dotfiles 的話，可以參閱「[善用 dotfiles 個人化自己的工作環境](http://cloudchen.logdown.com/posts/49264746647/dotfiles)」：
