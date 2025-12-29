@@ -35,7 +35,7 @@ brew "git-flow"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
-brew "go"
+# brew "go"
 # Colorize logfiles and command output
 brew "grc"
 # Open-source video transcoder available for Linux, Mac, and Windows
