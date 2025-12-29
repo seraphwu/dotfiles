@@ -6,6 +6,10 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 tap "lihaoyun6/tap"
 tap "sass/sass"
+# Distributed revision control system
+brew "git"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
 # Core application library for C
 brew "glib"
 # Automatic configure script builder
@@ -44,8 +48,6 @@ brew "findutils"
 brew "font-util"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# Distributed revision control system
-brew "git"
 # Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
 # GNU Pretty Good Privacy (PGP) package
@@ -126,8 +128,6 @@ brew "rethinkdb"
 brew "ripgrep"
 # Display and control your Android device
 brew "scrcpy"
-# 7-Zip is a file archiver with a high compression ratio
-brew "sevenzip"
 # Add a public key to a remote machine's authorized_keys file
 brew "ssh-copy-id"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
