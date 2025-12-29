@@ -219,6 +219,8 @@ cask "aldente"
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
+# 
+cask "dockdoor"
 # All in one MacOS management CLI app
 brew "m-cli"
 #Popup options for text on highlight 
