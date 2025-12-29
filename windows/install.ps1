@@ -1,7 +1,8 @@
 <#
 .SYNOPSIS
-    Windows Dotfiles Installer (v2.5 - Seraph Edition)
+    Windows Dotfiles Installer (v2.6 - Seraph Edition)
     整合 Docker, Scoop, Fonts, SSH Config 與繁體中文介面
+    Fixes: OneDrive Profile path & Terminal Preview support
 #>
 
 # 0. 初始化與變數定義
@@ -20,7 +21,7 @@ Write-Host "
  | |/ |/ / / / / / // /_/ / /_/ /| |/ |/ (__  ) 
  |__/|__/_/_/_/ /_/ \__,_/\____/ |__/|__/____/  
                                                 
-      :: Seraph's Dotfiles Setup :: v2.5 ::
+      :: Seraph's Dotfiles Setup :: v2.6 ::
 " -ForegroundColor Magenta
 
 Write-Host "🚀 正在啟動 Windows 環境部署..." -ForegroundColor Cyan
@@ -59,7 +60,7 @@ Write-Host "`n[2/7] 🍨 檢查 Scoop 套件管理器..." -ForegroundColor Cyan
 if (-not (Get-Command scoop -ErrorAction SilentlyContinue)) {
     Write-Host "   ➜ 正在安裝 Scoop..." -ForegroundColor Yellow
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
-    Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    Invoke-RestMethod -Uri [https://get.scoop.sh](https://get.scoop.sh) | Invoke-Expression
     Write-Host "   ✅ Scoop 安裝完成。" -ForegroundColor Green
 } else {
     Write-Host "   ✅ Scoop 已安裝。" -ForegroundColor Green
@@ -114,9 +115,10 @@ if ($InstallFonts -match "^[yY]$") {
 # -----------------------------------------------------------------------------
 Write-Host "`n[6/7] 🔗 建立設定檔連結 (Symlinks)..." -ForegroundColor Cyan
 
-# A. 偵測 Windows Terminal
+# A. 偵測 Windows Terminal (含 Preview)
 $ScoopTerminalPath = "$env:USERPROFILE\scoop\persist\windows-terminal\settings.json"
 $StoreTerminalPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+$PreviewTerminalPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json"
 $TargetTerminalPath = $null
 
 if (Test-Path "$(Split-Path $ScoopTerminalPath -Parent)") {
@@ -125,11 +127,15 @@ if (Test-Path "$(Split-Path $ScoopTerminalPath -Parent)") {
 } elseif (Test-Path "$(Split-Path $StoreTerminalPath -Parent)") {
     $TargetTerminalPath = $StoreTerminalPath
     Write-Host "   🔎 偵測到 Store/Winget 版 Windows Terminal" -ForegroundColor Gray
+} elseif (Test-Path "$(Split-Path $PreviewTerminalPath -Parent)") {
+    $TargetTerminalPath = $PreviewTerminalPath
+    Write-Host "   🔎 偵測到 Preview 版 Windows Terminal" -ForegroundColor Gray
 }
 
 # B. 定義連結清單
+# 使用 $PROFILE 自動變數解決 OneDrive 路徑偏移問題
 $Links = @{
-    "$WindowsDir\Microsoft.PowerShell_profile.ps1" = "$UserHome\Documents\PowerShell\Microsoft.PowerShell_profile.ps1";
+    "$WindowsDir\Microsoft.PowerShell_profile.ps1" = $PROFILE;
     "$DotfilesDir\.gitconfig"                      = "$UserHome\.gitconfig";
     "$DotfilesDir\ssh\config"                      = "$UserHome\.ssh\config";
 }
@@ -141,8 +147,16 @@ if ($TargetTerminalPath) {
 }
 
 # C. 確保目錄存在
-if (!(Test-Path "$UserHome\Documents\PowerShell")) { New-Item -ItemType Directory -Force -Path "$UserHome\Documents\PowerShell" | Out-Null }
-if (!(Test-Path "$UserHome\.ssh")) { New-Item -ItemType Directory -Force -Path "$UserHome\.ssh" | Out-Null }
+# 自動偵測 Profile 父目錄 (可能是 OneDrive/Documents/PowerShell)
+$ProfileDir = Split-Path -Parent $PROFILE
+if (!(Test-Path $ProfileDir)) { 
+    New-Item -ItemType Directory -Force -Path $ProfileDir | Out-Null 
+    Write-Host "   📁 建立 Profile 目錄: $ProfileDir" -ForegroundColor Gray
+}
+
+if (!(Test-Path "$UserHome\.ssh")) { 
+    New-Item -ItemType Directory -Force -Path "$UserHome\.ssh" | Out-Null 
+}
 
 # D. 執行連結
 foreach ($Link in $Links.GetEnumerator()) {

@@ -35,6 +35,14 @@
             "folder_icon": " "
           },
           "template": " {{ .Path }} "
+        },
+        {
+          "background": "#95ffa4",
+          "foreground": "#193549",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " {{ .HEAD }} ",
+          "type": "git"
         }
       ]
     },
@@ -97,22 +105,6 @@
       "type": "prompt",
       "alignment": "left",
       "segments": [
-        {
-          "type": "vi-mode",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
-          "foreground": "#ffffff",
-          "background": "#3498db",
-          "template": " {{ .Mode }} ",
-          "properties": {
-            "display_modes": ["INSERT", "NORMAL"],
-            "normal_mode_background": "#f1c40f",
-            "normal_mode_foreground": "#000000",
-            "insert_mode_background": "#3498db",
-            "insert_mode_foreground": "#ffffff",
-            "indicator_threshold": 0
-          }
-        },
         {
           "type": "text",
           "style": "plain",
