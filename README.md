@@ -1,4 +1,4 @@
-# Seraph Wu's dotfiles modified from Amo Wu does dotfiles
+# Seraph Wu's dotfiles modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles)
 
 如果不清楚什麼是 dotfiles 的話，可以參閱「[善用 dotfiles 個人化自己的工作環境](http://cloudchen.logdown.com/posts/49264746647/dotfiles)」：
 
@@ -356,6 +356,7 @@ ssh
 - [OS X Yosemite Security and Privacy Guide](https://github.com/drduh/OS-X-Yosemite-Security-and-Privacy-Guide)
 - [强迫症的 Mac 设置指南](https://github.com/macdao/ocds-guide-to-setting-up-mac)
 - [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)
+- **[使用 dotfiles 和 stow 管理你的 dotfiles](https://github.com/jcouyang/dotfiles)**
 
 ## Thanks
 
