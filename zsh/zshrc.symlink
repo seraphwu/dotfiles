@@ -79,8 +79,13 @@ plugins=(
   git
   zsh-autosuggestions
   z 
+  you-should-use
   zsh-wakatime
-  sublime
+  autojump
+  npm
+  sudo
+  zsh-bat
+  zsh-256color
   colorize
   cp
   brew
@@ -157,5 +162,3 @@ eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-# 隐藏 Homebrew 的环境提示
-export HOMEBREW_NO_ENV_HINTS=1
