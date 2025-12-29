@@ -153,7 +153,7 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 ###############################################################################
 
 # Disable local Time Machine snapshots
-sudo tmutil disablelocal
+sudo tmutil disable local
 
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
