@@ -114,6 +114,7 @@ cask "unity"
 cask "visual-studio-code"
 cask "vlc"
 cask "webstorm"
+cask "Clipy"
 
 cask "font-hack"
 cask "font-noto-sans-cjk"
