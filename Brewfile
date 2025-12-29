@@ -190,7 +190,7 @@ brew "zsh-syntax-highlighting"
 # Stylesheet Preprocessor
 brew "sass/sass/sass"
 # skhd - Hotkey daemon for macOS
-cask "skhd"
+#cask "skhd" brew install koekeishiya/formulae/skhd
 #lporg - Backup and restore launchpad layout
 cask "lporg"
 #hiddenbar - 隱藏/顯示煩人的功能表欄圖示
