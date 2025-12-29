@@ -6,7 +6,7 @@ tap "dart-lang/dart"
 #tap "homebrew/services"
 tap "lihaoyun6/tap"
 tap "sass/sass"
-tap "koekeishiya/formulae/"
+tap "koekeishiya/formulae"
 # Distributed revision control system
 brew "git"
 # 7-Zip is a file archiver with a high compression ratio
