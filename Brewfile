@@ -45,7 +45,7 @@ brew "ffmpegthumbnailer"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # X.Org: Font package creation/installation utilities
-brew "font-util"
+# brew "font-util" comment 20251216
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Extensions to follow Vincent Driessen's branching model
