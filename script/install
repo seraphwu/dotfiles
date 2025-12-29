@@ -8,6 +8,7 @@ cd "$(dirname $0)"/..
 
 # Run Homebrew through the Brewfile
 echo "› brew bundle"
+brew tap localsend/localsend
 brew bundle
 sudo xcodebuild -license accept
 
