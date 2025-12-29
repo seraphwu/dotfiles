@@ -8,7 +8,8 @@ POWERLEVEL10K_MODE='nerdfont-complete'
 
 # 左側
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs vi_mode)
-typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs vi_mode)
+#typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs vi_mode)
+typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir dir_writable vcs)
 # 右側
 typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs history ram load time)
 
