@@ -372,6 +372,7 @@ ssh
 - [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)
 - **[使用 dotfiles 和 stow 管理你的 dotfiles](https://github.com/jcouyang/dotfiles)**
 - **[Setting up a new Mac --Alan Shortis](https://short.is/writing/setting-up-a-new-mac)**
+- **[todc's Fresh Mac OS Setup](https://gist.github.com/todc/9562086)**
 
 ## Thanks
 
