@@ -12,7 +12,8 @@ $ZSH/osx/set-defaults.sh
 # Upgrade homebrew
 echo "› brew update"
 brew update
-git -C $(brew --repository homebrew/core) checkout master
+# comment @20230523 解決無法正常安裝 Brew
+# git -C $(brew --repository homebrew/core) checkout master
 
 # Install software
 echo "› $ZSH/script/install"
