@@ -316,7 +316,7 @@ cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Retro video game emulation
-cask "openemu-experimental"
+cask "openemu@experimental"
 # Cross-platform video editor
 cask "openshot-video-editor"
 # VPN client focusing on security
