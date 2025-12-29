@@ -357,7 +357,8 @@ cask "mounty"
 # macwhisper
 cask "macwhisper"
 # Read, annotate and manage ePub books
-cask "neat-reader"
+# cask "neat-reader"
+cask "koodo-reader"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
