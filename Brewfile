@@ -6,6 +6,8 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+# localsend source
+tab "brew tap localsend/localsend"
 # Automatic configure script builder
 brew "autoconf"
 # Shell extension to jump to frequently used directories
@@ -56,6 +58,8 @@ brew "irssi"
 brew "joe"
 # Note taking and to-do application with synchronization capabilities
 # brew "joplin-cli"
+# Localsend
+brew install localsend
 # Conversion library
 brew "libiconv"
 # YAML Parser
