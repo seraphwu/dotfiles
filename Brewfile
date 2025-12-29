@@ -237,7 +237,7 @@ cask "font-plemol-jp-hs"
 # Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
 cask "font-plemol-jp-nf"
 # Japanese programming font synthesized from IBM Plex Mono and IBM Plex Sans JP
-cask "font-plemol-jp-nfj"
+## cask "font-plemol-jp-nfj"
 cask "font-quicksand"
 # Developer targeted fonts with a high number of glyphs
 cask "font-sauce-code-pro-nerd-font"
