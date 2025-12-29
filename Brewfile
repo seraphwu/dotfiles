@@ -126,10 +126,12 @@ brew "zsh-completions"
 brew "zsh-git-prompt"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
+# A modern alternative to ls
+brew "eza"
 # Download Instagram photos, accounts, hashtags and locations
 cask "4k-stogram"
-# Free video downloader
-cask "4k-video-downloader"
+# Free video downloader Plus
+cask "4k-video-downloader+"
 # Turn YouTube links into MP3 files
 cask "4k-youtube-to-mp3"
 # Create and modify subtitles
