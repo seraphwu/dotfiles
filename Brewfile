@@ -219,11 +219,13 @@ cask "font-genyomin"
 #芫荽
 cask "font-iansui"
 #源柔ゴシック
-brew install --cask font-genjyuugothic
+cask "font-genjyuugothic"
 #源柔ゴシック-l
-brew install --cask font-genjyuugothic-l
+cask "font-genjyuugothic-l"
 #源柔ゴシック-x
-brew install --cask font-genjyuugothic-x
+cask "font-genjyuugothic-x"
+# I.明體
+cask "font-iming"
 cask "font-inconsolata"
 # Sans-serif, slab-serif, monospace and quasi‑proportional typeface family
 cask "font-iosevka"
