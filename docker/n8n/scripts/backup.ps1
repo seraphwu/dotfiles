@@ -1,6 +1,6 @@
-# 取得腳本所在的目錄 (windows\docker-services\n8n\scripts)
+# 取得腳本所在的目錄 (docker\n8n\scripts)
 $ScriptDir = $PSScriptRoot
-# 推導專案根目錄 (windows\docker-services\n8n)
+# 推導專案根目錄 (docker\n8n)
 $ProjectDir = Split-Path -Parent $ScriptDir
 
 # 設定備份路徑 (建議指向 OneDrive)
@@ -16,24 +16,28 @@ if (-not (Test-Path $TargetDir)) {
 Write-Host "🚀 Starting n8n & MySQL backup..." -ForegroundColor Cyan
 
 # 1. 匯出 MySQL 資料庫
+# 既然您保留了預設名稱，這裡使用 -1 是正確的
 $ContainerMySQL = "n8n-mysql-1"
-# 這裡建議從 .env 讀取密碼，或確保您執行時知道密碼
-# 若 .env 存在，嘗試讀取 MYSQL_ROOT_PASSWORD (簡易解析)
+
+# 讀取 .env 密碼邏輯
 $EnvFile = "$ProjectDir\.env"
-$MySQLPass = "root_password" # 預設值，若解析失敗則使用此值
+$MySQLPass = "root_password" # 預設值
 
 if (Test-Path $EnvFile) {
     $EnvContent = Get-Content $EnvFile
     foreach ($Line in $EnvContent) {
         if ($Line -match "^MYSQL_ROOT_PASSWORD=(.*)") {
-            $MySQLPass = $matches[1]
+            # [修正] 增加 .Trim('"') 去除可能存在的引號，避免密碼錯誤
+            $MySQLPass = $matches[1].Trim('"').Trim("'")
             break
         }
     }
+} else {
+    Write-Host "⚠️ Warning: .env file not found. Using default password." -ForegroundColor Yellow
 }
 
 Write-Host "📦 Exporting Database..." -ForegroundColor Yellow
-# 注意：這裡使用 docker exec，密碼緊接在 -p 後面不能有空格
+# 注意：密碼緊接在 -p 後面不能有空格
 docker exec $ContainerMySQL /usr/bin/mysqldump -u root -p$MySQLPass --all-databases > "$TargetDir\mysql_dump.sql"
 
 # 2. 匯出 n8n Workflows
@@ -47,12 +51,10 @@ Write-Host "📦 Exporting Credentials..." -ForegroundColor Yellow
 docker exec $ContainerN8N n8n export:credentials --all --output=/tmp/credentials.json
 docker cp "$ContainerN8N`:/tmp/credentials.json" "$TargetDir\credentials.json"
 
-# 4. 複製 .env 設定檔 (修正路徑邏輯)
+# 4. 複製 .env 設定檔
 if (Test-Path $EnvFile) {
     Copy-Item $EnvFile "$TargetDir\env_backup.txt"
     Write-Host "📄 .env file backed up." -ForegroundColor Gray
-} else {
-    Write-Host "⚠️ Warning: .env file not found at $EnvFile" -ForegroundColor Red
 }
 
 Write-Host "✅ Backup Complete! Saved to: $TargetDir" -ForegroundColor Green
