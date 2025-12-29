@@ -362,7 +362,7 @@ cask "loop"
 # Trims video and audio files losslessly
 cask "losslesscut"
 # Clipboard manager
-cask "maccy"
+# cask "maccy"
 # Open-source Markdown editor
 cask "macdown"
 # Controls and monitors all fans on Apple computers
