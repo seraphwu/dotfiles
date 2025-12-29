@@ -186,6 +186,8 @@ cask "flux"
 cask "focus-booster"
 # 小麥注音
 cask "McBopomofo"
+# Eagle - 圖片收藏及管理必備工具 https://eagle.cool 
+cask "ogdesign-eagle"
 # Developer targeted fonts with a high number of glyphs
 cask "font-comic-shanns-mono-nerd-font"
 cask "font-geologica"
