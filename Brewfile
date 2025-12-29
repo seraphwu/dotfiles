@@ -197,7 +197,7 @@ brew "sass/sass/sass"
 brew "koekeishiya/formulae/skhd"
 #lporg - Backup and restore launchpad layout
 # Acrobat Reader
-cack "adobe-acrobat-reader"
+cask "adobe-acrobat-reader"
 #cask "lporg"
 # 直接從蘋果伺服器下載所需的操作系統
 cask "mist"
@@ -243,7 +243,7 @@ cask "shottr"
 # cask "anydesk"
 
 # pronotes
-cack "pronotes"
+cask "pronotes"
 # Local-first and end-to-end encrypted notes app
 cask "anytype"
 # Inspect application bundles
