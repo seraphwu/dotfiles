@@ -156,7 +156,8 @@ cask "beyond-compare"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Tool to list all active shortcuts of the current application
-cask "cheatsheet"
+# cask "cheatsheet" 20250130 註解掉，改以 KeyClu 替代
+cask "keyclu"
 # Tool to show live information about the batteries in various devices
 cask "coconutbattery"
 # Two-panel file manager
