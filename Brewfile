@@ -502,7 +502,7 @@ cask "topnotch"
 # Web browser focusing on security
 cask "tor-browser"
 # Configurable document editor that supports Markdown
-cask "typora"
+#cask "typora"
 cask "upic"
 # AI image upscaler
 cask "upscayl"
