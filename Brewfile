@@ -269,10 +269,6 @@ cask "discord"
 cask "dozer"
 # Client for the Dropbox cloud storage service
 cask "dropbox"
-# Outlining app for your work
-cask "dynalist"
-# App for note taking, organising, task lists, and archiving
-cask "evernote"
 # Collaborative team software
 cask "figma"
 # Open terminal quickly from Finder
