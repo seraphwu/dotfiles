@@ -463,7 +463,7 @@ cask "scribus"
 # File sharing app
 cask "send-anywhere"
 # MySQL/MariaDB database management platform
-cask "sequel-pro"
+cask "sequel-ace"
 # Video editor
 cask "shotcut"
 # React client for Simplenote
