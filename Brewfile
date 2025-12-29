@@ -221,6 +221,11 @@ cask "Bitwarden"
 cask "keka"
 cask "Karabinder"
 
+#20221219 added
+cask "macs-fan-control"
+cask "obsidian"
+cask "logseq"
+
 mas "Agenda", id: 1287445660
 mas "Amphetamine", id: 937984704
 mas "Apowersoft Screen Recorder", id: 1030681467
