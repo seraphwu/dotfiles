@@ -2,55 +2,55 @@
   "buckets": [
     {
       "Name": "main",
-      "Source": "[https://github.com/ScoopInstaller/Main](https://github.com/ScoopInstaller/Main)",
-      "Updated": "2025-06-27T08:41:41+08:00",
-      "Manifests": 1410
+      "Source": "https://github.com/ScoopInstaller/Main",
+      "Updated": "2026-01-02T00:30:31+08:00",
+      "Manifests": 1412
     },
     {
       "Name": "extras",
-      "Source": "[https://github.com/ScoopInstaller/Extras](https://github.com/ScoopInstaller/Extras)",
-      "Updated": "2025-12-07T20:30:47+08:00",
-      "Manifests": 2226
+      "Source": "https://github.com/ScoopInstaller/Extras",
+      "Updated": "2026-01-02T00:30:18+08:00",
+      "Manifests": 2241
     },
     {
       "Name": "versions",
-      "Source": "[https://github.com/ScoopInstaller/Versions](https://github.com/ScoopInstaller/Versions)",
-      "Updated": "2025-12-07T20:58:17+08:00",
-      "Manifests": 540
+      "Source": "https://github.com/ScoopInstaller/Versions",
+      "Updated": "2026-01-02T00:46:30+08:00",
+      "Manifests": 551
     },
     {
       "Name": "nirsoft",
-      "Source": "[https://github.com/ScoopInstaller/Nirsoft](https://github.com/ScoopInstaller/Nirsoft)",
-      "Updated": "2025-12-04T13:03:11+08:00",
+      "Source": "https://github.com/ScoopInstaller/Nirsoft",
+      "Updated": "2025-12-30T13:12:19+08:00",
       "Manifests": 290
     },
     {
       "Name": "nerd-fonts",
-      "Source": "[https://github.com/matthewjberger/scoop-nerd-fonts](https://github.com/matthewjberger/scoop-nerd-fonts)",
-      "Updated": "2025-12-07T02:32:59+08:00",
+      "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+      "Updated": "2025-12-31T03:20:46+08:00",
       "Manifests": 367
     },
     {
       "Name": "nonportable",
-      "Source": "[https://github.com/ScoopInstaller/Nonportable](https://github.com/ScoopInstaller/Nonportable)",
-      "Updated": "2025-12-06T12:39:55+08:00",
+      "Source": "https://github.com/ScoopInstaller/Nonportable",
+      "Updated": "2025-12-31T12:53:51+08:00",
       "Manifests": 128
     },
     {
       "Name": "java",
-      "Source": "[https://github.com/ScoopInstaller/Java](https://github.com/ScoopInstaller/Java)",
+      "Source": "https://github.com/ScoopInstaller/Java",
       "Updated": "2025-12-05T04:25:04+08:00",
       "Manifests": 324
     },
     {
       "Name": "games",
-      "Source": "[https://github.com/Calinou/scoop-games](https://github.com/Calinou/scoop-games)",
-      "Updated": "2025-12-07T20:31:13+08:00",
-      "Manifests": 369
+      "Source": "https://github.com/Calinou/scoop-games",
+      "Updated": "2026-01-02T00:30:17+08:00",
+      "Manifests": 372
     },
     {
       "Name": "knox-scoop",
-      "Source": "[https://github.com/KNOXDEV/knox-scoop](https://github.com/KNOXDEV/knox-scoop)",
+      "Source": "https://github.com/KNOXDEV/knox-scoop",
       "Updated": "2022-07-27T23:14:36+08:00",
       "Manifests": 4
     }
@@ -64,8 +64,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-08T19:30:46.2444603+08:00",
-      "Version": "1.7.1",
+      "Updated": "2025-12-25T02:59:50.5022404+08:00",
+      "Version": "1.8.2",
       "Name": "abdownloadmanager",
       "Source": "extras",
       "Info": ""
@@ -78,8 +78,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-07T02:08:19.652611+08:00",
-      "Version": "3.7.6",
+      "Updated": "2025-12-25T02:53:16.2768962+08:00",
+      "Version": "3.7.7",
       "Name": "audacity",
       "Source": "extras",
       "Info": ""
@@ -92,10 +92,17 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-06T23:03:36.2393033+08:00",
-      "Version": "0.26.0",
+      "Updated": "2025-12-08T02:26:27.657449+08:00",
+      "Version": "0.26.1",
       "Name": "bat",
       "Source": "main",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-12-12T20:25:52.5520334+08:00",
+      "Version": "2025.12.0",
+      "Name": "bitwarden",
+      "Source": "extras",
       "Info": ""
     },
     {
@@ -113,8 +120,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-08T00:11:57.2303164+08:00",
-      "Version": "2025-11-04",
+      "Updated": "2025-12-08T02:26:30.6518714+08:00",
+      "Version": "2025-12-02",
       "Name": "cacert",
       "Source": "main",
       "Info": ""
@@ -155,8 +162,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-10-21T23:10:06.2990351+08:00",
-      "Version": "5.2.1",
+      "Updated": "2025-12-25T02:53:30.4073992+08:00",
+      "Version": "5.4.0",
       "Name": "darktable",
       "Source": "extras",
       "Info": ""
@@ -169,8 +176,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:07:53.5212186+08:00",
-      "Version": "28.5.2",
+      "Updated": "2025-12-25T02:53:35.7883369+08:00",
+      "Version": "29.1.3",
       "Name": "docker",
       "Source": "main",
       "Info": ""
@@ -197,8 +204,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-08T18:20:14.5793011+08:00",
-      "Version": "5.11.1",
+      "Updated": "2025-12-25T02:53:45.5107528+08:00",
+      "Version": "5.11.2",
       "Name": "fastcopy",
       "Source": "extras",
       "Info": ""
@@ -211,15 +218,15 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:08:35.3340645+08:00",
-      "Version": "8.0",
+      "Updated": "2025-12-25T02:54:18.5498605+08:00",
+      "Version": "8.0.1",
       "Name": "ffmpeg",
       "Source": "main",
       "Info": ""
     },
     {
-      "Updated": "2025-11-28T14:55:06.180296+08:00",
-      "Version": "125.10.8",
+      "Updated": "2025-12-25T02:59:57.7012437+08:00",
+      "Version": "125.11.6",
       "Name": "figma",
       "Source": "extras",
       "Info": ""
@@ -246,8 +253,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:08:36.1430543+08:00",
-      "Version": "0.66.1",
+      "Updated": "2025-12-25T02:54:24.3666504+08:00",
+      "Version": "0.67.0",
       "Name": "fzf",
       "Source": "main",
       "Info": ""
@@ -267,8 +274,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:23:58.5383211+08:00",
-      "Version": "2.51.2",
+      "Updated": "2025-12-25T02:54:36.6593384+08:00",
+      "Version": "2.52.0",
       "Name": "git",
       "Source": "main",
       "Info": ""
@@ -281,15 +288,15 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:06.4608331+08:00",
-      "Version": "1.25.4",
+      "Updated": "2025-12-25T02:55:01.2764669+08:00",
+      "Version": "1.25.5",
       "Name": "go",
       "Source": "main",
       "Info": ""
     },
     {
-      "Updated": "2025-12-07T02:08:33.3784277+08:00",
-      "Version": "143.0.7499.41",
+      "Updated": "2025-12-25T02:55:13.517604+08:00",
+      "Version": "143.0.7499.170",
       "Name": "googlechrome",
       "Source": "extras",
       "Info": ""
@@ -330,8 +337,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:16.3734731+08:00",
-      "Version": "0.152.2",
+      "Updated": "2025-12-25T02:55:18.0003087+08:00",
+      "Version": "0.153.2",
       "Name": "hugo-extended",
       "Source": "main",
       "Info": ""
@@ -344,8 +351,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:17.3503573+08:00",
-      "Version": "2.65.3",
+      "Updated": "2025-12-25T02:55:21.2783242+08:00",
+      "Version": "2.66.1",
       "Name": "innounp",
       "Source": "main",
       "Info": ""
@@ -365,8 +372,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-08T14:38:15.2379476+08:00",
-      "Version": "25.08.3",
+      "Updated": "2025-12-25T02:55:47.0817201+08:00",
+      "Version": "25.12.0-B",
       "Name": "kdenlive",
       "Source": "extras",
       "Info": ""
@@ -393,6 +400,13 @@
       "Info": ""
     },
     {
+      "Updated": "2025-12-24T22:01:29.1349588+08:00",
+      "Version": "8.18.0",
+      "Name": "libvips",
+      "Source": "main",
+      "Info": ""
+    },
+    {
       "Updated": "2025-05-03T18:15:14+08:00",
       "Version": "1.17.0",
       "Name": "localsend",
@@ -407,7 +421,7 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-07T02:10:07.350722+08:00",
+      "Updated": "2025-12-12T02:17:50.4444289+08:00",
       "Version": "7.9",
       "Name": "Maple-Mono-NF-CN",
       "Source": "nerd-fonts",
@@ -421,8 +435,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-07T02:10:21.0944695+08:00",
-      "Version": "2.140.0",
+      "Updated": "2025-12-25T02:56:18.2230892+08:00",
+      "Version": "2.141.2",
       "Name": "mendeley",
       "Source": "extras",
       "Info": ""
@@ -463,8 +477,15 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:27.7494892+08:00",
-      "Version": "24.11.0",
+      "Updated": "2026-01-02T02:51:18.5783591+08:00",
+      "Version": "3.34.1",
+      "Name": "ngrok",
+      "Source": "main",
+      "Info": ""
+    },
+    {
+      "Updated": "2025-12-25T02:56:25.4125435+08:00",
+      "Version": "24.12.0",
       "Name": "nodejs-lts",
       "Source": "main",
       "Info": ""
@@ -484,22 +505,22 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:29.7243142+08:00",
-      "Version": "27.5.2",
+      "Updated": "2025-12-25T02:56:29.0942858+08:00",
+      "Version": "28.5.1",
       "Name": "oh-my-posh",
       "Source": "main",
       "Info": ""
     },
     {
-      "Updated": "2025-05-03T18:18:04+08:00",
-      "Version": "3.3.0",
+      "Updated": "2025-12-25T02:56:56.2168931+08:00",
+      "Version": "3.4.0",
       "Name": "openshot",
       "Source": "extras",
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:32.0143174+08:00",
-      "Version": "3.8.2.1",
+      "Updated": "2025-12-14T21:58:36.2232417+08:00",
+      "Version": "3.8.3",
       "Name": "pandoc",
       "Source": "main",
       "Info": ""
@@ -519,8 +540,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:33.4720069+08:00",
-      "Version": "25.07.0-0",
+      "Updated": "2025-12-25T02:56:59.994503+08:00",
+      "Version": "25.12.0-0",
       "Name": "poppler",
       "Source": "main",
       "Info": ""
@@ -533,8 +554,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:50.0680425+08:00",
-      "Version": "3.14.0",
+      "Updated": "2025-12-25T02:57:19.5594827+08:00",
+      "Version": "3.14.2",
       "Name": "python",
       "Source": "main",
       "Info": ""
@@ -547,8 +568,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-02T18:57:20.4311176+08:00",
-      "Version": "0.9.94",
+      "Updated": "2025-12-25T02:57:24.4065602+08:00",
+      "Version": "0.9.96",
       "Name": "readest",
       "Source": "extras",
       "Info": ""
@@ -610,8 +631,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-05-03T18:18:54+08:00",
-      "Version": "1.6.4",
+      "Updated": "2025-12-25T02:57:42.7296388+08:00",
+      "Version": "1.6.5",
       "Name": "scribus",
       "Source": "extras",
       "Info": ""
@@ -624,8 +645,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-08-10T19:08:49.7067456+08:00",
-      "Version": "2.10.8",
+      "Updated": "2025-12-25T02:57:47.8202138+08:00",
+      "Version": "2.11.2",
       "Name": "snipaste",
       "Source": "extras",
       "Info": ""
@@ -645,8 +666,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-07T02:10:28.7902703+08:00",
-      "Version": "16.5.3",
+      "Updated": "2025-12-25T02:57:55.2932548+08:00",
+      "Version": "16.7.3",
       "Name": "super-productivity",
       "Source": "extras",
       "Info": ""
@@ -659,15 +680,15 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:52.8389806+08:00",
-      "Version": "3.45.4",
+      "Updated": "2025-12-25T02:57:58.9225291+08:00",
+      "Version": "3.46.3",
       "Name": "task",
       "Source": "main",
       "Info": ""
     },
     {
-      "Updated": "2025-12-07T02:10:34.3686567+08:00",
-      "Version": "6.3.6",
+      "Updated": "2025-12-25T02:58:04.6496395+08:00",
+      "Version": "6.3.9",
       "Name": "telegram",
       "Source": "extras",
       "Info": ""
@@ -680,8 +701,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-28T14:57:20.1878774+08:00",
-      "Version": "15.0.2",
+      "Updated": "2025-12-25T02:58:24.0031865+08:00",
+      "Version": "15.0.3",
       "Name": "tor-browser",
       "Source": "extras",
       "Info": ""
@@ -694,8 +715,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:54.218739+08:00",
-      "Version": "0.9.8",
+      "Updated": "2025-12-25T02:58:27.6389652+08:00",
+      "Version": "0.9.18",
       "Name": "uv",
       "Source": "main",
       "Info": ""
@@ -708,22 +729,22 @@
       "Info": ""
     },
     {
-      "Updated": "2025-07-17T15:41:50.2173354+08:00",
-      "Version": "14.44.35211.0",
+      "Updated": "2025-12-25T02:58:37.7792591+08:00",
+      "Version": "14.50.35719.0",
       "Name": "vcredist2022",
       "Source": "extras",
       "Info": ""
     },
     {
-      "Updated": "2025-11-08T14:46:53.8054039+08:00",
-      "Version": "1.1.07",
+      "Updated": "2025-12-25T02:58:41.2002576+08:00",
+      "Version": "1.1.10",
       "Name": "ventoy",
       "Source": "extras",
       "Info": ""
     },
     {
-      "Updated": "2025-11-28T14:57:28.3491086+08:00",
-      "Version": "1.106.3",
+      "Updated": "2025-12-25T02:59:06.6918044+08:00",
+      "Version": "1.107.1",
       "Name": "vscode",
       "Source": "extras",
       "Info": ""
@@ -743,15 +764,15 @@
       "Info": ""
     },
     {
-      "Updated": "2025-12-07T02:12:59.7973524+08:00",
-      "Version": "1.7",
+      "Updated": "2025-12-25T02:59:30.8354125+08:00",
+      "Version": "1.7.3",
       "Name": "windhawk",
       "Source": "extras",
       "Info": ""
     },
     {
-      "Updated": "2025-11-28T14:57:31.6701782+08:00",
-      "Version": "1.8.5",
+      "Updated": "2025-12-25T02:59:36.7245735+08:00",
+      "Version": "1.8.6",
       "Name": "yasb",
       "Source": "extras",
       "Info": ""
@@ -764,8 +785,8 @@
       "Info": ""
     },
     {
-      "Updated": "2025-11-09T17:25:55.2006721+08:00",
-      "Version": "2025.10.22",
+      "Updated": "2025-12-25T02:59:39.960203+08:00",
+      "Version": "2025.12.08",
       "Name": "yt-dlp",
       "Source": "main",
       "Info": ""
