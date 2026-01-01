@@ -13,6 +13,8 @@ brew "git"
 brew "sevenzip"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
+# OpenSSL 3
+brew "openssl"
 # Automatic configure script builder
 brew "autoconf"
 # Bourne-Again SHell, a UNIX command interpreter
