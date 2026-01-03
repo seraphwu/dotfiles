@@ -265,7 +265,7 @@ defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName Fl
 #defaults write com.apple.screensaver moduleName -string "Fliqlo" modulePath -string "~/Library/Screen\ Savers/Fliqlo.saver"
 
 # Save screenshots to the desktop
-defaults write com.apple.screencapture location -string "${HOME}/Documents/00.ScreenShot"
+defaults write com.apple.screencapture location -string "${HOME}/Documents/00_Screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "png"
