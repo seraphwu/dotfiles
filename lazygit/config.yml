@@ -1,0 +1,77 @@
+gui:
+  language: "auto"
+  # 其他你喜歡的 GUI 設定...
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never # 如果你有裝 delta，沒有的話用預設即可
+
+customCommands:
+  # [C] 建立新 Commit (Emoji 風格)
+  - key: "C"
+    context: "files"
+    description: "Conventional Commit"
+    command: 'git commit -m "{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}: {{.Form.Message}}"'
+    prompts:
+      - type: "menu"
+        title: "Select Type"
+        key: "Type"
+        options:
+          - name: "feat"
+            description: "✨  新功能 (Feature)"
+            value: "✨ feat"
+          - name: "fix"
+            description: "🐛  修復 (Bug Fix)"
+            value: "🐛 fix"
+          - name: "chore"
+            description: "🧹  維護 (Chore)"
+            value: "🧹 chore"
+          - name: "docs"
+            description: "📚  文件 (Docs)"
+            value: "📚 docs"
+          - name: "style"
+            description: "💎  格式 (Style)"
+            value: "💎 style"
+          - name: "refactor"
+            description: "♻️   重構 (Refactor)"
+            value: "♻️ refactor"
+          - name: "ci"
+            description: "⚙️   CI/CD"
+            value: "⚙️ ci"
+      - type: "input"
+        title: "Scope (可選，如 brew, zsh)"
+        key: "Scope"
+      - type: "input"
+        title: "Message"
+        key: "Message"
+
+  # [A] 修改最後一個 Commit (Amend)
+  - key: "A"
+    context: "commits"
+    description: "Amend last commit with menu"
+    command: 'git commit --amend -m "{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}: {{.Form.Message}}"'
+    prompts:
+      - type: "menu"
+        title: "修改類型"
+        key: "Type"
+        options:
+          - name: "feat"
+            description: "✨  新功能"
+            value: "✨ feat"
+          - name: "fix"
+            description: "🐛  修復"
+            value: "🐛 fix"
+          - name: "chore"
+            description: "🧹  維護"
+            value: "🧹 chore"
+          - name: "docs"
+            description: "📚  文件"
+            value: "📚 docs"
+      - type: "input"
+        title: "Scope"
+        key: "Scope"
+        initialValue: ""
+      - type: "input"
+        title: "Message"
+        key: "Message"

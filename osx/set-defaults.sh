@@ -147,7 +147,7 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # Commented out, as this is known to cause problems in various Adobe apps :(
 # See https://github.com/mathiasbynens/dotfiles/issues/237
 # [中文說明] 修正 QuickLook 的 UTF-8 編碼問題（因可能導致 Adobe 軟體問題而註解掉）
-# echo "0x08000100:0" > ~/.CFUserTextEncoding
+echo "0x08000100:0" > ~/.CFUserTextEncoding
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window

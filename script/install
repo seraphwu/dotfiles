@@ -31,6 +31,23 @@ echo "› Installing Yabai..."
 brew install koekeishiya/formulae/yabai
 yabai --start-service
 
+# -----------------------------------------------------------
+# 4. 執行其他子安裝腳本
+# -----------------------------------------------------------
+# 確保目標目錄存在
+mkdir -p "$HOME/.config/lazygit"
+
+# 備份舊的 (如果存在且不是連結)
+if [ -f "$HOME/.config/lazygit/config.yml" ] && [ ! -L "$HOME/.config/lazygit/config.yml" ]; then
+    mv "$HOME/.config/lazygit/config.yml" "$HOME/.config/lazygit/config.yml.bak"
+fi
+
+# 建立連結
+ln -sf "$HOME/.dotfiles/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
+
+echo "🔗 Lazygit config linked!"
+
+
 # 同意 Xcode 授權 (需要 sudo 密碼)
 echo "› Accepting Xcode license..."
 sudo xcodebuild -license accept || true
