@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Windows Dotfiles Installer (v2.6 - Seraph Edition)
     整合 Docker, Scoop, Fonts, SSH Config 與繁體中文介面
