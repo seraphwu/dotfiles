@@ -1,4 +1,4 @@
-<#
+﻿<#
 .SYNOPSIS
     Windows Dotfiles Installer (v2.8 - Seraph Edition)
     Feature: Nerd-Font Progress Bar & Manual Scoop JSON parsing
