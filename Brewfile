@@ -403,6 +403,8 @@ cask "quicklook-json"
 cask "quicklookase"
 # A lightweight and high-performance screen recorder for macOS.
 cask "quickrecorder"
+# Wave Terminal, WaveTerm
+cask "wave"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Simple menu bar app to view and interact with reminders
