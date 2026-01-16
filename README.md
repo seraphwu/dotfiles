@@ -56,6 +56,9 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
 ```powershell
 # 1. 安裝 Scoop
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser; irm get.scoop.sh | iex
+# 1.1 Admin 安裝 Scoop
+# source from: https://github.com/ScoopInstaller/Install?utm_source=copilot.com#for-admin
+iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 # 2. 安裝 Bitwarden
 scoop bucket add extras; scoop install bitwarden
 # 3. 登入 Bitwarden，取出 SSH Key 並放入 $env:USERPROFILE\.ssh\
