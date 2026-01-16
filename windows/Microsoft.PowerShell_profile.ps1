@@ -98,3 +98,21 @@ function reload-profile { . $PROFILE }
 # -------------------------------------------------------------------
 # 讓 git 使用 VS Code 作為編輯器
 $env:GIT_EDITOR="code --wait"
+
+# -------------------------------------------------------------------
+# 6. yazi 
+# 作者：裘乡
+# 链接：https://juejin.cn/post/7458292920564187171
+# 来源：稀土掘金
+# 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+# -------------------------------------------------------------------
+
+function y {
+    $tmp = [System.IO.Path]::GetTempFileName()
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp -Encoding UTF8
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -LiteralPath ([System.IO.Path]::GetFullPath($cwd))
+    }
+    Remove-Item -Path $tmp
+}
