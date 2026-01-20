@@ -166,11 +166,11 @@ then
   info "installing dependencies"
   if source bin/dot
   then
-    success "dependencies installed"
+    success "dependencies installed|依賴套件都安裝好了！"
   else
     fail "error installing dependencies"
   fi
 fi
 
 echo ''
-echo '  All installed!'
+echo '  All installed!|都安裝了'

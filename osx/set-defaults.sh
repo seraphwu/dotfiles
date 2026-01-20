@@ -51,7 +51,7 @@ sudo spctl --master-disable
 
 # Disable transparency in the menu bar and elsewhere on Yosemite
 # [中文說明] 減少系統透明度效果（可提升老舊機器效能）
-# defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Menu bar: hide the Time Machine, Volume, and User icons
 # [中文說明] 設定選單列（Menu bar）要顯示哪些圖示

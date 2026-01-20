@@ -175,6 +175,20 @@ brew "sass/sass/sass"
 brew "uv"
 
 # ==========================================
+# 必裝字體
+# ==========================================
+
+cask "font-jetbrains-maple-mono-nf"
+cask "font-maple-mono-nf-cn"
+cask "font-noto-sans-cjk"
+cask "font-noto-serif-cjk"
+cask "font-maple-mono-nf-cn"
+cask "font-noto-nerd-font"
+cask "font-iosevka-nerd-font"
+cask "font-iosevka-term-nerd-font"
+
+
+# ==========================================
 # Casks & GUI Apps (Common)
 # ==========================================
 # Bitwarden
@@ -358,7 +372,8 @@ cask "quicklook-json"
 # Quick Look generator for Adobe Swatch Exchange files
 cask "quicklookase"
 # A lightweight and high-performance screen recorder for macOS.
-cask "quickrecorder"
+# 已失效
+brew "lihaoyun6/tap/quickrecorder"
 # Wave Terminal, WaveTerm
 cask "wave"
 # Control your tools with a few keystrokes
@@ -400,9 +415,10 @@ cask "textmate"
 cask "the-unarchiver"
 # Web browser focusing on security
 cask "tor-browser"
-cask "upic"
+# uPic 圖床
+cask "bigwig-club/brew/upic"
 # Tool to hide menu bar icons
-cask "vanilla"
+#cask "vanilla"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
@@ -415,8 +431,8 @@ cask "webpquicklook"
 cask "welly"
 # Notetaking tool
 cask "workflowy"
-# Open-source version of the X.Org X Window System
-cask "xquartz"
+## Open-source version of the X.Org X Window System
+#cask "xquartz"
 # Multiplayer code editor
 cask "zed"
 # Synfig Studio - 2D animation
