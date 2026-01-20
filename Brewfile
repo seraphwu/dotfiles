@@ -170,7 +170,7 @@ brew "zsh-git-prompt"
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
 # Stylesheet Preprocessor
-brew "sass"
+brew "sass/sass/sass"
 # uv
 brew "uv"
 
