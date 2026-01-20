@@ -27,9 +27,9 @@ fi
 # 3. 其他特定安裝與設定
 # -----------------------------------------------------------
 # Yabai Window Manager
-echo "› Installing Yabai..."
-brew install koekeishiya/formulae/yabai
-yabai --start-service
+#echo "› Installing Yabai..."
+#brew install koekeishiya/formulae/yabai
+#yabai --start-service
 
 # -----------------------------------------------------------
 # 4. 執行其他子安裝腳本
