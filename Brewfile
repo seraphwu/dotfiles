@@ -7,6 +7,10 @@ tap "dart-lang/dart"
 tap "lihaoyun6/tap"
 tap "sass/sass"
 tap "koekeishiya/formulae"
+
+# ==========================================
+# Common Binaries (通用軟體 - 兩台都會裝)
+# ==========================================
 # Distributed revision control system
 brew "git"
 # 7-Zip is a file archiver with a high compression ratio
@@ -31,8 +35,6 @@ brew "coreutils"
 brew "dnsmasq", restart_service: :changed
 # Prepare CD image files so they compress better
 brew "ecm"
-# yabai - Tiling window manager
-#cask "yabai"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
@@ -45,8 +47,6 @@ brew "ffmpeg"
 brew "ffmpegthumbnailer"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
-# X.Org: Font package creation/installation utilities
-# brew "font-util" comment 20251216
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Extensions to follow Vincent Driessen's branching model
@@ -109,23 +109,14 @@ brew "multimarkdown"
 brew "tmux"
 #exiftool - Reading and writing exif metadata
 brew "exiftool"
-#https://github.com/mjolnirapp/AppGrid
 #Pandoc - Universal file converter
 brew "pandoc"
-# Yabai WM
-brew "yabai"
-# Ambitious Vim-fork focused on extensibility and agility
 # Google Gemini CLI
 brew "gemini-cli"
-#brew "neovim"
-#Synfig Studio - 2D animation
-cask "Synfigstudio"
 # Open source continuous file synchronization application
 cask "syncthing"
 # Manage multiple Node.js versions
 brew "nvm"
-# Create, run, and share large language models (LLMs)
-brew "ollama", restart_service: :changed
 # Simplified-traditional Chinese conversion tool
 brew "opencc"
 # SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
@@ -166,8 +157,6 @@ brew "wget"
 brew "superfile"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
-# Download YouTube videos from the command-line It was disabled on 2024-11-23.
-#brew "youtube-dl"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
@@ -184,28 +173,22 @@ brew "zsh-syntax-highlighting"
 brew "sass"
 # uv
 brew "uv"
-# skhd - Hotkey daemon for macOS
-brew "skhd"
-#lporg - Backup and restore launchpad layout
-# Bitwarden是一款自由且開源的密碼管理服務，使用者可在加密的保管庫中儲存敏感資訊（例如網站登入憑據）
+
+# ==========================================
+# Casks & GUI Apps (Common)
+# ==========================================
+# Bitwarden
 cask "bitwarden"
 # Acrobat Reader
 cask "adobe-acrobat-reader"
-#cask "lporg"
 # 直接從蘋果伺服器下載所需的操作系統
 cask "mist"
 #hiddenbar - 隱藏/顯示煩人的功能表欄圖示
 cask "hiddenbar"
-# copyq - Clipboard manager (cross platform)
-# cask "copyq"
 # espanso - Live text expander (cross-platform)
 cask "espanso"
-# finicky - Website-specific default browser 可以指定某些連結利用某些瀏覽器開啟
-# cask "finicky"
 # Download Instagram photos, accounts, hashtags and locations
 cask "4k-stogram"
-# Free video downloader
-# cask "4k-video-downloader"
 # Free video downloader
 cask "4k-video-downloader+"
 # Turn YouTube links into MP3 files
@@ -220,21 +203,14 @@ cask "aldente"
 cask "alfred"
 # Enable Windows-like alt-tab
 cask "alt-tab"
-# 
+# Dockdoor
 cask "dockdoor"
-# docker
-cask "docker"
 # All in one MacOS management CLI app
 brew "m-cli"
 #Popup options for text on highlight 
 cask "popclip"
 # shottr - Better screenshot utility
 cask "shottr"
-# App to measure storage read/write performance
-# cask "amorphousdiskmark"
-# Allows connection to a computer remotely
-# cask "anydesk"
-
 # pronotes
 cask "pronotes"
 # Local-first and end-to-end encrypted notes app
@@ -281,18 +257,6 @@ cask "findergo"
 cask "fliqlo"
 # Screen colour temperature controller
 cask "flux"
-
-# 2025-12-07 拆開字體到 Brewfile.fonts
-cask "font-maple-mono-nf-cn"
-cask "font-noto-nerd-font"
-cask "font-iosevka-nerd-font"
-cask "font-iosevka-term-nerd-font"
-cask "font-jetbrains-mono-nerd-font"
-cask "font-jetbrains-maple-mono-nf"
-
-
-
-cask "comfyui"
 # Tool that helps teams design every part of the product experience
 cask "framer"
 # Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
@@ -327,8 +291,6 @@ cask "keycastr"
 cask "keyclu"
 # Free and open-source media player
 cask "kodi"
-# Encryption-focused open source note taking application
-#cask "laverna"
 # Open-source cross-platform alternative to AirDrop
 cask "localsend"
 # Window manager
@@ -343,7 +305,6 @@ cask "maccy"
 cask "macs-fan-control"
 # Extensible two-pane file manager
 cask "marta"
-#cask "mdimagesizemdimporter"
 # Multi-platform web browser
 cask "microsoft-edge"
 # App to create and edit MKV videos
@@ -357,12 +318,9 @@ cask "mounty"
 # macwhisper
 cask "macwhisper"
 # Read, annotate and manage ePub books
-# cask "neat-reader"
 cask "koodo-reader"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# App to write, plan, collaborate, and get organised
-#cask "notion"
 # Calendar for professionals and teams
 cask "notion-calendar"
 # Note taking app
@@ -387,8 +345,6 @@ cask "protonvpn"
 cask "qbittorrent"
 # Quick Look plug-in that renders source code with syntax highlighting
 cask "qlcolorcode"
-# Display image info and preview unsupported formats in QuickLook
-#cask "qlimagesize"
 # Quick Look generator for Markdown files
 cask "qlmarkdown"
 # Quick Look plugin for plaintext files without an extension
@@ -436,23 +392,15 @@ cask "suspicious-package"
 # App to switch hosts
 cask "switchhosts"
 cask "switchkey"
-# Remote access and connectivity software focused on security
-## cask "teamviewer"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # General-purpose text editor
 cask "textmate"
 # Unpacks archive files
 cask "the-unarchiver"
-# Utility to hide the notch
-cask "topnotch"
 # Web browser focusing on security
 cask "tor-browser"
-# Configurable document editor that supports Markdown
-#cask "typora"
 cask "upic"
-# AI image upscaler
-cask "upscayl"
 # Tool to hide menu bar icons
 cask "vanilla"
 # Open-source code editor
@@ -471,6 +419,42 @@ cask "workflowy"
 cask "xquartz"
 # Multiplayer code editor
 cask "zed"
+# Synfig Studio - 2D animation
+cask "Synfigstudio"
+
+# ==========================================
+# Apple Silicon (M1/M2/M3) Exclusives
+# 
+# ==========================================
+if Hardware::CPU.arm?
+    # Yabai WM (Requires SIP disabled usually, runs best on M chips)
+    brew "yabai"
+    # Hotkey daemon for yabai
+    brew "skhd"
+    
+    # AI / LLM Tools (Need Neural Engine or heavy GPU)
+    brew "ollama", restart_service: :changed
+    cask "upscayl"
+    cask "comfyui"
+    
+    # Tools for Notch devices (New MacBooks)
+    cask "topnotch"
+    
+    # Heavy Docker (Optional, runs on Intel but heavy)
+    cask "docker"
+end
+
+# ==========================================
+# Intel Mac / Legacy Exclusives
+# ==========================================
+if Hardware::CPU.intel?
+    # Lightweight window manager alternative for older Macs
+    # cask "rectangle" # Magnet is already in mas, so optional
+end
+
+# ==========================================
+# Mac App Store (MAS)
+# ==========================================
 mas "Amphetamine", id: 937984704
 mas "Anybox", id: 1593408455
 mas "DeskMinder", id: 6740942938
@@ -496,6 +480,10 @@ mas "Xcode", id: 497799835
 mas "簡放島", id: 6529528324
 mas "amorphousdiskmark", id: 1168254295
 mas "Hidden Bar", id: 1452453066
+
+# ==========================================
+# VS Code Extensions
+# ==========================================
 vscode "aaron-bond.better-comments"
 vscode "aestudio.tailwind-skeleton-generator"
 vscode "agavram.github-vscode-theme-minimal"
