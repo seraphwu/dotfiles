@@ -103,6 +103,7 @@ link_file () {
 }
 
 install_homebrew () {
+  echo "正為您安裝 Homebrew"
   if test ! $(which brew)
   then
     echo "  Installing Homebrew for you..."
@@ -122,6 +123,7 @@ install_homebrew () {
 }
 
 install_ohmyzsh () {
+  echo "安裝 Oh-my-zsh"
   if [ ! -d ~/.oh-my-zsh ]
   then
     info '  Installing oh-my-zsh'
@@ -130,8 +132,10 @@ install_ohmyzsh () {
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     git clone https://github.com/wbingli/zsh-wakatime.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-wakatime
-    git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
-    cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color
+    #git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+    git clone https://github.com/fdellwing/zsh-bat.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-bat
+    #cd $ZSH_CUSTOM/plugins && git clone https://github.com/chrissicool/zsh-256color
+    cd ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins && git clone https://github.com/chrissicool/zsh-256color
   fi
 }
 
