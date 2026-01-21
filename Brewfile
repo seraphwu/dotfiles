@@ -438,7 +438,7 @@ cask "workflowy"
 # Multiplayer code editor
 cask "zed"
 # Synfig Studio - 2D animation
-cask "Synfigstudio"
+cask "synfigstudio"
 
 # ==========================================
 # Apple Silicon (M1/M2/M3) Exclusives
