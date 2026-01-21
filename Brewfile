@@ -17,7 +17,7 @@ brew "openssl"
 brew "autoconf"
 brew "bash"
 brew "bat"
-brew "icu4c@76"
+brew "icu4c"
 brew "brew-cask-completion"
 brew "coreutils"
 brew "dnsmasq", restart_service: :changed
@@ -29,10 +29,9 @@ brew "ffmpeg"             # 雖然編譯久，但作為轉檔機很實用
 brew "ffmpegthumbnailer"
 brew "findutils"
 brew "fzf"
-brew "git-flow"
 brew "gnupg"
 brew "go"
-brew "trash-cli"
+# brew "trash-cli"
 brew "grc"
 brew "groonga"
 brew "handbrake", link: false # 轉檔核心
@@ -60,7 +59,7 @@ brew "tmux"               # 終端機多工必備
 brew "exiftool"
 brew "pandoc"
 brew "gemini-cli"
-cask "syncthing"          # 同步檔案必備
+cask "syncthing-app"          # 同步檔案必備
 brew "nvm"
 brew "opencc"
 brew "openvpn"
@@ -92,7 +91,7 @@ brew "uv"
 brew "m-cli"
 
 # ==========================================
-# [GLOBAL] 必裝字體 (Retina 螢幕需要好字體)
+# [GLOBAL] 必裝字體
 # ==========================================
 cask "font-jetbrains-maple-mono-nf"
 cask "font-maple-mono-nf-cn"
@@ -111,7 +110,7 @@ cask "espanso"            # 文字替換 (Rust寫的，輕量)
 cask "openinterminal"
 cask "aegisub"            # 字幕編輯 (輕量)
 cask "aldente"            # 電池保養 (老機器必備)
-cask "alfred"             # 啟動器 (比 Raycast 省資源)
+# cask "alfred"             # 啟動器 (比 Raycast 省資源)
 cask "alt-tab"            # 視窗切換
 cask "popclip"
 cask "shottr"             # 截圖 (輕量)
@@ -124,16 +123,16 @@ cask "calibre"            # 電子書管理
 cask "coconutbattery"     # 電池健康度
 cask "commander-one"      # 雙欄檔案管理
 cask "cyberduck"          # FTP/SFTP
-cask "db-browser-for-sqlite"
+# cask "db-browser-for-sqlite"
 cask "findergo"
 cask "fliqlo"             # 螢幕保護程式
-cask "flux"               # 護眼 (老機器沒有 Night Shift)
-cask "github"
-cask "handbrake"          # 影片轉檔 GUI
+# cask "flux"               # 護眼 (老機器沒有 Night Shift)
+# cask "github"
+cask "handbrake-app"          # 影片轉檔 GUI
 cask "iina"               # 播放器 (比 VLC 現代且高效)
 cask "iterm2"             # 終端機
 cask "itsycal"            # 狀態列日曆
-cask "joplin"             # 筆記 (如果你用 Obsidian，這個可考慮拿掉)
+# cask "joplin"             # 筆記 (如果你用 Obsidian，這個可考慮拿掉)
 cask "keka"               # 解壓縮
 cask "keycastr"
 cask "keyclu"
@@ -150,25 +149,26 @@ cask "obsidian"           # [核心] 知識庫
 cask "notion-calendar"
 cask "nvalt"              # 極簡筆記
 cask "qbittorrent"        # BT 下載
-cask "qlcolorcode"
+# cask "qlcolorcode"
 cask "qlmarkdown"
 cask "qlstephen"
 cask "qlvideo"
 cask "quicklook-csv"
-cask "quicklook-json"
+# cask "quicklook-json"
+cask "glance-chamburr", args: { no_quarantine: true }
+cask "syntax-highlight", args: { no_quarantine: true }
 cask "quicklookase"
 cask "raycast"            # 雖然略重，但為了同步習慣保留
 cask "reminders-menubar"
 cask "switchhosts"
 cask "switchkey"
 cask "textmate"           # 極簡編輯器
-cask "the-unarchiver"
+# cask "the-unarchiver"
 cask "tor-browser"
 cask "bigwig-club/brew/upic" # 圖床工具
 cask "visual-studio-code" # 雖然是 Electron，但寫 Code 必備
-cask "vlc"
+# cask "vlc"
 cask "welly"              # BBS
-cask "workflowy"
 cask "zed"                # Rust 編輯器 (高性能，推薦在老機器用)
 
 # 下載專用工具 (適合在 2013 上掛機跑)
@@ -256,23 +256,3 @@ if Hardware::CPU.arm?
     mas "Xcode", id: 497799835     # 2013 絕對跑不動現代 Xcode
     mas "Disk Speed Test", id: 425264550
 end
-
-# ==========================================
-# VS Code Extensions (Keep global for sync)
-# ==========================================
-vscode "aaron-bond.better-comments"
-vscode "bierner.markdown-checkbox"
-vscode "bierner.markdown-emoji"
-vscode "bierner.markdown-mermaid"
-vscode "bierner.markdown-preview-github-styles"
-vscode "christian-kohler.path-intellisense"
-vscode "eamodio.gitlens"
-vscode "esbenp.prettier-vscode"
-vscode "github.copilot"
-vscode "github.copilot-chat"
-vscode "ms-python.python"
-vscode "ms-vscode-remote.remote-ssh" # 2013 連 M2 必備！
-vscode "ms-vscode.powershell"
-vscode "pkief.material-icon-theme"
-vscode "yzhang.markdown-all-in-one"
-# ... (其他輕量外掛可保留)
