@@ -195,6 +195,8 @@ cask "font-iosevka-term-nerd-font"
 cask "bitwarden"
 # Acrobat Reader
 cask "adobe-acrobat-reader"
+# Mole 開源清理 Mac 的軟體
+cask "mole"
 # 直接從蘋果伺服器下載所需的操作系統
 cask "mist"
 #hiddenbar - 隱藏/顯示煩人的功能表欄圖示
