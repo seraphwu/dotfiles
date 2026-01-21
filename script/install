@@ -10,7 +10,8 @@ cd "$(dirname $0)"/..
 # 1. 安裝核心軟體 (Core Software)
 # -----------------------------------------------------------
 echo "› brew bundle (Core Software) | 安裝核心軟體"
-brew bundle --file="Brewfile" --verbose
+# 加入 --verbose 以便在舊機器上觀察進度
+brew bundle --verbose --file="Brewfile"
 
 # -----------------------------------------------------------
 # 2. 安裝字體 (Fonts) - 獨立處理
@@ -18,7 +19,7 @@ brew bundle --file="Brewfile" --verbose
 # 檢查檔案是否存在，並使用 || true 允許失敗繼續 (字體下載常逾時)
 if [ -f "Brewfile.fonts" ]; then
     echo "› brew bundle (Fonts) | 安裝字體"
-    brew bundle --file="Brewfile.fonts" --verbose || true
+    brew bundle --verbose --file="Brewfile.fonts" || true
 else
     echo "› Warning: Brewfile.fonts not found, skipping fonts. | 找不到字體清單，跳過"
 fi

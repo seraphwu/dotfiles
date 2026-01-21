@@ -2,601 +2,277 @@
 tap "bigwig-club/brew"
 tap "buo/cask-upgrade"
 tap "dart-lang/dart"
-#tap "homebrew/bundle"
-#tap "homebrew/services"
 tap "lihaoyun6/tap"
 tap "sass/sass"
 tap "koekeishiya/formulae"
 
 # ==========================================
-# Common Binaries (通用軟體 - 兩台都會裝)
+# [GLOBAL] 核心 CLI 工具 (兩台都裝)
+# 說明：CLI 工具佔用資源極少，為了保持操作習慣一致，建議全部保留
 # ==========================================
-# Distributed revision control system
 brew "git"
-# 7-Zip is a file archiver with a high compression ratio
 brew "sevenzip"
-# Select default apps for documents and URL schemes on macOS
 brew "duti"
-# OpenSSL 3
 brew "openssl"
-# Automatic configure script builder
 brew "autoconf"
-# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
-# Fish completion for brew-cask
 brew "brew-cask-completion"
-# GNU File, Shell, and Text utilities
 brew "coreutils"
-# Lightweight DNS forwarder and DHCP server
 brew "dnsmasq", restart_service: :changed
-# Prepare CD image files so they compress better
 brew "ecm"
-# Modern, maintained replacement for ls
 brew "eza"
-# Simple, fast and user-friendly alternative to find
 brew "fd"
-# Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
-# Create thumbnails for your video files
+brew "ffmpeg"             # 雖然編譯久，但作為轉檔機很實用
 brew "ffmpegthumbnailer"
-# Collection of GNU find, xargs, and locate
 brew "findutils"
-# Command-line fuzzy finder written in Go
 brew "fzf"
-# Extensions to follow Vincent Driessen's branching model
 brew "git-flow"
-# GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
 brew "go"
-#trash-cli - Record + restore removed files
 brew "trash-cli"
-# Colorize logfiles and command output
 brew "grc"
-# Fulltext search engine and column store
 brew "groonga"
-# Open-source video transcoder available for Linux, Mac, and Windows
-brew "handbrake", link: false
-# 取代 htop
-# brew "htop"
-brew "btop"
-#ttygif：将终端录制转化为GIF动画的神器 - CSDN部落客
+brew "handbrake", link: false # 轉檔核心
+brew "btop"               # 監控系統必備
 brew "ttygif"
-# Apache HTTP server
 brew "httpd"
-# Power of curl, ease of use of httpie
 brew "curlie"
-# Website copier/offline browser
-brew "httrack"
-# Configurable static site generator
-brew "hugo"
-# Tools and libraries to manipulate images in many formats
+brew "httrack"            # 備份網站用
+brew "hugo"               # 寫 Blog 用
 brew "imagemagick"
-# Modular IRC client
 brew "irssi"
-# Full featured terminal-based screen editor
 brew "joe"
-#zoxide - Easy navigation (better cd)
 brew "zoxide"
-# task - Todo + task management
 brew "task"
-#lazydocker - Full Docker management app
-# lazygit - Full Git managemtne app
-brew "lazygit"
-# Helix
-brew "helix"
-# Lightweight and flexible command-line JSON processor
+brew "lazygit"            # 必備 Git GUI
+brew "helix"              # 輕量編輯器
 brew "jq"
-# Conversion library
 brew "libiconv"
-# YAML Parser
 brew "libyaml"
-# Keep your Mac's application settings in sync
-brew "mackup"
-# Mac App Store command-line interface
+brew "mackup"             # 同步設定檔用
 brew "mas"
-# Matroska media files manipulation tools
-brew "mkvtoolnix"
-# Turn marked-up plain text into well-formatted documents
+brew "mkvtoolnix"         # 影片處理
 brew "multimarkdown"
-# tmux - Term multiplexer
-brew "tmux"
-#exiftool - Reading and writing exif metadata
+brew "tmux"               # 終端機多工必備
 brew "exiftool"
-#Pandoc - Universal file converter
 brew "pandoc"
-# Google Gemini CLI
 brew "gemini-cli"
-# Open source continuous file synchronization application
-cask "syncthing"
-# Manage multiple Node.js versions
+cask "syncthing"          # 同步檔案必備
 brew "nvm"
-# Simplified-traditional Chinese conversion tool
 brew "opencc"
-# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
 brew "openvpn"
-# Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Package compiler and linker metadata toolkit
 brew "pkgconf"
-# PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Implementation of Telnet and SSH
 brew "putty"
-# Python version management
 brew "pyenv"
-# Ruby version manager
 brew "rbenv"
-# Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Display and control your Android device
-brew "scrcpy"
-# Add a public key to a remote machine's authorized_keys file
+brew "scrcpy"             # 安卓投屏 (輕量)
 brew "ssh-copy-id"
-# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# Clean C library for processing UTF-8 Unicode data
 brew "utf8proc", args: ["HEAD"]
-# Version control system designed to be a better CVS
 brew "subversion"
-# CLI tool that moves files or folder to the trash
 brew "trash", link: true
-# Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Command-line unarchiving tools supporting multiple formats
 brew "unar"
-# Internet file retriever
 brew "wget"
-# Superfile
 brew "superfile"
-# Blazing fast terminal file manager written in Rust, based on async I/O
-brew "yazi"
-# Shell extension to navigate your filesystem faster
-brew "zoxide"
-# UNIX shell (command interpreter)
+brew "yazi"               # 檔案管理器 (Rust版，快)
 brew "zsh"
-# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# Additional completion definitions for zsh
 brew "zsh-completions"
-# Informative git prompt for zsh
 brew "zsh-git-prompt"
-# Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-# Stylesheet Preprocessor
 brew "sass/sass/sass"
-# uv
 brew "uv"
+brew "m-cli"
 
 # ==========================================
-# 必裝字體
+# [GLOBAL] 必裝字體 (Retina 螢幕需要好字體)
 # ==========================================
-
 cask "font-jetbrains-maple-mono-nf"
 cask "font-maple-mono-nf-cn"
 cask "font-noto-sans-cjk"
 cask "font-noto-serif-cjk"
-cask "font-maple-mono-nf-cn"
 cask "font-noto-nerd-font"
 cask "font-iosevka-nerd-font"
 cask "font-iosevka-term-nerd-font"
 
-
 # ==========================================
-# Casks & GUI Apps (Common)
+# [GLOBAL] 輕量級/功能性 GUI App (2013 跑得動且實用)
 # ==========================================
-# Bitwarden
-cask "bitwarden"
-# Acrobat Reader
-cask "adobe-acrobat-reader"
-# Mole 開源清理 Mac 的軟體
-cask "mole"
-# 直接從蘋果伺服器下載所需的操作系統
-cask "mist"
-#hiddenbar - 隱藏/顯示煩人的功能表欄圖示
-cask "hiddenbar"
-# espanso - Live text expander (cross-platform)
-cask "espanso"
-# Download Instagram photos, accounts, hashtags and locations
-cask "4k-stogram"
-# Free video downloader
-cask "4k-video-downloader+"
-# Turn YouTube links into MP3 files
-cask "4k-youtube-to-mp3"
-# Finder button, opens directory in terminal
+cask "bitwarden"          # 密碼管理
+cask "hiddenbar"          # 整理 Menu Bar
+cask "espanso"            # 文字替換 (Rust寫的，輕量)
 cask "openinterminal"
-# Create and modify subtitles
-cask "aegisub"
-# Menu bar tool to limit maximum charging percentage
-cask "aldente"
-# Application launcher and productivity software
-cask "alfred"
-# Enable Windows-like alt-tab
-cask "alt-tab"
-# Dockdoor
-cask "dockdoor"
-# All in one MacOS management CLI app
-brew "m-cli"
-#Popup options for text on highlight 
+cask "aegisub"            # 字幕編輯 (輕量)
+cask "aldente"            # 電池保養 (老機器必備)
+cask "alfred"             # 啟動器 (比 Raycast 省資源)
+cask "alt-tab"            # 視窗切換
 cask "popclip"
-# shottr - Better screenshot utility
-cask "shottr"
-# pronotes
-cask "pronotes"
-# Local-first and end-to-end encrypted notes app
-cask "anytype"
-# Inspect application bundles
+cask "shottr"             # 截圖 (輕量)
 cask "apparency"
-# Application uninstaller
-cask "appcleaner"
-# User-friendly GUI app for Homebrew
+cask "appcleaner"         # 移除軟體
 cask "applite"
-# Chromium based browser
-cask "arc"
-# Online gaming platform
-cask "battle-net"
-# Utility to create and modify archives
 cask "betterzip"
-# Compare files and folders
 cask "beyond-compare"
-# Web browser focusing on privacy
-cask "brave-browser"
-# E-books management software
-cask "calibre"
-# Screen recording software
-cask "cap"
-# Tool to show live information about the batteries in various devices
-cask "coconutbattery"
-# Two-panel file manager
-cask "commander-one"
-# Grab and tweak the colours you see on your screen
-cask "couleurs"
-# Server and cloud storage browser
-cask "cyberduck"
-# Browser for SQLite databases
+cask "calibre"            # 電子書管理
+cask "coconutbattery"     # 電池健康度
+cask "commander-one"      # 雙欄檔案管理
+cask "cyberduck"          # FTP/SFTP
 cask "db-browser-for-sqlite"
-# Voice and text chat software
-cask "discord"
-# Client for the Dropbox cloud storage service
-cask "dropbox"
-# Collaborative team software
-cask "figma"
-# Open terminal quickly from Finder
 cask "findergo"
-# Flip clock screensaver
-cask "fliqlo"
-# Screen colour temperature controller
-cask "flux"
-# Tool that helps teams design every part of the product experience
-cask "framer"
-# Messaging app for WhatsApp, Facebook Messenger, Slack, Telegram and more
-cask "franz"
-# Free and open-source image editor
-cask "gimp"
-# Desktop client for GitHub repositories
+cask "fliqlo"             # 螢幕保護程式
+cask "flux"               # 護眼 (老機器沒有 Night Shift)
 cask "github"
-# Web browser
-cask "google-chrome"
-# Open-source video transcoder
-cask "handbrake"
-# Note-taking tool for visual learning
-cask "heptabase"
-# Free and open-source media player
-cask "iina"
-# Vector graphics editor
-cask "inkscape"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
-# Menu bar calendar
-cask "itsycal"
-# Note taking and to-do application with synchronisation capabilities
-cask "joplin"
-# Open-source screen recorder built with web technology
-cask "kap"
-# File archiver
-cask "keka"
-# Open-source keystroke visualiser
+cask "handbrake"          # 影片轉檔 GUI
+cask "iina"               # 播放器 (比 VLC 現代且高效)
+cask "iterm2"             # 終端機
+cask "itsycal"            # 狀態列日曆
+cask "joplin"             # 筆記 (如果你用 Obsidian，這個可考慮拿掉)
+cask "keka"               # 解壓縮
 cask "keycastr"
-# Find shortcuts for any installed application
 cask "keyclu"
-# Free and open-source media player
-cask "kodi"
-# Open-source cross-platform alternative to AirDrop
-cask "localsend"
-# Window manager
-cask "loop"
-# Drop any files to any devices on your LAN
-cask "landrop"
-# Trims video and audio files losslessly
-cask "losslesscut"
-# Clipboard manager
-cask "maccy"
-# Controls and monitors all fans on Apple computers
-cask "macs-fan-control"
-# Extensible two-pane file manager
-cask "marta"
-# Multi-platform web browser
-cask "microsoft-edge"
-# App to create and edit MKV videos
-cask "mkvtools"
-# Tool to control external monitor brightness & volume
-cask "monitorcontrol"
-# Smooths scrolling and set mouse scroll directions independently
-cask "mos"
-# Re-mounts write-protected NTFS volumes
-cask "mounty"
-# macwhisper
-cask "macwhisper"
-# Read, annotate and manage ePub books
-cask "koodo-reader"
-# Reverse proxy, secure introspectable tunnels to localhost
-cask "ngrok"
-# Calendar for professionals and teams
+cask "kodi"               # 媒體中心
+cask "localsend"          # 區網傳檔 (必備)
+cask "loop"               # 視窗管理
+cask "losslesscut"        # 無損剪輯
+cask "maccy"              # 剪貼簿管理 (輕量)
+cask "macs-fan-control"   # 風扇控制 (老機器散熱重要)
+cask "marta"              # 檔案管理 (極輕量)
+cask "mounty"             # NTFS 讀寫
+cask "netnewswire"        # (建議) RSS 閱讀器，比 web 輕
+cask "obsidian"           # [核心] 知識庫
 cask "notion-calendar"
-# Note taking app
-cask "nvalt"
-# Open-source software for live streaming and screen recording
-cask "obs"
-# Knowledge base that works on top of a local folder of plain text Markdown files
-cask "obsidian"
-# Organise all your reference images in one place
-cask "ogdesign-eagle"
-# System and utility switches
-cask "only-switch"
-# Retro video game emulation
-cask "openemu@experimental"
-# Cross-platform video editor
-cask "openshot-video-editor"
-# Colour picker for colours onscreen
-cask "pika"
-# VPN client focusing on security
-cask "protonvpn"
-# Peer to peer Bitorrent client
-cask "qbittorrent"
-# Quick Look plug-in that renders source code with syntax highlighting
+cask "nvalt"              # 極簡筆記
+cask "qbittorrent"        # BT 下載
 cask "qlcolorcode"
-# Quick Look generator for Markdown files
 cask "qlmarkdown"
-# Quick Look plugin for plaintext files without an extension
 cask "qlstephen"
-# Thumbnails, static previews, cover art and metadata for video files
 cask "qlvideo"
-# Quick Look plugin for CSV files
 cask "quicklook-csv"
-# Quick Look plugin for JSON files
 cask "quicklook-json"
-# Quick Look generator for Adobe Swatch Exchange files
 cask "quicklookase"
-# A lightweight and high-performance screen recorder for macOS.
-# 已失效
-brew "lihaoyun6/tap/quickrecorder"
-# Wave Terminal, WaveTerm
-cask "wave"
-# Control your tools with a few keystrokes
-cask "raycast"
-# Simple menu bar app to view and interact with reminders
+cask "raycast"            # 雖然略重，但為了同步習慣保留
 cask "reminders-menubar"
-# Emoji picker optimised for blind people
-cask "rocket"
-# Free and open-source page layout program
-cask "scribus"
-# File sharing app
-cask "send-anywhere"
-# Video editor
-cask "shotcut"
-# React client for Simplenote
-cask "simplenote"
-# Utility to resize and position application windows
-cask "sizeup"
-# Team communication and collaboration software
-cask "slack"
-# Graphical client for Git version control
-cask "sourcetree"
-# Music streaming service
-cask "spotify"
-# Run anything at startup by simply placing it in a special folder (sonoma or later)
-cask "startupfolder"
-# Video game digital distribution service
-cask "steam"
-# Application for inspecting installer packages
-cask "suspicious-package"
-# App to switch hosts
 cask "switchhosts"
 cask "switchkey"
-# Messaging app with a focus on speed and security
-cask "telegram"
-# General-purpose text editor
-cask "textmate"
-# Unpacks archive files
+cask "textmate"           # 極簡編輯器
 cask "the-unarchiver"
-# Web browser focusing on security
 cask "tor-browser"
-# uPic 圖床
-cask "bigwig-club/brew/upic"
-# Tool to hide menu bar icons
-#cask "vanilla"
-# Open-source code editor
-cask "visual-studio-code"
-# Multimedia player
+cask "bigwig-club/brew/upic" # 圖床工具
+cask "visual-studio-code" # 雖然是 Electron，但寫 Code 必備
 cask "vlc"
-# Instagram client
-cask "vu"
-# Quick Look plugin for webp files
-cask "webpquicklook"
-# BBS client
-cask "welly"
-# Notetaking tool
+cask "welly"              # BBS
 cask "workflowy"
-## Open-source version of the X.Org X Window System
-#cask "xquartz"
-# Multiplayer code editor
-cask "zed"
-# Synfig Studio - 2D animation
-cask "synfigstudio"
+cask "zed"                # Rust 編輯器 (高性能，推薦在老機器用)
+
+# 下載專用工具 (適合在 2013 上掛機跑)
+cask "4k-stogram"
+cask "4k-video-downloader+"
+cask "4k-youtube-to-mp3"
 
 # ==========================================
-# Apple Silicon (M1/M2/M3) Exclusives
-# 
+# [M-SERIES ONLY] 重型/現代/設計/娛樂軟體
+# 說明：這些軟體在 2013 上跑不動、沒必要、或有圖形 Bug
 # ==========================================
 if Hardware::CPU.arm?
-    # Yabai WM (Requires SIP disabled usually, runs best on M chips)
-    brew "yabai"
-    # Hotkey daemon for yabai
+    # --- 系統增強 ---
+    brew "yabai"          # 視窗管理 (Intel 版需關 SIP 且不穩)
     brew "skhd"
-    
-    # AI / LLM Tools (Need Neural Engine or heavy GPU)
+    cask "dockdoor"       # 現代化預覽 (吃顯卡)
+    cask "topnotch"       # 隱藏瀏海 (2013 沒瀏海)
+    cask "monitorcontrol" # 2013 螢幕亮度通常直接由系統控
+
+    # --- AI & 重運算 ---
     brew "ollama", restart_service: :changed
-    cask "upscayl"
-    cask "comfyui"
-    
-    # Tools for Notch devices (New MacBooks)
-    cask "topnotch"
-    
-    # Heavy Docker (Optional, runs on Intel but heavy)
-    cask "docker"
+    cask "upscayl"        # AI 放大 (沒顯卡跑不動)
+    cask "comfyui"        # AI 繪圖
+    cask "docker"         # Docker Desktop (Intel 版非常重)
+
+    # --- 瀏覽器 (Arc 很吃資源) ---
+    cask "arc"
+    cask "brave-browser"
+    cask "microsoft-edge"
+    # 2013 建議用內建 Safari 或輕量的 Firefox/Orion
+
+    # --- 設計與創意 (Web/Metal 重度依賴) ---
+    cask "figma"
+    cask "framer"
+    cask "gimp"
+    cask "inkscape"
+    cask "scribus"
+    cask "synfigstudio"
+    cask "couleurs"       # 選色器
+    cask "pika"
+
+    # --- 影音剪輯/錄製 (需要硬體編碼) ---
+    cask "obs"            # 直播/錄影
+    cask "openshot-video-editor"
+    cask "shotcut"
+    cask "cap"            # 螢幕錄製 (Web based)
+    cask "quickrecorder"
+    cask "macwhisper"     # 語音轉文字 (依賴 Neural Engine)
+
+    # --- 社交與通訊 (Electron 記憶體怪獸) ---
+    cask "discord"
+    cask "slack"
+    cask "telegram"       # 其實 Telegram Native 還好，但為了專注可移走
+    cask "franz"          # 聚合通訊 (非常重)
+    cask "rocket"         # Emoji picker
+
+    # --- 遊戲與娛樂 ---
+    cask "steam"
+    cask "battle-net"
+    cask "openemu@experimental" # 其實 2013 跑得動，看你想不想在上面玩
+    cask "spotify"        # 2013 用網頁版或手機 AirPlay 即可，省 App 資源
+
+    # --- 其他 ---
+    cask "adobe-acrobat-reader" # 太肥大，用預覽程式即可
+    cask "pronotes"
+    cask "anytype"        # 類似 Notion，稍重
+    cask "heptabase"      # 視覺筆記，吃圖形效能
+    cask "wave"           # Wave Terminal (圖形化終端，重)
 end
 
 # ==========================================
-# Intel Mac / Legacy Exclusives
+# [MAS] Mac App Store
 # ==========================================
-if Hardware::CPU.intel?
-    # Lightweight window manager alternative for older Macs
-    # cask "rectangle" # Magnet is already in mas, so optional
-end
-
-# ==========================================
-# Mac App Store (MAS)
-# ==========================================
-mas "Amphetamine", id: 937984704
-mas "Anybox", id: 1593408455
-mas "DeskMinder", id: 6740942938
-mas "Disk Speed Test", id: 425264550
-mas "FileSumo Pro", id: 1182711853
-mas "Folder Slice", id: 6736857712
-mas "HiddenMe", id: 467040476
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
-mas "Magnet", id: 441258766
-mas "MenubarX", id: 1575588022
-mas "Numbers", id: 409203825
-mas "OmmWriter", id: 412347921
-mas "Pages", id: 409201541
-mas "PDFgear", id: 6469021132
-mas "QuickKey", id: 1142743710
-mas "QuickLinks", id: 1200685619
-mas "Sleeve", id: 1606145041
-mas "Squash", id: 1152443474
-mas "ToothFairy", id: 1191449274
-mas "Xcode", id: 497799835
-mas "簡放島", id: 6529528324
-mas "amorphousdiskmark", id: 1168254295
+mas "Magnet", id: 441258766        # 2013 最佳視窗管理方案
 mas "Hidden Bar", id: 1452453066
+mas "Amphetamine", id: 937984704   # 防休眠
+# mas "Keka", id: 470158793          # 如果有買 MAS 版
+
+if Hardware::CPU.arm?
+    # 這些在舊機器可能沒必要裝
+    mas "iMovie", id: 408981434
+    mas "Keynote", id: 409183694
+    mas "Numbers", id: 409203825
+    mas "Pages", id: 409201541
+    mas "Xcode", id: 497799835     # 2013 絕對跑不動現代 Xcode
+    mas "Disk Speed Test", id: 425264550
+end
 
 # ==========================================
-# VS Code Extensions
+# VS Code Extensions (Keep global for sync)
 # ==========================================
 vscode "aaron-bond.better-comments"
-vscode "aestudio.tailwind-skeleton-generator"
-vscode "agavram.github-vscode-theme-minimal"
-vscode "anbuselvanrocky.bootstrap5-vscode"
-vscode "antfu.slidev"
-vscode "austenc.tailwind-docs"
-vscode "bierner.github-markdown-preview"
 vscode "bierner.markdown-checkbox"
 vscode "bierner.markdown-emoji"
-vscode "bierner.markdown-footnotes"
 vscode "bierner.markdown-mermaid"
 vscode "bierner.markdown-preview-github-styles"
-vscode "bierner.markdown-yaml-preamble"
-vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
-vscode "bradlc.vscode-tailwindcss"
-vscode "budparr.language-hugo-vscode"
-vscode "charleswan.markdown-toc"
 vscode "christian-kohler.path-intellisense"
-vscode "danielgjackson.auto-dark-mode-windows"
-vscode "davidanson.vscode-markdownlint"
-vscode "devrashed.go-responsive"
-vscode "dotjoshjohnson.xml"
 vscode "eamodio.gitlens"
-vscode "ecmel.vscode-html-css"
-vscode "eliostruyf.vscode-front-matter"
-vscode "enskylin.gitbook-shelf"
 vscode "esbenp.prettier-vscode"
-vscode "estevesegura.svgl"
-vscode "fivethree.vscode-hugo-snippets"
-vscode "formulahendry.auto-close-tag"
-vscode "formulahendry.auto-rename-tag"
-vscode "ginfuru.ginfuru-better-solarized-dark-theme"
-vscode "gitbook.gitbook-vscode"
 vscode "github.copilot"
 vscode "github.copilot-chat"
-vscode "github.vscode-github-actions"
-vscode "goessner.mdmath"
-vscode "gruntfuggly.todo-tree"
-vscode "hansuxdev.bootstrap5-snippets"
-vscode "hoyt-tian.gitbook-kit"
-vscode "huibizhang.codesnap-plus"
-vscode "idleberg.icon-fonts"
-vscode "jeff-hykin.polacode-2019"
-vscode "jgclark.vscode-todo-highlight"
-vscode "jock.svg"
-vscode "kaellarkin.hugo-shortcode-syntax"
-vscode "lightyen.vscode-fanhuaji"
-vscode "lior-chamla.google-fonts"
-vscode "marp-team.marp-vscode"
-vscode "mechatroner.rainbow-csv"
-vscode "miguelsolorio.fluent-icons"
-vscode "ms-azuretools.vscode-docker"
-vscode "ms-ceintl.vscode-language-pack-zh-hant"
-vscode "ms-edgedevtools.vscode-edge-devtools"
-vscode "ms-python.debugpy"
 vscode "ms-python.python"
-vscode "ms-python.vscode-pylance"
-vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode-remote.remote-wsl"
-vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode-remote.remote-ssh" # 2013 連 M2 必備！
 vscode "ms-vscode.powershell"
-vscode "ms-vscode.remote-explorer"
-vscode "ms-vscode.remote-server"
-vscode "ms-windows-ai-studio.windows-ai-studio"
-vscode "mushan.vscode-paste-image"
-vscode "natizyskunk.sftp"
-vscode "noahbeij.marp-codecafe-snippets"
-vscode "oderwat.indent-rainbow"
-vscode "onecentlin.laravel-blade"
-vscode "onecentlin.laravel5-snippets"
 vscode "pkief.material-icon-theme"
-vscode "pranaygp.vscode-css-peek"
-vscode "rangav.vscode-thunder-client"
-vscode "redhat.vscode-yaml"
-vscode "ritwickdey.liveserver"
-vscode "robole.markdown-snippets"
-vscode "ryannaddy.laravel-artisan"
-vscode "shd101wyy.markdown-preview-enhanced"
-vscode "shopify.ruby-lsp"
-vscode "simonsiefke.svg-preview"
-vscode "sleistner.vscode-fileutils"
-vscode "starbist.clamp-it"
-vscode "streetsidesoftware.code-spell-checker"
-vscode "tabbyml.vscode-tabby"
-vscode "tehnix.vscode-tidymarkdown"
-vscode "thekalinga.bootstrap4-vscode"
-vscode "tomoki1207.pdf"
-vscode "tootone.org-mode"
-vscode "toxblh.polacode-fork"
-vscode "ue.alphabetical-sorter"
-vscode "usernamehw.errorlens"
-vscode "ysemeniuk.emmet-live"
-vscode "yzane.markdown-pdf"
 vscode "yzhang.markdown-all-in-one"
-vscode "zaczero.bootstrap-v4-snippets"
-vscode "zignd.html-css-class-completion"
+# ... (其他輕量外掛可保留)
