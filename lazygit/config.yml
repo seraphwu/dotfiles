@@ -1,12 +1,10 @@
 gui:
   language: "zh-TW"
   # 其他你喜歡的 GUI 設定...
-
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never # 如果你有裝 delta，沒有的話用預設即可
-
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never # 如果你有裝 delta，沒有的話用預設即可
 customCommands:
   # [C] 建立新 Commit (Emoji 風格)
   - key: "C"
@@ -22,17 +20,17 @@ customCommands:
             description: "✨  新功能 (Feature)"
             value: "✨ feat"
           - name: "fix"
-            description: "🐛  修復 (Bug Fix)"
-            value: "🐛 fix"
+            description: "\U0001F41B  修復 (Bug Fix)"
+            value: "\U0001F41B fix"
           - name: "chore"
-            description: "🧹  維護 (Chore)"
-            value: "🧹 chore"
+            description: "\U0001F9F9  維護 (Chore)"
+            value: "\U0001F9F9 chore"
           - name: "docs"
-            description: "📚  文件 (Docs)"
-            value: "📚 docs"
+            description: "\U0001F4DA  文件 (Docs)"
+            value: "\U0001F4DA docs"
           - name: "style"
-            description: "💎  格式 (Style)"
-            value: "💎 style"
+            description: "\U0001F48E  格式 (Style)"
+            value: "\U0001F48E style"
           - name: "refactor"
             description: "♻️   重構 (Refactor)"
             value: "♻️ refactor"
@@ -45,7 +43,6 @@ customCommands:
       - type: "input"
         title: "Message"
         key: "Message"
-
   # [A] 修改最後一個 Commit (Amend)
   - key: "A"
     context: "commits"
@@ -60,14 +57,14 @@ customCommands:
             description: "✨  新功能"
             value: "✨ feat"
           - name: "fix"
-            description: "🐛  修復"
-            value: "🐛 fix"
+            description: "\U0001F41B  修復"
+            value: "\U0001F41B fix"
           - name: "chore"
-            description: "🧹  維護"
-            value: "🧹 chore"
+            description: "\U0001F9F9  維護"
+            value: "\U0001F9F9 chore"
           - name: "docs"
-            description: "📚  文件"
-            value: "📚 docs"
+            description: "\U0001F4DA  文件"
+            value: "\U0001F4DA docs"
       - type: "input"
         title: "Scope"
         key: "Scope"
