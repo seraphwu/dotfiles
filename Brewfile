@@ -256,3 +256,8 @@ if Hardware::CPU.arm?
     mas "Xcode", id: 497799835     # 2013 絕對跑不動現代 Xcode
     mas "Disk Speed Test", id: 425264550
 end
+
+# 載入字體清單
+# 如果要合併時才需要這樣作
+
+# eval(File.read(File.join(File.dirname(__FILE__), "Brewfile.fonts")))
