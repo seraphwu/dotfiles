@@ -170,6 +170,9 @@ cask "visual-studio-code" # 雖然是 Electron，但寫 Code 必備
 # cask "vlc"
 cask "welly"              # BBS
 cask "zed"                # Rust 編輯器 (高性能，推薦在老機器用)
+cask "mos"
+cask "monitorcontrol"
+cask "switchkey"
 
 # 下載專用工具 (適合在 2013 上掛機跑)
 cask "4k-stogram"
@@ -245,6 +248,7 @@ end
 mas "Magnet", id: 441258766        # 2013 最佳視窗管理方案
 mas "Hidden Bar", id: 1452453066
 mas "Amphetamine", id: 937984704   # 防休眠
+mas "Squash", id: 1152443474
 # mas "Keka", id: 470158793          # 如果有買 MAS 版
 
 if Hardware::CPU.arm?
