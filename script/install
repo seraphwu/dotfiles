@@ -4,7 +4,11 @@
 
 set -e
 
+# 切換到 .dotfiles 根目錄
 cd "$(dirname $0)"/..
+DOTFILES_ROOT=$(pwd) # 取得當前絕對路徑，比寫死 $HOME/.dotfiles 更靈活
+
+echo "🚀 Starting Dotfiles Installation from: $DOTFILES_ROOT"
 
 # -----------------------------------------------------------
 # 1. 安裝核心軟體 (Core Software)
@@ -16,7 +20,6 @@ brew bundle --verbose --file="Brewfile" || true
 # -----------------------------------------------------------
 # 2. 安裝字體 (Fonts) - 獨立處理
 # -----------------------------------------------------------
-# 檢查檔案是否存在，並使用 || true 允許失敗繼續 (字體下載常逾時)
 if [ -f "Brewfile.fonts" ]; then
     echo "› brew bundle (Fonts) | 安裝字體"
     brew bundle --verbose --file="Brewfile.fonts" || true
@@ -28,52 +31,61 @@ fi
 # 3. 其他特定安裝與設定
 # -----------------------------------------------------------
 
-# Yabai Window Manager Configuration (Only for Apple Silicon)
-# Yabai 視窗管理設定 (僅限 Apple Silicon / M1 / M2)
+# Yabai Window Manager (Only for Apple Silicon)
 if [[ $(uname -m) == 'arm64' ]]; then
-    echo "› Apple Silicon detected. Configuring Yabai... | 偵測到 Apple Silicon，設定 Yabai..."
-    # 確保 yabai 已安裝 (Brewfile 已經處理了，這裡確保服務啟動)
+    echo "› Apple Silicon detected. Configuring Yabai..."
     if brew list yabai &>/dev/null; then
         yabai --start-service || true
         echo "  - Yabai service started."
     else
-        echo "  - Yabai not found (skipped in Brewfile?), skipping service start."
+        echo "  - Yabai not found, skipping service start."
     fi
 else
-    echo "› Intel Mac detected. Skipping Yabai service. | 偵測到 Intel Mac，跳過 Yabai 設定"
+    echo "› Intel Mac detected. Skipping Yabai service."
 fi
 
 # -----------------------------------------------------------
-# 4. 執行其他子安裝腳本
+# 4. Lazygit 設定檔連結 (跨平台相容)
 # -----------------------------------------------------------
-# 確保目標目錄存在
-mkdir -p "$HOME/.config/lazygit"
+echo "› Linking Lazygit config..."
 
-# 備份舊的 (如果存在且不是連結)
+# A. 標準路徑 (~/.config/lazygit)
+mkdir -p "$HOME/.config/lazygit"
+# 備份舊檔
 if [ -f "$HOME/.config/lazygit/config.yml" ] && [ ! -L "$HOME/.config/lazygit/config.yml" ]; then
     mv "$HOME/.config/lazygit/config.yml" "$HOME/.config/lazygit/config.yml.bak"
 fi
+ln -sf "$DOTFILES_ROOT/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
 
-# 建立連結
-ln -sf "$HOME/.dotfiles/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
-
+# B. macOS 特殊路徑 fix (Application Support)
 if [ "$(uname)" = "Darwin" ]; then
-    echo "› Fix Lazygit config path for macOS..."
-    mkdir -p "$HOME/Library/Application Support/lazygit"
-    ln -sf "$HOME/.dotfiles/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/config.yml"
+    echo "  - Fixing Lazygit path for macOS (Application Support)..."
+    MAC_TARGET_DIR="$HOME/Library/Application Support/lazygit"
+    mkdir -p "$MAC_TARGET_DIR"
+    
+    # 清理舊的 Application Support 設定，確保它指向我們的新連結
+    # 注意：這裡直接強制覆蓋，因為我們已經在上面 .config 備份過了，且兩者應同步
+    ln -sf "$DOTFILES_ROOT/lazygit/config.yml" "$MAC_TARGET_DIR/config.yml"
 fi
-
 
 echo "🔗 Lazygit config linked!"
 
+# -----------------------------------------------------------
+# 5. 執行其他子安裝腳本 (Sub-installers)
+# -----------------------------------------------------------
+# 同意 Xcode 授權
+echo "› Accepting Xcode license..."
+if command -v xcodebuild >/dev/null 2>&1; then
+    sudo xcodebuild -license accept || true
+fi
 
-# 同意 Xcode 授權 (需要 sudo 密碼)
-echo "› Accepting Xcode license... | 同意 Xcode 授權 (需輸入密碼)"
-sudo xcodebuild -license accept || true
-
-# 尋找並執行其他子目錄下的 install.sh
 echo "› Running sub-installers... | 執行子安裝腳本..."
-find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
+# 搜尋所有 install.sh，排除 .git 目錄，並自動賦予執行權限
+find . -name "install.sh" -not -path '*/.git/*' | while read installer; do
+    echo "  - Running ${installer}..."
+    chmod +x "${installer}" # 自動修復權限問題
+    bash -c "${installer}"
+done
 
 echo "› Done! | 安裝完成！"
 
@@ -86,7 +98,7 @@ echo "=================================================================="
 echo "✋ MANUAL ACTION REQUIRED (需要手動執行的項目)"
 echo "=================================================================="
 
-# 1. 檢查 Squash 2 (因為 mas 無法下載舊版)
+# 1. 檢查 Squash 2
 if [ -d "/Applications/Squash.app" ]; then
     echo "✅ [已安裝] Squash 2"
 else
@@ -95,7 +107,7 @@ else
     echo "   👉 動作: 請開啟 App Store -> 帳號 -> 已購項目 -> 手動下載。"
 fi
 
-# 2. 檢查 Git User Email (新電腦常忘記設)
+# 2. 檢查 Git User Email
 if git config --global user.email > /dev/null 2>&1; then
     echo "✅ [已設定] Git User Email"
 else
@@ -103,13 +115,11 @@ else
     echo "   👉 動作: git config --global user.email 'your@email.com'"
 fi
 
-# 3. 檢查字體 (如果是透過 script 安裝通常會成功，但再次確認也無妨)
-# 這裡檢查一個代表性的字體
+# 3. 檢查字體
 if [ -d "$HOME/Library/Fonts/MapleMono-NF-CN-Regular.ttf" ] || \
    [ -f "$HOME/Library/Fonts/MapleMono-NF-CN-Regular.ttf" ]; then
     echo "✅ [已安裝] Maple Mono NF CN"
 else
-    # 這裡只是提醒，因為字體安裝有時會非同步生效
     echo "ℹ️  [檢查] 如果字體顯示異常，請確認字體是否已正確載入。"
 fi
 
