@@ -57,6 +57,13 @@ fi
 # 建立連結
 ln -sf "$HOME/.dotfiles/lazygit/config.yml" "$HOME/.config/lazygit/config.yml"
 
+if [ "$(uname)" = "Darwin" ]; then
+    echo "› Fix Lazygit config path for macOS..."
+    mkdir -p "$HOME/Library/Application Support/lazygit"
+    ln -sf "$HOME/.dotfiles/lazygit/config.yml" "$HOME/Library/Application Support/lazygit/config.yml"
+fi
+
+
 echo "🔗 Lazygit config linked!"
 
 
