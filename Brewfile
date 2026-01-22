@@ -173,6 +173,7 @@ cask "zed"                # Rust 編輯器 (高性能，推薦在老機器用)
 cask "mos"
 cask "monitorcontrol"
 cask "switchkey"
+cask "mac-mouse-fix"
 
 # 下載專用工具 (適合在 2013 上掛機跑)
 cask "4k-stogram"
