@@ -190,13 +190,6 @@
       "Updated": "2025-11-09T20:43:47.1289517+08:00"
     },
     {
-      "Version": "2.004",
-      "Info": "",
-      "Source": "nerd-fonts",
-      "Name": "Noto-CJK-Mega-OTC",
-      "Updated": "2025-11-09T20:43:51.8946217+08:00"
-    },
-    {
       "Version": "3.4.0",
       "Info": "",
       "Source": "nerd-fonts",
@@ -211,11 +204,11 @@
       "Updated": "2025-11-09T20:45:44.0508746+08:00"
     },
     {
-      "Version": "2.003",
+      "Version": "3.4.0",
       "Info": "",
       "Source": "nerd-fonts",
-      "Name": "Noto-Serif-CJK-Super-OTC",
-      "Updated": "2025-11-09T20:45:52.3720943+08:00"
+      "Name": "Noto-Sans-NF",
+      "Updated": "2025-11-09T20:46:10.2232083+08:00"
     },
     {
       "Version": "1.0.35",

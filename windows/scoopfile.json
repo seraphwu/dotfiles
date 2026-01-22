@@ -316,13 +316,6 @@
       "Updated": "2026-01-22T14:01:10.1617547+08:00"
     },
     {
-      "Version": "3.5.12",
-      "Info": "",
-      "Source": "extras",
-      "Name": "joplin",
-      "Updated": "2026-01-22T14:01:22.3910929+08:00"
-    },
-    {
       "Version": "1.8.1",
       "Info": "",
       "Source": "main",
@@ -391,6 +384,20 @@
       "Source": "nerd-fonts",
       "Name": "Maple-Mono-NF-CN",
       "Updated": "2025-12-12T02:17:50.4444289+08:00"
+    },
+    {
+      "Version": "2.004",
+      "Info": "",
+      "Source": "nerd-fonts",
+      "Name": "Noto-CJK-Mega-OTC",
+      "Updated": "2025-11-09T20:43:51.8946217+08:00"
+    },
+    {
+      "Version": "2.003",
+      "Info": "",
+      "Source": "nerd-fonts",
+      "Name": "Noto-Serif-CJK-Super-OTC",
+      "Updated": "2025-11-09T20:45:52.3720943+08:00"
     },
     {
       "Version": "0.17.1",
@@ -727,13 +734,6 @@
       "Source": "extras",
       "Name": "wave-terminal",
       "Updated": "2026-01-14T20:14:18.1750377+08:00"
-    },
-    {
-      "Version": "20240203-110809-5046fc22",
-      "Info": "",
-      "Source": "extras",
-      "Name": "wezterm",
-      "Updated": "2026-01-16T19:11:20.2467797+08:00"
     },
     {
       "Version": "1.21.4",
