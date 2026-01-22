@@ -11,7 +11,7 @@ cd "$(dirname $0)"/..
 # -----------------------------------------------------------
 echo "› brew bundle (Core Software) | 安裝核心軟體"
 # 加入 --verbose 以便在舊機器上觀察進度
-brew bundle --verbose --file="Brewfile"
+brew bundle --verbose --file="Brewfile" || true
 
 # -----------------------------------------------------------
 # 2. 安裝字體 (Fonts) - 獨立處理
@@ -69,3 +69,42 @@ echo "› Running sub-installers... | 執行子安裝腳本..."
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
 
 echo "› Done! | 安裝完成！"
+
+# -----------------------------------------------------------
+# Post-Installation Checks (手動安裝提醒)
+# -----------------------------------------------------------
+
+echo ""
+echo "=================================================================="
+echo "✋ MANUAL ACTION REQUIRED (需要手動執行的項目)"
+echo "=================================================================="
+
+# 1. 檢查 Squash 2 (因為 mas 無法下載舊版)
+if [ -d "/Applications/Squash.app" ]; then
+    echo "✅ [已安裝] Squash 2"
+else
+    echo "❌ [未安裝] Squash 2 (Legacy Version)"
+    echo "   👉 原因: 舊版已從商店索引移除，mas 指令無法下載。"
+    echo "   👉 動作: 請開啟 App Store -> 帳號 -> 已購項目 -> 手動下載。"
+fi
+
+# 2. 檢查 Git User Email (新電腦常忘記設)
+if git config --global user.email > /dev/null 2>&1; then
+    echo "✅ [已設定] Git User Email"
+else
+    echo "❌ [未設定] Git User Email"
+    echo "   👉 動作: git config --global user.email 'your@email.com'"
+fi
+
+# 3. 檢查字體 (如果是透過 script 安裝通常會成功，但再次確認也無妨)
+# 這裡檢查一個代表性的字體
+if [ -d "$HOME/Library/Fonts/MapleMono-NF-CN-Regular.ttf" ] || \
+   [ -f "$HOME/Library/Fonts/MapleMono-NF-CN-Regular.ttf" ]; then
+    echo "✅ [已安裝] Maple Mono NF CN"
+else
+    # 這裡只是提醒，因為字體安裝有時會非同步生效
+    echo "ℹ️  [檢查] 如果字體顯示異常，請確認字體是否已正確載入。"
+fi
+
+echo "=================================================================="
+echo ""

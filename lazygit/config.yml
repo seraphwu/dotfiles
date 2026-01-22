@@ -1,5 +1,5 @@
 gui:
-  language: "auto"
+  language: "zh-TW"
   # 其他你喜歡的 GUI 設定...
 
 git:
