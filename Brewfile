@@ -89,6 +89,7 @@ brew "zsh-syntax-highlighting"
 brew "sass/sass/sass"
 brew "uv"
 brew "m-cli"
+brew "yt-dlp"
 
 # ==========================================
 # [GLOBAL] 必裝字體
