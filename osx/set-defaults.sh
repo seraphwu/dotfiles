@@ -1042,7 +1042,36 @@ defaults write com.irradiatedsoftware.SizeUp ShowPrefsOnNextStart -bool false
 # [中文說明] 重複設定：允許 QuickLook 選取文字
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE
 
+# -----------------------------------------------------------
+# Terminal.app Theme Setup (Terminal 主題設定)
+# -----------------------------------------------------------
+echo "› Configuring Terminal.app profile..."
 
+# 1. 定義主題名稱與檔案路徑
+# 注意：THEME_NAME 必須與 .terminal 檔名(不含副檔名)一致
+THEME_NAME="seraphwu" 
+THEME_FILE="$HOME/.dotfiles/Terminal/$THEME_NAME.terminal"
+
+# 2. 檢查檔案是否存在
+if [ -f "$THEME_FILE" ]; then
+    echo "  - Importing theme from: $THEME_FILE"
+    
+    # 3. 匯入主題
+    # 使用 open 指令，Terminal.app 會自動讀取並加入描述檔列表
+    open "$THEME_FILE"
+
+    # 等待 1 秒讓系統處理匯入
+    sleep 1
+
+    # 4. 將其設為「預設」與「啟動」主題
+    # 這行告訴 macOS：以後開新視窗，請用這個設定
+    defaults write com.apple.Terminal "Default Window Settings" -string "$THEME_NAME"
+    defaults write com.apple.Terminal "Startup Window Settings" -string "$THEME_NAME"
+    
+    echo "  ✅ Terminal theme '$THEME_NAME' set as default."
+else
+    echo "  ⚠️ Warning: Terminal theme file not found at $THEME_FILE"
+fi
 
 ###############################################################################
 # Kill affected applications                                                  #
