@@ -48,3 +48,5 @@
 	program = gpg
 [init]
 	defaultBranch = main
+[credential "helperselector"]
+	selected = manager
