@@ -11,6 +11,8 @@ tap "koekeishiya/formulae"
 # 說明：CLI 工具佔用資源極少，為了保持操作習慣一致，建議全部保留
 # ==========================================
 brew "git"
+# GitHub CLI
+brew "gh"
 brew "sevenzip"
 brew "duti"
 brew "openssl"
