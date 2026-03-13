@@ -77,6 +77,12 @@
                 "icon": "%USERPROFILE%\\scoop\\apps\\git\\current\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash (Scoop)",
                 "startingDirectory": "%USERPROFILE%"
+            },
+            {
+                "guid": "{6df7dac3-5dc1-5ae7-a353-f1edf94159b8}",
+                "hidden": false,
+                "name": "Ubuntu-24.04",
+                "source": "Microsoft.WSL"
             }
         ]
     },
