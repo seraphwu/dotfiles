@@ -116,3 +116,31 @@ function y {
     }
     Remove-Item -Path $tmp
 }
+
+function Get-Shiny {
+    Write-Host "🚀 開始 Scoop 大掃除..." -ForegroundColor Cyan
+    
+    Write-Host "1. 正在更新庫 (Buckets)..." -ForegroundColor Yellow
+    scoop update
+    
+    Write-Host "2. 正在更新所有軟體..." -ForegroundColor Yellow
+    scoop update *
+    
+    Write-Host "3. 正在清除舊版本與快取..." -ForegroundColor Yellow
+    # 使用 -ErrorAction Continue 並加上 try-catch 確保流程不中斷
+    try {
+        # 如果軟體正在運行，cleanup 會失敗，這裡我們讓它安靜地跳過
+        scoop cleanup * 2>$null
+        scoop cache rm *
+    } catch {
+        Write-Host "⚠️ 部分軟體正在執行中，已跳過舊版清理。" -ForegroundColor Gray
+    }
+    
+    Write-Host "4. 執行系統檢查 (Checkup)..." -ForegroundColor Yellow
+    scoop checkup
+    
+    Write-Host "✨ 一切都變乾淨了！" -ForegroundColor Green
+}
+
+# 確保 Alias 依然存在
+Set-Alias -Name up -Value Get-Shiny
