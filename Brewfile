@@ -198,7 +198,7 @@ if Hardware::CPU.arm?
     # --- AI & 重運算 ---
     #brew "ollama", restart_service: :changed
     cask "upscayl"        # AI 放大 (沒顯卡跑不動)
-    cask "comfyui"        # AI 繪圖
+    #cask "comfyui"        # AI 繪圖
     cask "docker"         # Docker Desktop (Intel 版非常重)
 
     # --- 瀏覽器 (Arc 很吃資源) ---
