@@ -196,7 +196,7 @@ if Hardware::CPU.arm?
     cask "monitorcontrol" # 2013 螢幕亮度通常直接由系統控
 
     # --- AI & 重運算 ---
-    brew "ollama", restart_service: :changed
+    #brew "ollama", restart_service: :changed
     cask "upscayl"        # AI 放大 (沒顯卡跑不動)
     cask "comfyui"        # AI 繪圖
     cask "docker"         # Docker Desktop (Intel 版非常重)
