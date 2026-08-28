@@ -71,6 +71,22 @@ fi
 echo "🔗 Lazygit config linked!"
 
 # -----------------------------------------------------------
+# 4b. McBopomofo 手動加詞資料檔連結 (macOS Only)
+# -----------------------------------------------------------
+if [ "$(uname)" = "Darwin" ]; then
+    echo "› Linking McBopomofo data.txt..."
+    MCBOPOMOFO_TARGET_DIR="$HOME/Library/Application Support/McBopomofo"
+    mkdir -p "$MCBOPOMOFO_TARGET_DIR"
+    
+    # 備份舊檔（非 symlink 時才備份）
+    if [ -f "$MCBOPOMOFO_TARGET_DIR/data.txt" ] && [ ! -L "$MCBOPOMOFO_TARGET_DIR/data.txt" ]; then
+        mv "$MCBOPOMOFO_TARGET_DIR/data.txt" "$MCBOPOMOFO_TARGET_DIR/data.txt.bak"
+    fi
+    ln -sf "$DOTFILES_ROOT/mcbopomofo/data.txt" "$MCBOPOMOFO_TARGET_DIR/data.txt"
+    echo "🔗 McBopomofo data.txt linked!"
+fi
+
+# -----------------------------------------------------------
 # 5. 執行其他子安裝腳本 (Sub-installers)
 # -----------------------------------------------------------
 # 同意 Xcode 授權
