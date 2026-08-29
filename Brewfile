@@ -239,9 +239,8 @@ if Hardware::CPU.arm?
     cask "spotify"        # 2013 用網頁版或手機 AirPlay 即可，省 App 資源
 
     # --- 其他 ---
-    cask "adobe-acrobat-reader" # 太肥大，用預覽程式即可
+    cask "tirling-pdf" 
     cask "pronotes"
-    cask "heptabase"      # 視覺筆記，吃圖形效能
     cask "wave"           # Wave Terminal (圖形化終端，重)
     cask "bleunlock"      # 藍牙鎖 (需要藍牙 5.0，2013 沒有)
     cask "TheBoredTeam/boring-notch/boring-notch" # 隱藏瀏海 (2013 沒瀏海)
