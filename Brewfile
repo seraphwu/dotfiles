@@ -247,6 +247,7 @@ if Hardware::CPU.arm?
     cask "wave"           # Wave Terminal (圖形化終端，重)
     cask "bleunlock"      # 藍牙鎖 (需要藍牙 5.0，2013 沒有)
     cask "TheBoredTeam/boring-notch/boring-notch" # 隱藏瀏海 (2013 沒瀏海)
+    cask "open-design"    # 設計工具 (需要 Metal)
 
 end
 
