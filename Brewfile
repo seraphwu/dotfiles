@@ -228,7 +228,6 @@ if Hardware::CPU.arm?
 
     # --- 社交與通訊 (Electron 記憶體怪獸) ---
     cask "discord"
-    cask "slack"
     cask "telegram"       # 其實 Telegram Native 還好，但為了專注可移走
     cask "franz"          # 聚合通訊 (非常重)
     cask "rocket"         # Emoji picker
