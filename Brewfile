@@ -241,7 +241,6 @@ if Hardware::CPU.arm?
     # --- 其他 ---
     cask "adobe-acrobat-reader" # 太肥大，用預覽程式即可
     cask "pronotes"
-    cask "anytype"        # 類似 Notion，稍重
     cask "heptabase"      # 視覺筆記，吃圖形效能
     cask "wave"           # Wave Terminal (圖形化終端，重)
     cask "bleunlock"      # 藍牙鎖 (需要藍牙 5.0，2013 沒有)
