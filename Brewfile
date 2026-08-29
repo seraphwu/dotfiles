@@ -234,7 +234,6 @@ if Hardware::CPU.arm?
 
     # --- 遊戲與娛樂 ---
     cask "steam"
-    cask "battle-net"
     cask "openemu@experimental" # 其實 2013 跑得動，看你想不想在上面玩
     cask "spotify"        # 2013 用網頁版或手機 AirPlay 即可，省 App 資源
 
