@@ -72,6 +72,10 @@ defaults write com.apple.systemuiserver menuExtras -array \
 # [中文說明] 在選單列顯示電池百分比
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
+# menubar 圖示間距縮小
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 6
+
 # Set highlight color to green
 # [中文說明] 設定選取文字或檔案時的反白顏色（目前註解掉）
 # defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"

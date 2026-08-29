@@ -177,6 +177,7 @@ cask "mos"
 cask "monitorcontrol"
 cask "switchkey"
 cask "mac-mouse-fix"
+cask "snapzy"          # 螢幕錄製 (Web based)
 
 # 下載專用工具 (適合在 2013 上掛機跑)
 cask "4k-stogram"
@@ -244,6 +245,9 @@ if Hardware::CPU.arm?
     cask "anytype"        # 類似 Notion，稍重
     cask "heptabase"      # 視覺筆記，吃圖形效能
     cask "wave"           # Wave Terminal (圖形化終端，重)
+    cask "bleunlock"      # 藍牙鎖 (需要藍牙 5.0，2013 沒有)
+    cask "TheBoredTeam/boring-notch/boring-notch" # 隱藏瀏海 (2013 沒瀏海)
+
 end
 
 # ==========================================
