@@ -160,3 +160,13 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/Users/seraphwu/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# proto
+export PROTO_HOME="$HOME/.proto";
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
+# bun completions
+[ -s "/Users/seraphwu/.bun/_bun" ] && source "/Users/seraphwu/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
