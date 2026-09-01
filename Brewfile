@@ -93,6 +93,9 @@ brew "sass/sass/sass"
 brew "uv"
 brew "m-cli"
 brew "yt-dlp"
+brew "ytfzf"              # YouTube 下載器 (CLI)
+brew "gallery-dl"          # 圖片下載器 (CLI)
+brew "pnpm"
 # ==========================================
 # [GLOBAL] 必裝字體
 # ==========================================
