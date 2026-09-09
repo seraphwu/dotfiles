@@ -182,6 +182,7 @@ cask "switchkey"
 cask "mac-mouse-fix"
 cask "snapzy"          # 螢幕錄製 (Web based)
 cask "alt-tab".        # 視窗切換 (比 macOS 原生更好用)
+cask "stats"           # 系統資訊
 
 # 下載專用工具 (適合在 2013 上掛機跑)
 cask "4k-stogram"
