@@ -123,7 +123,7 @@ cask "shottr"             # 截圖 (輕量)
 cask "apparency"
 cask "appcleaner"         # 移除軟體
 cask "applite"
-cask "betterzip"
+# cask "betterzip"
 cask "beyond-compare"
 cask "calibre"            # 電子書管理
 cask "coconutbattery"     # 電池健康度
@@ -261,6 +261,8 @@ mas "Hidden Bar", id: 1452453066
 mas "Amphetamine", id: 937984704   # 防休眠
 mas "Squash", id: 1152443474
 # mas "Keka", id: 470158793          # 如果有買 MAS 版
+mas "Anybox", id: 1449414000
+mas "Folder Preview", id: 1456957248
 
 if Hardware::CPU.arm?
     # 這些在舊機器可能沒必要裝
@@ -270,6 +272,7 @@ if Hardware::CPU.arm?
     mas "Pages", id: 409201541
     mas "Xcode", id: 497799835     # 2013 絕對跑不動現代 Xcode
     mas "Disk Speed Test", id: 425264550
+    mas "簡放島", id: 1518425040
 end
 
 # 載入字體清單
