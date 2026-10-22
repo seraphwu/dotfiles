@@ -25,7 +25,11 @@ Modified from [Amo Wu does dotfiles](https://github.com/amowu/dotfiles) & [Holma
 ```text
 /dotfiles
   ├── .gitattributes      # [Core] 強制定義換行規則 (LF/CRLF 防護)
-  ├── .gitconfig          # [Shared] 跨平台共用的 Git 設定
+  ├── .gitconfig          # [Win] Git 入口 (include git/gitconfig.shared + Windows 專屬設定)
+  ├── git/
+  │   ├── gitconfig.shared   # [Shared] 跨平台共用的 Git 設定
+  │   └── gitconfig.symlink  # [Mac] Git 入口 (include gitconfig.shared + macOS 專屬設定)
+  ├── ssh/config          # [Shared] SSH 設定 (GitHub 雙帳號：github.com / github-meijiasha)
   ├── docker/             # [Shared] 跨平台 Docker 服務 (n8n, MySQL)
   │   └── n8n/
   │       ├── scripts/    # 備份腳本 ([Win]backup.ps1 / [Mac]backup.sh)

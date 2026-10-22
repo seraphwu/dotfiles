@@ -1,28 +1,10 @@
-[hub]
-  protocol = https
-[user]
-	name = seraphwu
-	email = seraphwu@gmail.com
-  signingkey = E77D0CB6
+# macOS 入口：script/bootstrap 連結為 ~/.gitconfig
+[include]
+  path = ~/.dotfiles/git/gitconfig.shared
+
+# ---- macOS 專屬 ----
 [credential]
 	helper = osxkeychain
-[color]
-  diff = auto
-  status = auto
-  branch = auto
-  log = auto
-  ui = true
-[core]
-  excludesfile = ~/.gitignore
-	editor = code --wait
-[help]
-  autocorrect = 1
-[push]
-  # See `git help config` (search for push.default)
-  # for more information on different options of the below setting.
-  #
-  # Setting to git 2.0 default to surpress warning message
-  default = simple
 [diff]
   tool = sourcetree
 [difftool]
@@ -37,14 +19,3 @@
 [mergetool "sourcetree"]
   cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
   trustExitCode = true
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-  required = true
-	process = git-lfs filter-process
-[commit]
-  gpgsign = false
-[gpg]
-	program = gpg
-[init]
-	defaultBranch = main

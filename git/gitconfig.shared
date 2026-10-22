@@ -1,0 +1,38 @@
+# 跨平台共用的 Git 設定
+# 由各平台入口檔 include：
+#   macOS   : git/gitconfig.symlink  -> ~/.gitconfig (script/bootstrap 連結)
+#   Windows : .gitconfig             -> ~\.gitconfig (windows/install.ps1 連結)
+[hub]
+  protocol = https
+[user]
+	name = seraphwu
+	email = seraphwu@gmail.com
+  signingkey = E77D0CB6
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  log = auto
+  ui = true
+[core]
+  excludesfile = ~/.gitignore
+	editor = code --wait
+[help]
+  autocorrect = 1
+[push]
+  # See `git help config` (search for push.default)
+  # for more information on different options of the below setting.
+  #
+  # Setting to git 2.0 default to surpress warning message
+  default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+  required = true
+	process = git-lfs filter-process
+[commit]
+  gpgsign = false
+[gpg]
+	program = gpg
+[init]
+	defaultBranch = main
