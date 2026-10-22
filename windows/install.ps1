@@ -168,8 +168,11 @@ $ScoopTerminalPath = "$env:USERPROFILE\scoop\persist\windows-terminal\settings.j
 $StoreTerminalPath = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 $TargetTerminalPath = if (Test-Path $(Split-Path $ScoopTerminalPath -Parent)) { $ScoopTerminalPath } elseif (Test-Path $(Split-Path $StoreTerminalPath -Parent)) { $StoreTerminalPath } else { $null }
 
+# PowerShell 7 的 profile 路徑 (不用 $PROFILE：在 5.1 執行時它會指向 WindowsPowerShell)
+$Pwsh7Profile = Join-Path ([Environment]::GetFolderPath('MyDocuments')) "PowerShell\Microsoft.PowerShell_profile.ps1"
+
 $Links = @{
-    "$WindowsDir\Microsoft.PowerShell_profile.ps1" = $PROFILE;
+    "$WindowsDir\Microsoft.PowerShell_profile.ps1" = $Pwsh7Profile;
     "$DotfilesDir\.gitconfig"                      = "$UserHome\.gitconfig";
     "$DotfilesDir\ssh\config"                      = "$UserHome\.ssh\config";
     "$DotfilesDir\lazygit\config.yml"              = "$env:LOCALAPPDATA\lazygit\config.yml";
@@ -177,7 +180,7 @@ $Links = @{
 if ($TargetTerminalPath) { $Links["$WindowsDir\Terminal\settings.json"] = $TargetTerminalPath }
 
 # 建立目錄
-if (!(Test-Path "$(Split-Path $PROFILE -Parent)")) { New-Item -ItemType Directory -Force -Path "$(Split-Path $PROFILE -Parent)" | Out-Null }
+if (!(Test-Path "$(Split-Path $Pwsh7Profile -Parent)")) { New-Item -ItemType Directory -Force -Path "$(Split-Path $Pwsh7Profile -Parent)" | Out-Null }
 if (!(Test-Path "$UserHome\.ssh")) { New-Item -ItemType Directory -Force -Path "$UserHome\.ssh" | Out-Null }
 if (!(Test-Path "$env:LOCALAPPDATA\lazygit")) { New-Item -ItemType Directory -Force -Path "$env:LOCALAPPDATA\lazygit" | Out-Null }
 
