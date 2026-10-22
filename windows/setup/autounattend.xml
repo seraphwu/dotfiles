@@ -701,7 +701,7 @@ winget install --id Microsoft.PowerShell --accept-package-agreements
 #winget install --id QL-Win.QuickLook -e
 
 
-:: Disabling the Delivery of Personalized or Suggested Content Like App Suggestions, Tips, and Advertisements in Windows
+# Disabling the Delivery of Personalized or Suggested Content Like App Suggestions, Tips, and Advertisements in Windows
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "ContentDeliveryAllowed" /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "FeatureManagementEnabled" /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "OEMPreInstalledAppsEnabled" /t REG_DWORD /d 0 /f
@@ -728,84 +728,84 @@ reg.exe delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Cont
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings\OnlineSpeechPrivacy" /v "HasAccepted" /t REG_DWORD /d 0 /f
 
 
-:: Removes Copilot
-::reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Runonce" /v "UninstallCopilot" /t REG_SZ /d "" /f
-::reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f
+# Removes Copilot
+#reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Runonce" /v "UninstallCopilot" /t REG_SZ /d "" /f
+#reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f
 
-:: Removes Store Banner in Notepad
-::reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Notepad" /v ShowStoreBanner /t REG_DWORD /d 0 /f
+# Removes Store Banner in Notepad
+#reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Notepad" /v ShowStoreBanner /t REG_DWORD /d 0 /f
 
-:: Removes OneDrive
-::reg.exe delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v OneDriveSetup /f
+# Removes OneDrive
+#reg.exe delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v OneDriveSetup /f
 
-:: Align the taskbar to the left on Windows 11
-::reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAl /t REG_DWORD /d 0 /f
+# Align the taskbar to the left on Windows 11
+#reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarAl /t REG_DWORD /d 0 /f
 
-:: Hides Search Icon on Taskbar
+# Hides Search Icon on Taskbar
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Search" /v SearchboxTaskbarMode /t REG_DWORD /d 0 /f
 
-:: Start Menu Customizations 
-:: Disables Recently Added Apps and Recommendations in the Start Menu
+# Start Menu Customizations 
+# Disables Recently Added Apps and Recommendations in the Start Menu
 reg.exe add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer" /v HideRecentlyAddedApps /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_IrisRecommendations /t REG_DWORD /d 0 /f
 
-:: Hides or Removes People from Taskbar
+# Hides or Removes People from Taskbar
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People" /v PeopleBand /t REG_DWORD /d 0 /f
 
-:: Hides Task View Button on Taskbar
+# Hides Task View Button on Taskbar
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowTaskViewButton /t REG_DWORD /d 0 /f
 
-:: Hides and Removes News and Interests from PC and Taskbar
+# Hides and Removes News and Interests from PC and Taskbar
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" /v ShellFeedsTaskbarViewMode /t REG_DWORD /d 2 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Feeds" /v ShellFeedsEnabled /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds" /v EnableFeeds /t REG_DWORD /d 0 /f
 
-:: Hides or Removes Notifications
+# Hides or Removes Notifications
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 0 /f
 
-:: Disables User Account Sync
-::reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy" /v SettingSyncEnabled /t REG_DWORD /d 0 /f
+# Disables User Account Sync
+#reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy" /v SettingSyncEnabled /t REG_DWORD /d 0 /f
 
-:: Disables Location Services
+# Disables Location Services
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Privacy" /v LocationServicesEnabled /t REG_DWORD /d 0 /f
 
-:: Disables Input Personalization Settings
+# Disables Input Personalization Settings
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Personalization\Settings" /v AcceptedPrivacyPolicy /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\InputPersonalization" /v RestrictImplicitTextCollection /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\InputPersonalization" /v RestrictImplicitInkCollection /t REG_DWORD /d 1 /f
 
-:: Disables Automatic Feedback Sampling
+# Disables Automatic Feedback Sampling
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Feedback" /v AutoSample /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Feedback" /v ServiceEnabled /t REG_DWORD /d 0 /f
 
-:: Disables Recent Documents Tracking
+# Disables Recent Documents Tracking
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_TrackDocs /t REG_DWORD /d 0 /f
 
-:: Disable "Let websites provide locally relevant content by accessing my language list"
+# Disable "Let websites provide locally relevant content by accessing my language list"
 reg.exe add "HKEY_CURRENT_USER\Control Panel\International\User Profile" /v HttpAcceptLanguageOptOut /t REG_DWORD /d 1 /f
 
-:: Disables "Let Windows track app launches to improve Start and search results"
+# Disables "Let Windows track app launches to improve Start and search results"
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v Start_TrackProgs /t REG_DWORD /d 0 /f
 
-:: Disables Background Apps
+# Disables Background Apps
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications" /v GlobalUserDisabled /t REG_DWORD /d 1 /f
 
-:: Disables App Diagnostics
+# Disables App Diagnostics
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\AppDiagnostics" /v AppDiagnosticsEnabled /t REG_DWORD /d 0 /f
 
-:: Disables Delivery Optimization
+# Disables Delivery Optimization
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\DeliveryOptimization" /v DODownloadMode /t REG_DWORD /d 0 /f
 
-:: Disables Tablet Mode
+# Disables Tablet Mode
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ImmersiveShell" /v TabletMode /t REG_DWORD /d 0 /f
 
-:: Disables Use Sign-In Info for User Account
+# Disables Use Sign-In Info for User Account
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication" /v UseSignInInfo /t REG_DWORD /d 0 /f
 
-:: Disables Maps Auto Download
+# Disables Maps Auto Download
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Maps" /v AutoDownload /t REG_DWORD /d 0 /f
 
-:: Disables Telemetry and Ads
+# Disables Telemetry and Ads
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Siuf\Rules" /v NumberOfSIUFInPeriod /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\CloudContent" /v DisableTailoredExperiencesWithDiagnosticData /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\CloudContent" /v DisableWindowsConsumerFeatures /t REG_DWORD /d 1 /f
@@ -813,28 +813,28 @@ reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explore
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\AdvertisingInfo" /v Enabled /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\InputPersonalization\TrainedDataStore" /v "HarvestContacts" /t REG_DWORD /d 0 /f
 
-:: Manages and displays the status of ongoing operations, such as file copy, move, delete, etc.
+# Manages and displays the status of ongoing operations, such as file copy, move, delete, etc.
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager" /v EnthusiastMode /t REG_DWORD /d 1 /f
 
-:: Set File Explorer to Open This PC instead of Quick Access
+# Set File Explorer to Open This PC instead of Quick Access
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v LaunchTo /t REG_DWORD /d 1 /f
 
-:: Set Display for Performance
+# Set Display for Performance
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v MenuShowDelay /t REG_DWORD /d 1 /f
 
-:: On Shutdown, Windows will automatically close any running applications
+# On Shutdown, Windows will automatically close any running applications
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v AutoEndTasks /t REG_DWORD /d 1 /f
 
-:: Sets the Mouse hover time to 400 milliseconds
+# Sets the Mouse hover time to 400 milliseconds
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Mouse" /v MouseHoverTime /t REG_SZ /d "400" /f
 
-:: Hides the Meet Now Button on the Taskbar
+# Hides the Meet Now Button on the Taskbar
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v HideSCAMeetNow /t REG_DWORD /d 1 /f
 
-:: Disables the Second Out-Of-Box Experience
+# Disables the Second Out-Of-Box Experience
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\UserProfileEngagement" /v ScoobeSystemSettingEnabled /t REG_DWORD /d 0 /f
 
-:: Set Display for Performance
+# Set Display for Performance
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v DragFullWindows /t REG_SZ /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v MenuShowDelay /t REG_SZ /d 200 /f
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics" /v MinAnimate /t REG_SZ /d 0 /f
@@ -847,65 +847,65 @@ reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explore
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" /v VisualFXSetting /t REG_DWORD /d 3 /f
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\DWM" /v EnableAeroPeek /t REG_DWORD /d 0 /f
 
-:: Set Registry Keys to Enable End Task With Right Click
+# Set Registry Keys to Enable End Task With Right Click
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarDeveloperSettings /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v TaskbarEndTask /t REG_DWORD /d 1 /f
 
-:: Disables Notification Tray and Calendar
+# Disables Notification Tray and Calendar
 reg.exe add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer" /v DisableNotificationCenter /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\PushNotifications" /v ToastEnabled /t REG_DWORD /d 0 /f
 
-:: Set Classic Right-Click Menu for Windows 11
+# Set Classic Right-Click Menu for Windows 11
 reg.exe add "HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /ve /t REG_SZ /d "" /f
 
-:: Disable Xbox GameDVR
+# Disable Xbox GameDVR
 reg.exe add "HKEY_CURRENT_USER\System\GameConfigStore" /v GameDVR_FSEBehavior /t REG_DWORD /d 2 /f
 reg.exe add "HKEY_CURRENT_USER\System\GameConfigStore" /v GameDVR_Enabled /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\System\GameConfigStore" /v GameDVR_DXGIHonorFSEWindowsCompatible /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\System\GameConfigStore" /v GameDVR_HonorUserFSEBehaviorMode /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\System\GameConfigStore" /v GameDVR_EFSEFeatureFlags /t REG_DWORD /d 0 /f
 
-:: Disables Bing Search in Start Menu
+# Disables Bing Search in Start Menu
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Explorer" /v DisableSearchBoxSuggestions /t REG_DWORD /d 1 /f
 
-:: Enables NumLock on Startup
+# Enables NumLock on Startup
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Keyboard" /v InitialKeyboardIndicators /t REG_SZ /d 2 /f
 
-:: Disables Mouse Acceleration
+# Disables Mouse Acceleration
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Mouse" /v MouseSpeed /t REG_SZ /d "0" /f
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Mouse" /v MouseThreshold1 /t REG_SZ /d "0" /f
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Mouse" /v MouseThreshold2 /t REG_SZ /d "0" /f
 
-:: Disables Sticky Keys
+# Disables Sticky Keys
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys" /v Flags /t REG_SZ /d "506" /f
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Accessibility\StickyKeys" /v HotkeyFlags /t REG_SZ /d "58" /f
 
-:: Disables Snap Assist Flyout
+# Disables Snap Assist Flyout
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v SnapAssist /t REG_DWORD /d 0 /f
 
-:: Enables Show File Extensions
+# Enables Show File Extensions
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFileExt /t REG_DWORD /d 0 /f
 
-:: Enables Dark Mode
+# Enables Dark Mode
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v AppsUseLightTheme /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v ColorPrevalence /t REG_DWORD /d 0 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v EnableTransparency /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" /v SystemUsesLightTheme /t REG_DWORD /d 0 /f
 
-:: Set Desktop Background Dark Mode Wallpaper
+# Set Desktop Background Dark Mode Wallpaper
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d "C:\Windows\Web\Wallpaper\Windows\img19.jpg" /f
 
-:: WINDOWS 10 TASKBAR CUSTOMIZATIONS
-:: Makes Taskbar Transparent in Windows 10
+# WINDOWS 10 TASKBAR CUSTOMIZATIONS
+# Makes Taskbar Transparent in Windows 10
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarAcrylicOpacity" /t REG_DWORD /d 0 /f
-:: Makes Taskbar Small in Windows 10
+# Makes Taskbar Small in Windows 10
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "TaskbarSmallIcons" /t REG_DWORD /d 1 /f
 
-:: Don't Update Last Access Time Stamp - This Can Improve File System Performance
+# Don't Update Last Access Time Stamp - This Can Improve File System Performance
 fsutil.exe behavior set disableLastAccess 1
 
-:: Restore Windows Photo Viewer and Set as Default Program for Image Files
-:: Restore Windows Photo Viewer
+# Restore Windows Photo Viewer and Set as Default Program for Image Files
+# Restore Windows Photo Viewer
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Classes\.bmp" /ve /d "PhotoViewer.FileAssoc.Tiff" /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Classes\.cr2" /ve /d "PhotoViewer.FileAssoc.Tiff" /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Classes\.dib" /ve /d "PhotoViewer.FileAssoc.Tiff" /f
@@ -920,7 +920,7 @@ reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Classes\.png" /ve /d "PhotoViewer.FileAs
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Classes\.tif" /ve /d "PhotoViewer.FileAssoc.Tiff" /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Classes\.tiff" /ve /d "PhotoViewer.FileAssoc.Tiff" /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Classes\.wdp" /ve /d "PhotoViewer.FileAssoc.Tiff" /f
-:: Create Relevant File Associations
+# Create Relevant File Associations
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.bmp\OpenWithProgids" /v "PhotoViewer.FileAssoc.Tiff" /t REG_NONE /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.cr2\OpenWithProgids" /v "PhotoViewer.FileAssoc.Tiff" /t REG_NONE /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.dib\OpenWithProgids" /v "PhotoViewer.FileAssoc.Tiff" /t REG_NONE /f
@@ -936,31 +936,31 @@ reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explore
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.tiff\OpenWithProgids" /v "PhotoViewer.FileAssoc.Tiff" /t REG_NONE /f
 reg.exe add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.wdp\OpenWithProgids" /v "PhotoViewer.FileAssoc.Tiff" /t REG_NONE /f
 
-:: Disables Windows Recall on Copilot+ PC - Credit Britec09
+# Disables Windows Recall on Copilot+ PC - Credit Britec09
 reg.exe add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsAI" /f
 reg.exe add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\WindowsAI" /v "DisableAIDataAnalysis" /t REG_DWORD /d 1 /f
 reg.exe add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Windows AI" /v "TurnOffSavingSnapshots" /t REG_DWORD /d 1 /f
 
-:: Disables Wallpaper JPEG Quality Reduction in Windows 10 
+# Disables Wallpaper JPEG Quality Reduction in Windows 10 
 reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v "JPEGImportQuality" /t REG_DWORD /d 100 /f
 
-:: Sets "When Windows Detects Communication Activity" under "System &gt; Sound &gt; More sound settings &gt; Communications" to "Do Nothing"
+# Sets "When Windows Detects Communication Activity" under "System &gt; Sound &gt; More sound settings &gt; Communications" to "Do Nothing"
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Multimedia\Audio" /v "UserDuckingPreference" /t REG_DWORD /d 3 /f
 
-:: Enables User Account Control (Default Value)
+# Enables User Account Control (Default Value)
 reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 3 /f
 
 ## AveYo: fix ms-gamebar annoyance after uninstalling Xbox
-reg.exe add HKCR\ms-gamebar /f /ve /d URL:ms-gamebar 2>&1 >''
-reg.exe add HKCR\ms-gamebar /f /v "URL Protocol" /d "" 2>&1 >''
-reg.exe add HKCR\ms-gamebar /f /v "NoOpenWith" /d "" 2>&1 >''
-reg.exe add HKCR\ms-gamebar\shell\open\command /f /ve /d "\`"$env:SystemRoot\System32\systray.exe\`"" 2>&1 >''
-reg.exe add HKCR\ms-gamebarservices /f /ve /d URL:ms-gamebarservices 2>&1 >''
-reg.exe add HKCR\ms-gamebarservices /f /v "URL Protocol" /d "" 2>&1 >''
-reg.exe add HKCR\ms-gamebarservices /f /v "NoOpenWith" /d "" 2>&1 >''
-reg.exe add HKCR\ms-gamebarservices\shell\open\command /f /ve /d "\`"$env:SystemRoot\System32\systray.exe\`"" 2>&1 >''
+reg.exe add HKCR\ms-gamebar /f /ve /d URL:ms-gamebar 2&gt;&amp;1 &gt;''
+reg.exe add HKCR\ms-gamebar /f /v "URL Protocol" /d "" 2&gt;&amp;1 &gt;''
+reg.exe add HKCR\ms-gamebar /f /v "NoOpenWith" /d "" 2&gt;&amp;1 &gt;''
+reg.exe add HKCR\ms-gamebar\shell\open\command /f /ve /d "\`"$env:SystemRoot\System32\systray.exe\`"" 2&gt;&amp;1 &gt;''
+reg.exe add HKCR\ms-gamebarservices /f /ve /d URL:ms-gamebarservices 2&gt;&amp;1 &gt;''
+reg.exe add HKCR\ms-gamebarservices /f /v "URL Protocol" /d "" 2&gt;&amp;1 &gt;''
+reg.exe add HKCR\ms-gamebarservices /f /v "NoOpenWith" /d "" 2&gt;&amp;1 &gt;''
+reg.exe add HKCR\ms-gamebarservices\shell\open\command /f /ve /d "\`"$env:SystemRoot\System32\systray.exe\`"" 2&gt;&amp;1 &gt;''
 
-:: Restart PC to Apply All Changes
+# Restart PC to Apply All Changes
 shutdown /r -t 1
 		</File>
 		<File path="C:\Windows\Setup\Scripts\unattend-03.cmd">
@@ -1256,6 +1256,49 @@ $scripts = @(
 	};
 	{
 		Get-Content -LiteralPath 'C:\Windows\Setup\Scripts\unattend-01.ps1' -Raw | Invoke-Expression;
+	};
+	{
+		# [自訂] 安裝 PowerShell 7：優先用隨身碟根目錄的 PowerShell-7*-win-x64.msi，找不到才從 GitHub 下載
+		$failNote = 'C:\Users\Public\Desktop\PowerShell7-安裝失敗.txt';
+		if( Test-Path -LiteralPath "$env:ProgramFiles\PowerShell\7\pwsh.exe" ) {
+			'PowerShell 7 already installed (e.g. by winget in unattend-01.ps1), skipping.';
+			return;
+		}
+		$msi = Get-PSDrive -PSProvider FileSystem | ForEach-Object {
+			Get-ChildItem -Path "$($_.Root)PowerShell-7*-win-x64.msi" -File -ErrorAction 'SilentlyContinue';
+		} | Sort-Object -Property Name -Descending | Select-Object -First 1 -ExpandProperty FullName;
+		if( $msi ) {
+			"Found local MSI: $msi";
+		} else {
+			[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12;
+			$ProgressPreference = 'SilentlyContinue';
+			foreach( $i in 1..12 ) {
+				try {
+					$release = Invoke-RestMethod -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' -UseBasicParsing;
+					$asset = $release.assets | Where-Object -Property name -Like 'PowerShell-*-win-x64.msi' | Select-Object -First 1;
+					$msi = Join-Path $env:TEMP $asset.name;
+					Invoke-WebRequest -Uri $asset.browser_download_url -OutFile $msi -UseBasicParsing;
+					"Downloaded: $msi";
+					break;
+				} catch {
+					$msi = $null;
+					"Download attempt $i failed: $($_.Exception.Message)";
+					Start-Sleep -Seconds 10;
+				}
+			}
+		}
+		if( -not $msi ) {
+			Set-Content -LiteralPath $failNote -Value "找不到 PowerShell 7 安裝檔（隨身碟根目錄沒有 PowerShell-7*-win-x64.msi，且無法連網下載）。`r`n請連上網路後手動安裝：winget install Microsoft.PowerShell`r`n詳細紀錄：C:\Windows\Setup\Scripts\FirstLogon.log" -Encoding UTF8;
+			Write-Warning 'PowerShell 7 was NOT installed.';
+			return;
+		}
+		$proc = Start-Process -FilePath 'msiexec.exe' -ArgumentList @( '/i', "`"$msi`"", '/qn', '/norestart' ) -Wait -PassThru;
+		if( $proc.ExitCode -notin 0, 3010 ) {
+			Set-Content -LiteralPath $failNote -Value "PowerShell 7 安裝失敗，msiexec 結束代碼 $($proc.ExitCode)。`r`n安裝檔：$msi`r`n詳細紀錄：C:\Windows\Setup\Scripts\FirstLogon.log" -Encoding UTF8;
+			Write-Warning "PowerShell 7 msiexec failed with exit code $($proc.ExitCode).";
+		} else {
+			"PowerShell 7 installed (exit code $($proc.ExitCode)).";
+		}
 	};
 	{
 		Remove-Item -LiteralPath @(
