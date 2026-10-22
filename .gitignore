@@ -23,3 +23,6 @@ sftp-config.json
 
 # Crash logs
 npm-debug.log
+
+# Windows 安裝應答檔（含 Wi-Fi 密碼，只放 Ventoy 隨身碟）；公開版是 windows/setup/autounattend.xml
+/windows/autounattend.xml
