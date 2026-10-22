@@ -1,0 +1,13 @@
+# GitHub 雙帳號
+#   seraphwu（預設）: git@github.com:<owner>/<repo>.git
+#   meijiasha       : git@github-meijiasha:<owner>/<repo>.git
+# 私鑰不在 repo 內，從 Bitwarden 取回後放到 ~/.ssh/
+#   seraphwu  : 沿用 OpenSSH 預設金鑰 (~/.ssh/id_rsa 或 ~/.ssh/id_ed25519)，不需設定
+#   meijiasha : ~/.ssh/meijiasha/id_rsa
+# 注意：不要把 meijiasha 的金鑰 ssh-add 進 agent，否則 github.com 可能誤用它登入
+
+Host github-meijiasha
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/meijiasha/id_rsa
+  IdentitiesOnly yes
