@@ -8,6 +8,9 @@
 ## Windows 應答檔的決定
 - 以 Ventoy 版（schneegans 產生器，2026-03）為底，之後的修改都是手動的；**不要**用第 3 行的產生器網址重新產生（會失去所有自訂）。自訂處以 `[custom]` / `[自訂]` 註解標示。
 - 使用者設定（HKCU）一律放 UserOnce 或 FirstLogon；specialize 以 SYSTEM 執行，寫 HKCU 不會到使用者身上。
+- **啟動指令有長度上限**：`RunSynchronousCommand/Path`、`SynchronousCommand/CommandLine` 超過上限（推測 259 字元；已知 248、253 可用，264 失敗）會讓整份應答檔無效，表現為「電腦意外地重新啟動」，`setuperr.log` 出現 `0x80220005`、「值無效」。specialize Order 1（解出腳本，248 字元）不能再加長；改動啟動指令後一律檢查長度。
+- 首次登入的腳本不能有會等待輸入的指令：winget 一律加 `--accept-source-agreements --accept-package-agreements`、`Set-ExecutionPolicy` 加 `-Force`；各腳本以 `-NonInteractive` 啟動（Order 1 除外）。輸出都導向日誌，等待輸入時視窗看起來像卡住。
+- 另一台電腦上的 AI 修改隨身碟應答檔前，要同步回本機私人版並重新產生公開版，否則三份會不一致。
 - UAC 開啟（`EnableLUA=1`）、管理員提權不詢問（`ConsentPromptBehaviorAdmin=0`）：因為 Scoop 拒絕在管理員權限下安裝。
 - 帳號 `seraphwu` 在 Administrators 群組（平常一般權限、需要時自動提權），開機永久自動登入（密碼存 Winlogon，可遠端桌面登入）。
 - Wi-Fi 在首次登入（FirstLogon 第一步）才連，OOBE 期間不連網。

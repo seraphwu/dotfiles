@@ -24,4 +24,8 @@
 - UAC：曾改 `EnableLUA=0`，發現 scoop 安裝程式會拒絕在管理員權限下執行 → 改為 `EnableLUA=1` + `ConsentPromptBehaviorAdmin=0`。
 - Wi-Fi 由 specialize 移到 FirstLogon 第一步（OOBE 期間無網路）；自動建立 `seraphwu`（Administrators，密碼沿用 2024 版應答檔）；FirstLogon 最後改為永久自動登入。公開版移除 Wi-Fi、帳號、密碼，並把永久自動登入換回「關閉自動登入」。
 - 使用者回報另一台重裝後卡住一個 PowerShell 視窗；初步查到 `unattend-03.ps1` 有 3 行 winget 缺 `--accept-package-agreements`、`Set-ExecutionPolicy` 缺 `-Force`，且輸出導向日誌、無 `-NonInteractive`，提示看不到。尚未在那台確認與修正。
+- 另一台電腦上的 Claude 依 HANDOFF 改了隨身碟應答檔（16:31）：所有 powershell 啟動指令加 `-NonInteractive`、移除 winget、`-Force`、下載逾時。之後重灌出現「電腦意外地重新啟動」。
+- 確認兩個 ISO 都完整：26300 ISO SHA256 `E951AB4E…F9B5DC` 與使用者提供的相同；25H2 ISO 與隨身碟上的 `.sha256.txt` 相同。
+- 使用者用 Shift+F10 把日誌複製到隨身碟 `setuplogs`。`setuperr.log` 顯示 specialize `RunSynchronousCommand[Order="1"]/Path` 值無效、`0x80220005`：Order 1 從 248 變 264 字元，超過長度上限。隨身碟換回 14:04 版（16:31 版另存 `backup\autounattend.20261024-1631-too-long.xml`）。
+- 以 14:04 版為底重新修正：winget 補同意條款參數、`Set-ExecutionPolicy -Force`、下載逾時；`-NonInteractive` 只加在 Specialize/DefaultUser/FirstLogon/UserOnce（143/144/143/141 字元），Order 1 維持 248。全部啟動指令最長 253。三份同步、公開版重新產生。
 - 驗證方式：每次修改都檢查 XML 可解析、內嵌 PowerShell 用 5.1 解析器檢查語法、關鍵區塊寫到 HKCU 測試機碼實際執行後刪除、私人版與隨身碟比對雜湊、公開版掃描不含 Wi-Fi/密碼。**未實際重灌驗證整個流程。**

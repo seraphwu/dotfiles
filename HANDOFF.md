@@ -16,7 +16,7 @@
 - 公開版的產生方式：`windows/setup/New-PublicUnattend.ps1`。私人版有改動時重跑它；它找不到預期內容、或輸出仍含 Wi-Fi/密碼時會直接中止。
 - Ventoy 設定：`F:\ventoy\ventoy.json` 的 `auto_install` 指向 `/Templates/autounattend.xml`，套用在 `/ISO/Windows` 底下的 ISO。
 - 隨身碟根目錄另有 `PowerShell-7.6.8-win-x64.msi`（離線安裝 PowerShell 7 用）、`lockscreen.png`（鎖定畫面）。
-- 最後一次 commit：`10525cd`。本機私人版與隨身碟一致（雜湊相同）。
+- 本機私人版與隨身碟一致（雜湊相同，2026-10-24 晚間更新）。最新 commit 見 `git log`。
 
 ## 安裝流程與各階段做的事（私人版）
 
@@ -28,29 +28,52 @@
 | FirstLogon | seraphwu（提升權限） | ① 連 Wi-Fi 並等網路可用 → … → 安裝 PowerShell 7（先找隨身碟 MSI，找不到從 GitHub 下載，失敗在桌面留 `PowerShell7-安裝失敗.txt`）→ 刪除含密碼暫存檔 → **永久開啟自動登入**（密碼存 Winlogon DefaultPassword） |
 | UserOnce | seraphwu（一般權限） | 深色模式、隱藏桌面圖示（含 OneDrive）、桌布、`unattend-05.cmd`（整理後的 itoc，51 條）、`unattend-03.ps1`（winget：Terminal、QuickLook、VS Code、Chrome、PowerShell；scoop + git、7zip；輸入法）、`unattend-04.cmd`（**5 秒後重開機**） |
 
-## ⚠️ 尚未處理：另一台重裝後卡住一個 PowerShell 視窗
+## ⚠️ 已解決：啟動指令超過長度上限 → 「電腦意外地重新啟動」
 
-使用者回報：用隨身碟重裝的另一台電腦，安裝後**卡住一個 PowerShell 視窗**（尚未回覆、尚未診斷）。
+**現象**：重灌時在第一次重開機後（ASUS 標誌＋轉圈圈）出現「電腦意外地重新啟動或發生意外的錯誤。Windows 無法進行安裝」。
 
-原電腦上已查到的線索（推測，尚未在那台確認）：
-- 各階段腳本的輸出都被導向日誌（`*>&1 | Out-String ... >> log`），而且 PowerShell 啟動參數**沒有 `-NonInteractive`**。所以若有指令在等輸入，**提示文字只會寫進日誌，視窗看起來像卡住**。
-- `unattend-03.ps1`（UserOnce 執行）裡可能會停下來等輸入的指令：
-  - L7 `winget install --id QL-Win.QuickLook -e`：缺 `--accept-package-agreements`（也缺 `--accept-source-agreements`）
-  - L8 `winget install --id Microsoft.VisualStudioCode --source winget`：缺 `--accept-package-agreements`
-  - L9 `winget install --id google.chrome --source winget`：缺 `--accept-package-agreements`
-  - L12 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`：缺 `-Force`，Windows PowerShell 5.1 會詢問是否變更
-- FirstLogon 也可能較久（不是卡死）：Wi-Fi 等待最多約 60 + 90 秒；PowerShell 7 從 GitHub 下載沒有逾時設定；`msiexec` 若遇到其他安裝進行中會等待。
+**原因**（已由 `C:\Windows\Panther\setuperr.log` 確認）：
+```
+... Microsoft-Windows-Deployment ... /settings/RunSynchronous/RunSynchronousCommand/[Order="1"]/Path
+... Description = 值無效。
+The provided unattend file is not valid; hrResult = 0x80220005
+```
+另一台電腦上的 Claude 為了處理「卡住視窗」，在所有 `powershell.exe` 啟動指令加了 ` -NonInteractive`（16 字元），使 specialize **Order 1（解出所有腳本的指令）從 248 → 264 字元**，超過 `RunSynchronousCommand/Path` 的長度上限，整份應答檔被判定無效。日誌中失敗值為 530 bytes = 265 字元（含結尾），吻合。上限推測為 259 字元（未查證官方文件；已知 248、253 可用，264 失敗）。
 
-在那台電腦上先確認：
+**規則**：修改任何 `RunSynchronousCommand/Path` 或 `SynchronousCommand/CommandLine` 後都要檢查長度；**specialize Order 1 不能再加長**。
+
+**修正（2026-10-24 晚間，以 14:04 版為底）**：
+- `unattend-03.ps1`：QuickLook、VS Code、Chrome 的 winget 補上 `--accept-source-agreements --accept-package-agreements`；`Set-ExecutionPolicy ... -Force`（winget 保留，不像 16:31 版整段移除）
+- PowerShell 7 下載：查詢最新版 `-TimeoutSec 30`、MSI 下載 `-TimeoutSec 300`
+- `-NonInteractive` **只加在**：Specialize.ps1（143 字元）、DefaultUser.ps1（144）、FirstLogon.ps1（143）、UserOnce 的 RunOnce 值（141，RunOnce 上限 260）；Order 1 維持 248
+- 全部啟動指令最長 253（windowsPE 原本的 `defender.vbs` 行）
+- 隨身碟備份：`F:\Templates\backup\autounattend.20261024-before-noninteractive.xml`（14:04 版）、`F:\Templates\backup\autounattend.20261024-1631-too-long.xml`（無效的 16:31 版）
+
+## ⚠️ 待確認：另一台重裝後卡住一個 PowerShell 視窗
+
+那次安裝用的是 14:04 版（已進到桌面）。推測原因：各階段輸出導向日誌、啟動參數沒有 `-NonInteractive`，若 winget（缺同意條款參數）或 `Set-ExecutionPolicy`（缺 `-Force`）在等輸入，提示只會寫進日誌，視窗看起來像卡住。上述修正已處理這些，**尚未重裝驗證**。
+
+若再發生，在那台電腦上看：
 ```powershell
-# 視窗的進度列文字：'Running scripts to configure this user account' = UserOnce；'...finalize your Windows installation' = FirstLogon
+# 進度列文字：'Running scripts to configure this user account' = UserOnce；'...finalize your Windows installation' = FirstLogon
 Get-Content $env:TEMP\UserOnce.log -Tail 30
 Get-Content C:\Windows\Setup\Scripts\FirstLogon.log -Tail 30
 Get-Process winget, msiexec, powershell -ErrorAction SilentlyContinue | Select Name, Id, StartTime
 ```
-日誌最後一行 `*** Will now execute command «…»` 就是正在執行（卡住）的步驟。若是等輸入，點一下該視窗按 `Y` + Enter 可能就會繼續（推測）。
+日誌最後一行 `*** Will now execute command «…»` 就是正在執行的步驟。
 
-可能的修正（尚未實作）：winget 都補上 `--accept-source-agreements --accept-package-agreements`、`Set-ExecutionPolicy` 加 `-Force`、PowerShell 啟動參數加 `-NonInteractive`、下載加逾時。
+## 安裝出錯時怎麼抓日誌
+
+在錯誤畫面按 **Shift + F10**（cmd）。先 `echo list volume | diskpart` 找 Label 為 `Ventoy` 的代號（下例 `E:`）：
+```
+mkdir E:\setuplogs
+copy C:\Windows\Panther\setup*.log E:\setuplogs\
+xcopy /e /i /y C:\Windows\Panther\UnattendGC E:\setuplogs\UnattendGC
+copy C:\Windows\Setup\Scripts\*.log E:\setuplogs\
+```
+- 在 windowsPE 階段（藍色背景、還沒重開機）沒有 C:：安裝程式在 `X:`，目標硬碟是 `W:`（應答檔 diskpart `ASSIGN LETTER=W`），日誌在 `X:\Windows\Panther\`。
+- windowsPE 的 `cscript.exe defender.vbs` 視窗停在 `Scanning for newly created SYSTEM registry hive file...` 是正常的，會等系統登錄檔產生後自己關閉。
+- `for %d in (...)` 寫法只能在 cmd 直接輸入，PowerShell 或 .bat 內不能用。
 
 ## 下一步：在剛重灌的電腦上檢查
 

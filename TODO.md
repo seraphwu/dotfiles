@@ -1,7 +1,9 @@
 # TODO
 
 ## 進行中
-- [ ] **另一台重裝後卡住一個 PowerShell 視窗**：看 `UserOnce.log` / `FirstLogon.log` 最後執行的步驟（線索見 `HANDOFF.md`）
+- [ ] 用目前版本重裝，確認不再出現「電腦意外地重新啟動」，也不再卡住 PowerShell 視窗
+- [x] ~~「電腦意外地重新啟動」~~：16:31 版 Order 1 超過長度上限，已換回 14:04 版並重新修正（2026-10-24）
+- [x] 卡住 PowerShell 視窗的推測原因已修正（winget 同意條款參數、`-Force`、`-NonInteractive`），待重裝驗證
 - [ ] 在剛重灌的電腦上依 `HANDOFF.md`「下一步」檢查安裝結果
 
 ## 重灌前（原電腦 ASUS 15）
