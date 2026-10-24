@@ -36,8 +36,23 @@ $raw = Remove-Required $raw '\t\{\r?\n\t\t# \[custom-wifi-begin\].*?# \[custom-w
 $raw = Remove-Required $raw '[ \t]*<UserAccounts>.*?</UserAccounts>\r?\n' 'UserAccounts'
 $raw = Remove-Required $raw '[ \t]*<AutoLogon>.*?</AutoLogon>\r?\n' 'AutoLogon'
 
-# 5. 確認沒有殘留
-foreach ($p in 'WifiName=', 'WifiPassword=', 'WifiAuthentication=', 'keyMaterial', 'WLANProfile', 'netsh.exe wlan', 'custom-wifi', '<UserAccounts>', '<AutoLogon>', '<Password>') {
+# 5. FirstLogon：永久自動登入區塊 (含密碼) 換成「關閉自動登入並刪除存下的密碼」
+$autoLogonOff = @'
+	{
+		# [custom] Auto logon was only for this first logon; turn it off and remove the stored password
+		$winlogon = 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon';
+		Set-ItemProperty -LiteralPath $winlogon -Name 'AutoAdminLogon' -Value '0' -Type 'String';
+		Set-ItemProperty -LiteralPath $winlogon -Name 'AutoLogonCount' -Value 0 -Type 'DWord';
+		Remove-ItemProperty -LiteralPath $winlogon -Name 'DefaultPassword' -ErrorAction 'SilentlyContinue';
+	};
+
+'@ -replace "(?<!`r)`n", "`r`n"
+$re = [regex]::new('\t\{\r?\n\t\t# \[custom-autologon-begin\].*?# \[custom-autologon-end\]\r?\n\t\};\r?\n', 'Singleline')
+if (-not $re.IsMatch($raw)) { throw '找不到要替換的內容：FirstLogon 永久自動登入區塊' }
+$raw = $re.Replace($raw, { param($m) $autoLogonOff }, 1)
+
+# 6. 確認沒有殘留
+foreach ($p in 'WifiName=', 'WifiPassword=', 'WifiAuthentication=', 'keyMaterial', 'WLANProfile', 'netsh.exe wlan', 'custom-wifi', '<UserAccounts>', '<AutoLogon>', '<Password>', 'custom-autologon', "-Name 'DefaultPassword' -Value") {
     if ($raw.Contains($p)) { throw "輸出仍含有 '$p'，已中止" }
 }
 $doc = New-Object System.Xml.XmlDocument
