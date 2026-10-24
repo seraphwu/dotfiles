@@ -1001,8 +1001,8 @@ reg.exe add "HKEY_CURRENT_USER\Control Panel\Desktop" /v "JPEGImportQuality" /t 
 :: Sets "When Windows Detects Communication Activity" under "System &gt; Sound &gt; More sound settings &gt; Communications" to "Do Nothing"
 reg.exe add "HKEY_CURRENT_USER\Software\Microsoft\Multimedia\Audio" /v "UserDuckingPreference" /t REG_DWORD /d 3 /f
 
-:: Enables User Account Control (Default Value)
-reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 3 /f
+:: [自訂] Disables User Account Control (與產生器 DisableUac 一致；原為無效值 3)
+reg.exe add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" /v EnableLUA /t REG_DWORD /d 0 /f
 
 ## AveYo: fix ms-gamebar annoyance after uninstalling Xbox
 reg.exe add HKCR\ms-gamebar /f /ve /d URL:ms-gamebar 2&amp;gt;&amp;amp;1 &amp;gt;''
@@ -1226,6 +1226,10 @@ $scripts = @(
 		&amp; 'C:\Windows\Setup\Scripts\SetWallpaper.ps1';
 	};
 	{
+		# [自訂] 原本在 DefaultUser.ps1 (specialize/SYSTEM) 執行，HKCU 寫不到使用者；移到這裡以使用者身分執行，需在 unattend-04.cmd (重開機) 之前
+		C:\Windows\Setup\Scripts\unattend-05.cmd;
+	};
+	{
 		&amp; 'C:\Windows\Setup\Scripts\unattend-03.ps1';
 	};
 	{
@@ -1342,9 +1346,6 @@ $scripts = @(
 	};
 	{
 		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\DWM" /v ColorPrevalence /t REG_DWORD /d 0 /f;
-	};
-	{
-		C:\Windows\Setup\Scripts\unattend-05.cmd;
 	};
 	{
 		reg.exe add "HKU\DefaultUser\Software\Microsoft\Windows\CurrentVersion\RunOnce" /v "UnattendedSetup" /t REG_SZ /d "powershell.exe -WindowStyle \""Normal\"" -ExecutionPolicy \""Unrestricted\"" -NoProfile -File \""C:\Windows\Setup\Scripts\UserOnce.ps1\""" /f;
