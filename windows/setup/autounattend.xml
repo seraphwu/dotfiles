@@ -648,12 +648,12 @@ $htmlAccentColor = '#0078D4';
 };
 		</File>
 		<File path="C:\Windows\Setup\Scripts\GetWallpaper.ps1">
-# Photo by Les&#x142;aw Dzik: https://www.pexels.com/zh-tw/photo/4504714/
-$url = 'https://images.pexels.com/photos/4504714/pexels-photo-4504714.jpeg';
-&amp; {
-	$ProgressPreference = 'SilentlyContinue';
-	( Invoke-WebRequest -Uri $url -UseBasicParsing -TimeoutSec 30 ).Content;
-};
+# [自訂] 使用 Windows 內建的深色桌布，不上網下載
+$path = 'C:\Windows\Web\Wallpaper\Windows\img19.jpg';
+if( -not ( Test-Path -LiteralPath $path ) ) {
+	throw "找不到內建深色桌布 '$path'";
+}
+return [System.IO.File]::ReadAllBytes( $path );
 		</File>
 		<File path="C:\Windows\Setup\Scripts\SetWallpaper.ps1">
 Add-Type -TypeDefinition '
