@@ -1,6 +1,7 @@
 ﻿<#
 .SYNOPSIS
-    從含 Wi-Fi 密碼的 autounattend.xml 產生可公開的版本 (WifiMode=Interactive)。
+    從含 Wi-Fi 與帳號密碼的 autounattend.xml 產生可公開的版本
+    (WifiMode=Interactive、安裝時手動建立帳號)。
 .DESCRIPTION
     來源 windows\autounattend.xml 只放在 Ventoy 隨身碟與本機 (已加入 .gitignore)；
     輸出 windows\setup\autounattend.xml 才會進 repo。任何一步找不到預期內容就中止。
@@ -28,13 +29,15 @@ $raw = [regex]::Replace($raw, '&(?:amp;)?Wifi(?!Mode)[A-Za-z]+=[^&\s]*', '')
 # 2. 內嵌的 Wifi.xml (含 SSID 與密碼)
 $raw = Remove-Required $raw '[ \t]*<File path="C:\\Windows\\Setup\\Scripts\\Wifi\.xml">.*?</File>\r?\n' 'Wifi.xml'
 
-# 3. Specialize：等待 WlanSvc、netsh 加入設定檔、netsh 連線
-$raw = Remove-Required $raw '\t\{\r?\n\t\t\$name = ''WlanSvc'';.*?\r?\n\t\};\r?\n' 'WlanSvc 等待區塊'
-$raw = Remove-Required $raw '\t\{\r?\n\t\tnetsh\.exe wlan add profile [^\r\n]*\r?\n\t\};\r?\n' 'netsh wlan add profile'
-$raw = Remove-Required $raw '\t\{\r?\n\t\tnetsh\.exe wlan connect [^\r\n]*\r?\n\t\};\r?\n' 'netsh wlan connect'
+# 3. FirstLogon：首次登入時連 Wi-Fi 的區塊 ([custom-wifi-begin] ~ [custom-wifi-end])
+$raw = Remove-Required $raw '\t\{\r?\n\t\t# \[custom-wifi-begin\].*?# \[custom-wifi-end\]\r?\n\t\};\r?\n' 'FirstLogon Wi-Fi 區塊'
 
-# 4. 確認沒有殘留
-foreach ($p in 'WifiName=', 'WifiPassword=', 'WifiAuthentication=', 'keyMaterial', 'WLANProfile', 'netsh.exe wlan') {
+# 4. oobeSystem：自動建立的帳號與自動登入 (含密碼)；公開版改回安裝時手動建立帳號
+$raw = Remove-Required $raw '[ \t]*<UserAccounts>.*?</UserAccounts>\r?\n' 'UserAccounts'
+$raw = Remove-Required $raw '[ \t]*<AutoLogon>.*?</AutoLogon>\r?\n' 'AutoLogon'
+
+# 5. 確認沒有殘留
+foreach ($p in 'WifiName=', 'WifiPassword=', 'WifiAuthentication=', 'keyMaterial', 'WLANProfile', 'netsh.exe wlan', 'custom-wifi', '<UserAccounts>', '<AutoLogon>', '<Password>') {
     if ($raw.Contains($p)) { throw "輸出仍含有 '$p'，已中止" }
 }
 $doc = New-Object System.Xml.XmlDocument

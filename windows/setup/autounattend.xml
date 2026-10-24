@@ -1322,6 +1322,13 @@ $scripts = @(
 		  'C:\Windows\Setup\Scripts\Wifi.xml';
 		) -Force -ErrorAction 'SilentlyContinue' -Verbose;
 	};
+	{
+		# [custom] Auto logon was only for this first logon; turn it off and remove the stored password
+		$winlogon = 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon';
+		Set-ItemProperty -LiteralPath $winlogon -Name 'AutoAdminLogon' -Value '0' -Type 'String';
+		Set-ItemProperty -LiteralPath $winlogon -Name 'AutoLogonCount' -Value 0 -Type 'DWord';
+		Remove-ItemProperty -LiteralPath $winlogon -Name 'DefaultPassword' -ErrorAction 'SilentlyContinue';
+	};
 );
 
 &amp; {
